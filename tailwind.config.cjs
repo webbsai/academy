@@ -23,7 +23,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Urbanist'],
+				sans: ['Poppins', 'Inter'],
 			},
 			colors: { accent, gray },
 		},

@@ -1,166 +1,129 @@
 ---
-import BaseHead from "../components/BaseHead.astro"
-import Header from "../components/Header.tsx"
-import Footer from "../components/Footer.tsx"
-import { SITE_TITLE, SITE_DESCRIPTION, DEFAULT_SCREEN_SIZE } from "../consts"
-import "@fontsource/urbanist"
-import { RightArrow } from "../components/icons/icons.tsx"
-import CarouselSection from "../components/CarouselSection"
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.tsx';
+import Footer from '../components/Footer.tsx';
+import { SITE_TITLE, SITE_DESCRIPTION, DEFAULT_SCREEN_SIZE } from '../consts';
+import '@fontsource/urbanist';
+import { RightArrow } from '../components/icons/icons.tsx';
+import CarouselSection from '../components/CarouselSection';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-black">
-		<Header />
+	<body class='bg-black'>
+		<Header client:load />
 		<!-- <Header title={SITE_TITLE} /> -->
 		<main
-			class="min-h-screen bg-white vsc-initialized font-urbanist selection:text-primary dark:bg-black lg:pb-16"
+			class='min-h-screen text-black bg-white vsc-initialized font-urbanist selection:text-primary dark:bg-black lg:pb-16 dark:text-white'
 		>
 			<section
-				style={{
-					maxWidth: `${DEFAULT_SCREEN_SIZE}px`
-				}}
-				class="h-screen pt-24 mx-auto bg-center sm:pt-32 lg:mb-16 lg:pt-36"
+				class='h-screen pt-24 mx-auto bg-black bg-center sm:pt-32 lg:mb-16 lg:pt-36'
 			>
 				<div
-					class="mx-auto flex h-[calc(100%-96px)] flex-col items-center justify-center gap-5 px-[70px] text-white lg:-translate-y-24 relative"
+					class='mx-auto flex h-[calc(100%-96px)] flex-col items-center justify-center gap-5 px-[70px] text-white lg:-translate-y-24 relative px-4 mx-auto text-white sm:px-12 xl:max-w-6xl xl:px-0'
 				>
 					<div
-						class="absolute z-10 w-full h-full bg-black/[85%] top-24 flex flex-col gap-8 items-center justify-center text-center"
+						class='absolute z-10 w-full h-full bg-black/[85%] top-24 flex flex-col gap-8 items-center justify-center text-center'
 					>
-						<h1 class="text-6xl font-extrabold">
+						<h1 class='text-6xl font-extrabold'>
 							Learn everything about WebbsAI
 						</h1>
-						<p class="text-3xl">
-							No-bullshit, practical tutorials & the best
-							resources.
+						<p class='text-3xl'>
+							No-bullshit, practical tutorials & the best resources.
 						</p>
-						<div class="flex justify-center w-full gap-5">
-							<button
-								class="px-5 py-4 rounded-[18px] bg-white text-black"
+						<div class='flex justify-center w-full gap-5'>
+							<button class='px-5 py-4 rounded-[18px] bg-white text-black'
 								>Get free courses</button
 							>
-							<button
-								class="px-6 py-4 rounded-[18px] bg-[#202020]"
+							<button class='px-6 py-4 rounded-[18px] bg-[#202020]'
 								>See Resources</button
 							>
 						</div>
 					</div>
-					<img
-						src="/background.png"
-						class="h-full lg:translate-y-24"
-					/>
+					<img src='/background.png' class='h-full lg:translate-y-24' />
 				</div>
 			</section>
 
-			<section class="mt-24">
-				<div
-					class="px-4 mx-auto text-white sm:px-12 xl:max-w-6xl xl:px-0"
-				>
-					<div class="flex flex-col">
+			<section class='mt-24'>
+				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
+					<div class='flex flex-col'>
 						<div
-							class="flex w-full flex-col rounded-[20px] p-6 bg-[#131313] md:p-8 lg:p-12"
+							class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:p-8 lg:p-12'
 						>
-							<div class="flex gap-16">
-								<div class="flex flex-col justify-center gap-5">
-									<h3
-										class="font-semibold text-2g md:text-3xl lg:text-5xl"
-									>
+							<div class='flex gap-16'>
+								<div class='flex flex-col justify-center gap-5'>
+									<h3 class='font-semibold text-2g md:text-3xl lg:text-5xl'>
 										Free WebbsAI Courses
 									</h3>
-									<p
-										class="mt-2 text-base md:text-lg lg:text-2xl"
-									>
-										Learn how to create stunning websites
-										with ease by learning the fundamentals
-										of WebbsAI.
+									<p class='mt-2 text-base md:text-lg lg:text-2xl'>
+										Learn how to create stunning websites with ease by learning
+										the fundamentals of WebbsAI.
 									</p>
 									<button
-										class="px-5 w-fit py-4 rounded-[18px] bg-white text-black"
+										class='px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black'
 										>Start Learning Now</button
 									>
 								</div>
-								<div class="w-full h-full">
-									<img
-										src="/assets/toolboxes.svg"
-										class="w-full h-full"
-									/>
+								<div class='w-full h-full'>
+									<img src='/assets/toolboxes.svg' class='w-full h-full' />
 								</div>
 							</div>
 						</div>
 
-						<div class="flex flex-col gap-4 mt-4 md:flex-row">
+						<div class='flex flex-col gap-4 mt-4 md:flex-row'>
 							<div
-								class="flex w-full flex-col rounded-[20px] p-6 bg-[#131313] md:w-3/5 md:p-8 lg:p-12"
+								class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-3/5 md:p-8 lg:p-12'
 							>
 								<div>
-									<h3
-										class="text-lg font-semibold md:text-xl lg:text-2xl"
-									>
+									<h3 class='text-lg font-semibold md:text-xl lg:text-2xl'>
 										Getting Started
 									</h3>
-									<p
-										class="mt-2 text-sm md:text-base lg:text-lg"
-									>
-										Bring more charm to your designs by
-										setting up animations.
+									<p class='mt-2 text-sm md:text-base lg:text-lg'>
+										Bring more charm to your designs by setting up animations.
 									</p>
 								</div>
 							</div>
 							<div
-								class="flex w-full flex-col rounded-[20px] p-6 bg-[#131313] md:w-2/5 md:p-8 lg:p-12"
+								class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-2/5 md:p-8 lg:p-12'
 							>
 								<div>
-									<h3
-										class="text-lg font-semibold md:text-xl lg:text-2xl"
-									>
+									<h3 class='text-lg font-semibold md:text-xl lg:text-2xl'>
 										Core Skills
 									</h3>
-									<p
-										class="mt-2 text-sm md:text-base lg:text-lg"
-									>
-										WebbsAI gives you control of all CSS
-										design proporties visually.
+									<p class='mt-2 text-sm md:text-base lg:text-lg'>
+										WebbsAI gives you control of all CSS design proporties
+										visually.
 									</p>
 								</div>
 							</div>
 						</div>
 
-						<div class="flex flex-col gap-4 mt-4 md:flex-row">
+						<div class='flex flex-col gap-4 mt-4 md:flex-row'>
 							<div
-								class="flex w-full flex-col rounded-[20px] p-6 bg-[#131313] md:w-2/5 md:p-8 lg:p-12"
+								class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-2/5 md:p-8 lg:p-12'
 							>
 								<div>
-									<h3
-										class="text-lg font-semibold md:text-xl lg:text-2xl"
-									>
+									<h3 class='text-lg font-semibold md:text-xl lg:text-2xl'>
 										Web Types
 									</h3>
-									<p
-										class="mt-2 text-sm md:text-base lg:text-lg"
-									>
-										WebbsAI gives you control of all CSS
-										design proporties visually.
+									<p class='mt-2 text-sm md:text-base lg:text-lg'>
+										WebbsAI gives you control of all CSS design proporties
+										visually.
 									</p>
 								</div>
 							</div>
 							<div
-								class="flex w-full flex-col rounded-[20px] p-6 bg-[#131313] md:w-3/5 md:p-8 lg:p-12"
+								class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-3/5 md:p-8 lg:p-12'
 							>
 								<div>
-									<h3
-										class="text-lg font-semibold md:text-xl lg:text-2xl"
-									>
+									<h3 class='text-lg font-semibold md:text-xl lg:text-2xl'>
 										Resources
 									</h3>
-									<p
-										class="mt-2 text-sm md:text-base lg:text-lg"
-									>
-										Bring more charm to your designs by
-										setting up animations.
+									<p class='mt-2 text-sm md:text-base lg:text-lg'>
+										Bring more charm to your designs by setting up animations.
 									</p>
 								</div>
 							</div>
@@ -169,49 +132,44 @@ import CarouselSection from "../components/CarouselSection"
 				</div>
 			</section>
 
-			<section class="mt-24">
-				<div
-					class="px-4 mx-auto text-white sm:px-12 xl:max-w-6xl xl:px-0"
-				>
-					<h2 class="text-6xl font-bold text-center">
+			<section class='mt-24'>
+				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
+					<h2 class='text-6xl font-bold text-center'>
 						Get started with our<br />WebbsAI video lessons
 					</h2>
 					<p
-						class="mt-8 text-lg text-center md:text-xl lg:text-2xl text-white/70"
+						class='mt-8 text-lg text-center md:text-xl lg:text-2xl text-black/70 dark:text-white/70'
 					>
-						The website builder for everyone, from novices to pros.
-						With our<br />generative AI technology.
+						The website builder for everyone, from novices to pros. With our<br
+						/>generative AI technology.
 					</p>
-					<div class="mt-16 h-[400px] bg-[#131313]">
+					<div class='mt-16 h-[400px] bg-[#EEEEEE] dark:bg-[#131313]'>
 						<!-- <CarouselSection /> -->
 					</div>
 				</div>
 			</section>
 
-			<section class="mt-24">
-				<div
-					class="px-4 mx-auto text-white sm:px-12 xl:max-w-6xl xl:px-0"
-				>
-					<h2 class="text-6xl font-bold text-center">
-						WebbsAI Courses
-					</h2>
+			<section class='mt-24'>
+				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
+					<h2 class='text-6xl font-bold text-center'>WebbsAI Courses</h2>
 					<p
-						class="flex items-center justify-center gap-4 mt-8 text-lg md:text-xl lg:text-2xl"
+						class='flex items-center justify-center gap-4 mt-8 text-lg md:text-xl lg:text-2xl'
 					>
-						<span class="underline">Explore all</span><RightArrow />
+						<span class='underline'>Explore all</span><RightArrow
+							className='invert dark:invert-0'
+						/>
 					</p>
-					<div class="grid grid-cols-4 mt-16 gap-7">
+					<div class='grid grid-cols-4 mt-16 gap-7'>
 						{
 							Array.from(Array(8)).map(() => (
-								<div class="bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]">
-									<div class="w-full h-[150px] bg-[#0D0D0D] rounded-[20px]" />
-									<h3 class="text-lg md:text-xl lg:text-2xl">
+								<div class='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
+									<div class='w-full h-[150px] bg-[#F7F7F7] dark:bg-[#0D0D0D] rounded-[20px]' />
+									<h3 class='text-lg md:text-xl lg:text-2xl'>
 										Step-by-step guides to using WebbsAI
 									</h3>
-									<p class="text-xs lg:text-sm text-white/70">
-										The website builder for everyone, from
-										novices to pros. With our generative AI
-										technology.
+									<p class='text-xs lg:text-sm text-black/70 dark:text-white/70'>
+										The website builder for everyone, from novices to pros. With
+										our generative AI technology.
 									</p>
 								</div>
 							))
@@ -220,35 +178,25 @@ import CarouselSection from "../components/CarouselSection"
 				</div>
 			</section>
 
-			<section class="my-24">
-				<div
-					class="px-4 mx-auto text-white sm:px-12 xl:max-w-6xl xl:px-0"
-				>
-					<div class="flex flex-col w-full">
-						<div class="flex gap-16">
-							<div class="flex flex-col justify-center gap-5">
-								<h3
-									class="font-semibold text-2g md:text-3xl lg:text-5xl"
-								>
+			<section class='my-24'>
+				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
+					<div class='flex flex-col w-full'>
+						<div class='flex gap-16'>
+							<div class='flex flex-col justify-center gap-5'>
+								<h3 class='font-semibold text-2g md:text-3xl lg:text-5xl'>
 									Read our WebbsAI University Blogs
 								</h3>
-								<p
-									class="mt-2 text-base md:text-lg lg:text-2xl"
-								>
-									The website builder for everyone, from
-									novices to pros. With our generative AI
-									technology.
+								<p class='mt-2 text-base md:text-lg lg:text-2xl'>
+									The website builder for everyone, from novices to pros. With
+									our generative AI technology.
 								</p>
 								<button
-									class="px-5 w-fit py-4 rounded-[18px] bg-white text-black"
+									class='px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black'
 									>See all blogs</button
 								>
 							</div>
-							<div class="w-full h-full">
-								<img
-									src="/assets/blogs.png"
-									class="w-full h-full"
-								/>
+							<div class='w-full h-full'>
+								<img src='/assets/blogs.png' class='w-full h-full' />
 							</div>
 						</div>
 					</div>

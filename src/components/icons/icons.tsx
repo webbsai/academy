@@ -1,6 +1,7 @@
-export function RightArrow() {
+export function RightArrow({ className }: { className?: string }) {
 	return (
 		<svg
+			className={className ?? ''}
 			width='28'
 			height='28'
 			viewBox='0 0 28 28'

@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { paths } from '../consts';
+import { useEffect, useState } from 'react';
 
 function Header() {
 	const onDropDownHandler = () => {
@@ -10,8 +11,27 @@ function Header() {
 		navlinks!.classList.toggle('opacity-0');
 	};
 
+	const [theme, setTheme] = useState('dark');
+
+	const handleClick = () => {
+		setTheme(theme === 'light' ? 'dark' : 'light');
+	};
+	useEffect(() => {
+		setTheme(window.localStorage.getItem('theme') ?? 'light');
+	}, []);
+
+	useEffect(() => {
+		if (theme === 'dark') {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
+		localStorage.setItem('theme', theme);
+		console.log(theme);
+	}, [theme]);
+
 	return (
-		<header className='overflow-x-clip'>
+		<header className='overflow-x-clip not-content'>
 			<nav
 				id='navbar'
 				className='absolute inset-x-0 z-30 w-screen bg-[#EEEEEE] font-urbanist dark:bg-[#111111] lg:w-full lg:bg-transparent lg:dark:bg-transparent'
@@ -74,6 +94,7 @@ function Header() {
 									))}
 									<li className='flex items-center rounded-[15px] px-[14px]'>
 										<button
+											onClick={handleClick}
 											aria-label='switch theme'
 											className='relative rounded-full switcher group h-9 w-9 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex'
 										>

@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { docsSchema } from '@astrojs/starlight/schema';
 
 const blog = defineCollection({
 	// Type-check frontmatter using a schema
@@ -18,4 +19,8 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+export const collections = { blog,
+	lessons: defineCollection({ schema: docsSchema() }), 
+	videos: defineCollection({ schema: docsSchema() }), 
+	docs: defineCollection({ schema: docsSchema() }),
+};

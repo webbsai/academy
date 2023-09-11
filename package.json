@@ -14,6 +14,8 @@
     "@astrojs/react": "^3.0.1",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/starlight": "^0.9.1",
+    "@astrojs/starlight-tailwind": "^2.0.0",
     "@astrojs/tailwind": "^5.0.0",
     "@fontsource/urbanist": "^5.0.11",
     "@splidejs/react-splide": "^0.7.12",

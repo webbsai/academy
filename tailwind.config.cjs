@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const starlightPlugin = require('@astrojs/starlight-tailwind');
 
 const accent = {
 	200: '#86B9F2',
@@ -42,5 +41,4 @@ module.exports = {
 		},
 	},
 	darkMode: 'class',
-	// plugins: [starlightPlugin()],
 };

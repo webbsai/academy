@@ -1,0 +1,79 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.tsx';
+import Footer from '../components/Footer.tsx';
+import { SITE_DESCRIPTION } from '../consts';
+import '@fontsource/poppins';
+import { Search } from '../components/icons/icons.tsx';
+import { getCollection } from 'astro:content';
+import AllLessons from '../sections/Lessons/AllLessons.tsx';
+
+const lessons = (
+	await getCollection('docs', (doc) => {
+		return doc.id.split('/')[0] === 'lessons';
+	})
+).sort(
+	(a, b) =>
+		//@ts-ignore
+		b.data.lastUpdated - a.data.lastUpdated
+);
+---
+
+<!doctype html>
+<html lang='en'>
+	<head>
+		<BaseHead title={'Lessons'} description={SITE_DESCRIPTION} />
+	</head>
+	<body class='bg-white dark:bg-black'>
+		<Header client:load />
+		<main
+			class='pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white'
+		>
+			<section class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
+				<div class='text-center'>
+					<h1 class='text-3xl font-bold md:text-4xl lg:text-6xl'>
+						The WebbsAI Lessons
+					</h1>
+					<p class='text-base md:text-lg lg:text-xl max-w-[800px] mx-auto mt-4'>
+						Learn from my bite-sized WebbsAI tutorials where I show you how to
+						create stunning effects and animations on your websites.
+					</p>
+				</div>
+				<div class='mt-16'>
+					<div
+						class='flex bg-secondary-light dark:bg-secondary-dark rounded-[20px] h-[60px] items-center px-8 gap-x-4 max-w-[400px] mx-auto'
+					>
+						<Search className='invert dark:invert-0' />
+						<input
+							placeholder='Search lessons'
+							class='w-full bg-transparent outline-none'
+						/>
+					</div>
+				</div>
+			</section>
+
+			<section class='mx-auto mt-48 sm:px-12 xl:max-w-6xl xl:px-0'>
+				<div class='text-center'>
+					<h2 class='text-2xl font-bold md:text-3xl lg:text-5xl'>
+						Latest Lesson
+					</h2>
+				</div>
+				<div
+					class="mt-8 bg-[url('https://picsum.photos/615/300/?blur=6')] bg-center bg-no-repeat bg-cover h-[500px] rounded-[20px] p-8 flex flex-col gap-4 justify-end"
+				>
+					<h3 class='text-2xl font-semibold md:text-3xl'>
+						{lessons[lessons?.length - 1].data.title}
+					</h3>
+					<p class='text-base lg:text-lg max-w-[600px]'>
+						{lessons[lessons?.length - 1].data.description}
+					</p>
+				</div>
+			</section>
+
+			<section class='mx-auto mt-48 sm:px-12 xl:max-w-6xl xl:px-0'>
+				<AllLessons client:only lessons={lessons} />
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

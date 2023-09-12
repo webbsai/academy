@@ -52,3 +52,16 @@ export const footerLinks = [
 ]
 
 export const DEFAULT_SCREEN_SIZE = 1360
+
+export const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
+export const blogTags = [
+"Product Update",
+"Web designs",
+"FAQ's",
+"Technical",
+"Interviews",
+"Trends"
+]

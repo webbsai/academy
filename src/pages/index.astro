@@ -12,20 +12,20 @@ import { RightArrow } from '../components/icons/icons.tsx';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class='bg-black'>
+	<body class='bg-white dark:bg-black'>
 		<Header client:load />
 		<!-- <Header title={SITE_TITLE} /> -->
 		<main
 			class='min-h-screen text-black bg-white vsc-initialized font-urbanist selection:text-primary dark:bg-black lg:pb-16 dark:text-white'
 		>
 			<section
-				class='h-screen pt-24 mx-auto bg-black bg-center sm:pt-32 lg:mb-16 lg:pt-36'
+				class='h-screen pt-24 mx-auto bg-center sm:pt-32 lg:mb-16 lg:pt-36'
 			>
 				<div
-					class='mx-auto flex h-[calc(100%-96px)] flex-col items-center justify-center gap-5 px-[70px] text-white lg:-translate-y-24 relative px-4 mx-auto text-white sm:px-12 xl:max-w-6xl xl:px-0'
+					class='mx-auto flex h-[calc(100%-96px)] flex-col items-center justify-center gap-5 px-[70px] text-black lg:-translate-y-24 relative px-4 mx-auto dark:text-white sm:px-12 xl:max-w-6xl xl:px-0'
 				>
 					<div
-						class='absolute z-10 w-full h-full bg-black/[85%] top-24 flex flex-col gap-8 items-center justify-center text-center'
+						class='absolute z-10 w-full h-full bg-white/[85%] dark:bg-black/[85%] top-24 flex flex-col gap-8 items-center justify-center text-center'
 					>
 						<h1 class='text-6xl font-extrabold'>
 							Learn everything about WebbsAI
@@ -37,12 +37,19 @@ import { RightArrow } from '../components/icons/icons.tsx';
 							<button class='px-5 py-4 rounded-[18px] bg-white text-black'
 								>Get free courses</button
 							>
-							<button class='px-6 py-4 rounded-[18px] bg-[#202020]'
+							<button class='px-6 py-4 rounded-[18px] bg-[#202020] text-white'
 								>See Resources</button
 							>
 						</div>
 					</div>
-					<img src='/background.png' class='h-full lg:translate-y-24' />
+					<img
+						src='/background-light.png'
+						class='hidden h-full dark:inline lg:translate-y-24'
+					/>
+					<img
+						src='/background.png'
+						class='h-full dark:hidden lg:translate-y-24'
+					/>
 				</div>
 			</section>
 

@@ -27,7 +27,6 @@ function Header() {
 			document.documentElement.classList.remove('dark');
 		}
 		localStorage.setItem('theme', theme);
-		console.log(theme);
 	}, [theme]);
 
 	return (
@@ -40,7 +39,7 @@ function Header() {
 					<div className='relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4'>
 						<div className='relative z-20 flex w-full gap-x-6 text-[#31456a] md:px-0 lg:w-max'>
 							<a
-								className='flex items-center order-2 text-2xl font-semibold text-black dark:text-white lg:order-1 lg:text-white'
+								className='flex items-center order-2 text-2xl font-semibold text-black dark:text-white lg:order-1'
 								aria-label='WebbsAI Logo'
 								href='/'
 							>
@@ -78,14 +77,14 @@ function Header() {
 						>
 							<div
 								className={clsx(
-									'rounded-[20px] px-2 py-1 text-black dark:text-white lg:text-white lg:bg-white/10 lg:dark:bg-white/10'
+									'rounded-[20px] px-2 py-1 text-black dark:text-white lg:text-black lg:bg-black/10 lg:dark:bg-white/10'
 								)}
 							>
 								<ul className='gap-1 space-y-6 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm'>
 									{paths.map((path, index) => (
 										<li
 											key={index}
-											className='rounded-[15px] p-[14px] hover:bg-[#131426]/80'
+											className='rounded-[15px] p-[14px] hover:bg-[#131426]/80 hover:text-white'
 										>
 											<a href={path.path} className='block transition md:px-4'>
 												<span>{path.name}</span>
@@ -124,7 +123,15 @@ function Header() {
 							</div>
 						</div>
 
-						<div></div>
+						<div className='opacity-0'>
+							<a
+								className='flex items-center order-2 text-2xl font-semibold text-black dark:text-white lg:order-1'
+								aria-label='WebbsAI Logo'
+								href='/'
+							>
+								WebbsAI
+							</a>
+						</div>
 					</div>
 				</div>
 			</nav>

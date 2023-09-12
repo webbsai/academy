@@ -9,10 +9,10 @@ export default defineConfig({
 	site: 'https://example.com',
 	integrations: [
 		react(),
-		tailwind(),
+		tailwind({}),
 		starlight({
 			title: 'WebbsAI',
-			customCss: ['./src/tailwind.css'],
+			customCss: ['./src/styles/custom.css', './src/styles/tailwind.css'],
 		}),
 	],
 });

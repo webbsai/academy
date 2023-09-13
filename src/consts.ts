@@ -9,6 +9,10 @@ export const paths = [
         name: 'Lessons',
         path: '/lessons',
     },
+	{
+		name: "Courses",
+		path: "/courses"
+	},
     {
         name: 'Resources',
         path: '/resources',
@@ -64,4 +68,18 @@ export const blogTags = [
 "Technical",
 "Interviews",
 "Trends"
+]
+
+export const courseDifficultyLevels = [
+"Beginner",
+"Intermediate",
+"Advance",
+"Expert",
+]
+
+export const resourceTypes = [
+	"Buttons",
+	"Animations",
+	"Nav bars",
+	"Tables"
 ]

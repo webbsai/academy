@@ -1,12 +1,12 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.tsx';
-import Footer from '../components/Footer.tsx';
-import { SITE_DESCRIPTION } from '../consts';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.tsx';
+import Footer from '../../components/Footer.tsx';
+import { SITE_DESCRIPTION } from '../../consts.ts';
 import '@fontsource/poppins';
 import { getCollection } from 'astro:content';
-import BlogsSection from '../sections/Blogs/Blogs.tsx';
-import { RightArrow } from '../components/icons/icons';
+import BlogsSection from '../../sections/Blogs/Blogs.tsx';
+import { RightArrow } from '../../components/icons/icons.tsx';
 
 const blogs = (await getCollection('blog')).sort(
 	(a, b) =>
@@ -47,7 +47,9 @@ const blogs = (await getCollection('blog')).sort(
 						className='invert dark:invert-0'
 					/>
 				</p>
-				<div class='grid grid-cols-4 mt-16 gap-7'>
+				<div
+					class='grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7'
+				>
 					{
 						[1, 2, 3, 4].map(() => (
 							<a>

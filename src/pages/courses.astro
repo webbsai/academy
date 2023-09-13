@@ -4,12 +4,12 @@ import Header from '../components/Header.tsx';
 import Footer from '../components/Footer.tsx';
 import { SITE_DESCRIPTION } from '../consts';
 import '@fontsource/poppins';
-import LessonsSection from './../sections/Lessons/Lessons';
+import CoursesSection from './../sections/Courses/Courses';
 import { getCollection } from 'astro:content';
 
-const lessons = (
+const courses = (
 	await getCollection('docs', (doc) => {
-		return doc.id.split('/')[0] === 'lessons';
+		return doc.id.split('/')[0] === 'courses';
 	})
 ).sort(
 	(a, b) =>
@@ -28,7 +28,7 @@ const lessons = (
 		<main
 			class='pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white'
 		>
-			<LessonsSection client:only lessons={lessons} />
+			<CoursesSection client:only courses={courses} />
 		</main>
 		<Footer />
 	</body>

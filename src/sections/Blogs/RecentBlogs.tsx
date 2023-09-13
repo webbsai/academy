@@ -32,9 +32,9 @@ function RecentBlogs({ blogs }: { blogs: Blog[] }) {
 						Recent Posts
 					</h2>
 				</div>
-				<div className='grid items-center grid-cols-3 mt-8 gap-7'>
+				<div className='grid items-center grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 gap-7'>
 					{currentBlogs?.map((blog) => (
-						<a href={blog.slug}>
+						<a href={`blogs/${blog.slug}`}>
 							<div className='p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
 								<img
 									src={blog.data.image}
@@ -62,6 +62,12 @@ function RecentBlogs({ blogs }: { blogs: Blog[] }) {
 						</a>
 					))}
 				</div>
+				{!currentBlogs ||
+					(!(currentBlogs?.length >= 0) && (
+						<h3 className='text-xl font-semibold text-center'>
+							Stay Tuned for the Upcoming Content
+						</h3>
+					))}
 				{numberToDisplay !== blogs?.length && blogs.length > 0 && (
 					<button
 						onClick={() => setNumberToDisplay((prev) => prev + 3)}

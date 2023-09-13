@@ -5,6 +5,17 @@ import Footer from '../components/Footer.tsx';
 import { SITE_TITLE, SITE_DESCRIPTION, DEFAULT_SCREEN_SIZE } from '../consts';
 import '@fontsource/poppins';
 import { RightArrow } from '../components/icons/icons.tsx';
+import { getCollection } from 'astro:content';
+
+const courses = (
+	await getCollection('docs', (doc) => {
+		return doc.id.split('/')[0] === 'courses';
+	})
+).sort(
+	(a, b) =>
+		//@ts-ignore
+		b.data.lastUpdated - a.data.lastUpdated
+);
 ---
 
 <!doctype html>
@@ -22,33 +33,37 @@ import { RightArrow } from '../components/icons/icons.tsx';
 				class='h-screen pt-24 mx-auto bg-center sm:pt-32 lg:mb-16 lg:pt-36'
 			>
 				<div
-					class='mx-auto flex h-[calc(100%-96px)] flex-col items-center justify-center gap-5 px-[70px] text-black lg:-translate-y-24 relative px-4 mx-auto dark:text-white sm:px-12 xl:max-w-6xl xl:px-0'
+					class='mx-auto flex h-[calc(100vh-96px)] flex-col items-center justify-center gap-5 px-[70px] text-black -translate-y-24 relative px-4 mx-auto dark:text-white sm:px-12 xl:max-w-6xl xl:px-0'
 				>
 					<div
-						class='absolute z-10 w-full h-full bg-white/[85%] dark:bg-black/[85%] top-24 flex flex-col gap-8 items-center justify-center text-center'
+						class='absolute px-4 sm:px-12 z-10 w-full h-full bg-white/[85%] dark:bg-black/[85%] top-24 flex flex-col gap-8 items-center justify-center text-center'
 					>
-						<h1 class='text-6xl font-extrabold'>
+						<h1
+							class='text-3xl font-extrabold md:text-4xl lg:text-5xl xl:text-6xl'
+						>
 							Learn everything about WebbsAI
 						</h1>
-						<p class='text-3xl'>
+						<p class='text-xl md:text-2xl lg:text-3xl'>
 							No-bullshit, practical tutorials & the best resources.
 						</p>
-						<div class='flex justify-center w-full gap-5'>
-							<button class='px-5 py-4 rounded-[18px] bg-white text-black'
-								>Get free courses</button
+						<div class='flex flex-col justify-center w-full gap-5 sm:flex-row'>
+							<a
+								class='px-5 py-4 rounded-[18px] bg-white text-black border'
+								href='/courses'>Get free courses</a
 							>
-							<button class='px-6 py-4 rounded-[18px] bg-[#202020] text-white'
-								>See Resources</button
+							<a
+								class='px-6 py-4 rounded-[18px] bg-[#202020] text-white'
+								href='/resources'>See Resources</a
 							>
 						</div>
 					</div>
 					<img
 						src='/background-light.png'
-						class='hidden h-full dark:inline lg:translate-y-24'
+						class='hidden w-full translate-y-24 sm:h-full dark:inline'
 					/>
 					<img
 						src='/background.png'
-						class='h-full dark:hidden lg:translate-y-24'
+						class='w-full translate-y-24 sm:h-full dark:hidden'
 					/>
 				</div>
 			</section>
@@ -59,7 +74,7 @@ import { RightArrow } from '../components/icons/icons.tsx';
 						<div
 							class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:p-8 lg:p-12'
 						>
-							<div class='flex gap-16'>
+							<div class='flex flex-col gap-16 md:flex-row'>
 								<div class='flex flex-col justify-center gap-5'>
 									<h3 class='font-semibold text-2g md:text-3xl lg:text-5xl'>
 										Free WebbsAI Courses
@@ -68,13 +83,17 @@ import { RightArrow } from '../components/icons/icons.tsx';
 										Learn how to create stunning websites with ease by learning
 										the fundamentals of WebbsAI.
 									</p>
-									<button
+									<a
+										href='/lessons'
 										class='px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black'
-										>Start Learning Now</button
+										>Start Learning Now</a
 									>
 								</div>
 								<div class='w-full h-full'>
-									<img src='/assets/toolboxes.svg' class='w-full h-full' />
+									<img
+										src='/assets/toolboxes.svg'
+										class='block w-full h-full m-auto'
+									/>
 								</div>
 							</div>
 						</div>
@@ -140,7 +159,9 @@ import { RightArrow } from '../components/icons/icons.tsx';
 
 			<section class='mt-24'>
 				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
-					<h2 class='text-6xl font-bold text-center'>
+					<h2
+						class='text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl'
+					>
 						Get started with our<br />WebbsAI video lessons
 					</h2>
 					<p
@@ -157,28 +178,45 @@ import { RightArrow } from '../components/icons/icons.tsx';
 
 			<section class='mt-24'>
 				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
-					<h2 class='text-6xl font-bold text-center'>WebbsAI Courses</h2>
-					<p
+					<h2
+						class='text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl'
+					>
+						WebbsAI Courses
+					</h2>
+					<a
+						href='/courses'
 						class='flex items-center justify-center gap-4 mt-8 text-lg md:text-xl lg:text-2xl'
 					>
 						<span class='underline'>Explore all</span><RightArrow
 							className='invert dark:invert-0'
 						/>
-					</p>
-					<div class='grid grid-cols-4 mt-16 gap-7'>
+					</a>
+					<div
+						class='grid items-center grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7'
+					>
 						{
-							Array.from(Array(8)).map(() => (
-								<div class='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
-									<div class='w-full h-[150px] bg-[#F7F7F7] dark:bg-[#0D0D0D] rounded-[20px]' />
-									<h3 class='text-lg md:text-xl lg:text-2xl'>
-										Step-by-step guides to using WebbsAI
-									</h3>
-									<p class='text-xs lg:text-sm text-black/70 dark:text-white/70'>
-										The website builder for everyone, from novices to pros. With
-										our generative AI technology.
-									</p>
-								</div>
-							))
+							courses?.length > 0 ? (
+								courses?.map((course) => (
+									<a href={course.slug}>
+										<div class='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
+											<img
+												src={course.data.banner!.content as string}
+												class='h-[150px] rounded-[20px]'
+											/>
+											<h3 class='text-lg md:text-xl lg:text-2xl'>
+												{course.data.title}
+											</h3>
+											<p class='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[100px] overflow-hidden'>
+												{course.data.description}
+											</p>
+										</div>
+									</a>
+								))
+							) : (
+								<h3 class='col-span-4 text-xl font-semibold text-center'>
+									Stay Tuned for the Upcoming Content
+								</h3>
+							)
 						}
 					</div>
 				</div>
@@ -187,7 +225,7 @@ import { RightArrow } from '../components/icons/icons.tsx';
 			<section class='my-24'>
 				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
 					<div class='flex flex-col w-full'>
-						<div class='flex gap-16'>
+						<div class='flex flex-col gap-16 md:flex-row'>
 							<div class='flex flex-col justify-center gap-5'>
 								<h3 class='font-semibold text-2g md:text-3xl lg:text-5xl'>
 									Read our WebbsAI University Blogs
@@ -196,9 +234,10 @@ import { RightArrow } from '../components/icons/icons.tsx';
 									The website builder for everyone, from novices to pros. With
 									our generative AI technology.
 								</p>
-								<button
+								<a
+									href='/blogs'
 									class='px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black'
-									>See all blogs</button
+									>See all blogs</a
 								>
 							</div>
 							<div class='w-full h-full'>

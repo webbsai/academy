@@ -17,7 +17,7 @@ function Header() {
 		setTheme(theme === 'light' ? 'dark' : 'light');
 	};
 	useEffect(() => {
-		setTheme(window.localStorage.getItem('theme') ?? 'light');
+		setTheme(window.localStorage.getItem('starlight-theme') ?? 'light');
 	}, []);
 
 	useEffect(() => {
@@ -26,7 +26,7 @@ function Header() {
 		} else {
 			document.documentElement.classList.remove('dark');
 		}
-		localStorage.setItem('theme', theme);
+		window.localStorage.setItem('starlight-theme', theme);
 	}, [theme]);
 
 	return (
@@ -123,7 +123,7 @@ function Header() {
 							</div>
 						</div>
 
-						<div className='opacity-0'>
+						<div className='hidden opacity-0 lg:block'>
 							<a
 								className='flex items-center order-2 text-2xl font-semibold text-black dark:text-white lg:order-1'
 								aria-label='WebbsAI Logo'

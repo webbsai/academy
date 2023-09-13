@@ -20,28 +20,36 @@ export type Lesson = {
 	render: any;
 };
 
-function AllLessons({ lessons }: { lessons: Lesson[] }) {
+function AllLessons({
+	lessons,
+	lessonFilter,
+}: {
+	lessons: Lesson[];
+	lessonFilter: string;
+}) {
 	const [numberToDisplay, setNumberToDisplay] = useState(3);
 	const [currentLessons, setCurrentLessons] = useState<Lesson[]>(lessons);
 
 	useEffect(() => {
 		console.log(currentLessons.slice(0, numberToDisplay));
 		setCurrentLessons(lessons?.slice(0, numberToDisplay));
-	}, [numberToDisplay]);
+	}, [numberToDisplay, lessons]);
 
 	return (
 		<>
 			<div>
-				<div className='text-center'>
-					<h2 className='text-2xl font-bold md:text-3xl lg:text-5xl'>
-						All Lessons
-					</h2>
-					<p className='text-base md:text-lg lg:text-xl max-w-[800px] mx-auto mt-4'>
-						Learn from my bite-sized WebbsAI tutorials where I show you how to
-						create stunning effects.
-					</p>
-				</div>
-				<div className='grid grid-cols-3 mt-16 gap-7'>
+				{!lessonFilter && (
+					<div className='text-center'>
+						<h2 className='text-2xl font-bold md:text-3xl lg:text-5xl'>
+							All Lessons
+						</h2>
+						<p className='text-base md:text-lg lg:text-xl max-w-[800px] mx-auto mt-4'>
+							Learn from my bite-sized WebbsAI tutorials where I show you how to
+							create stunning effects.
+						</p>
+					</div>
+				)}
+				<div className='grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-7'>
 					{currentLessons?.map((lesson) => (
 						<a href={lesson.slug}>
 							<div className='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
@@ -59,14 +67,22 @@ function AllLessons({ lessons }: { lessons: Lesson[] }) {
 						</a>
 					))}
 				</div>
-				{numberToDisplay !== lessons?.length && (
-					<button
-						onClick={() => setNumberToDisplay((prev) => prev + 3)}
-						className='block mt-8 rounded-[20px] bg-secondary-light dark:bg-secondary-dark px-5 py-4 mx-auto'
-					>
-						Load More
-					</button>
-				)}
+				{!currentLessons ||
+					(!(currentLessons?.length >= 0) && (
+						<h3 className='text-xl font-semibold text-center'>
+							Stay Tuned for the Upcoming Content
+						</h3>
+					))}
+				{!(numberToDisplay >= lessons?.length) &&
+					lessons?.length > 0 &&
+					!lessonFilter && (
+						<button
+							onClick={() => setNumberToDisplay((prev) => prev + 3)}
+							className='block mt-8 rounded-[20px] bg-secondary-light dark:bg-secondary-dark px-5 py-4 mx-auto'
+						>
+							Load More
+						</button>
+					)}
 			</div>
 		</>
 	);

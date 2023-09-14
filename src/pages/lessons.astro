@@ -3,7 +3,6 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.tsx';
 import Footer from '../components/Footer.tsx';
 import { SITE_DESCRIPTION } from '../consts';
-import '@fontsource/poppins';
 import LessonsSection from './../sections/Lessons/Lessons';
 import { getCollection } from 'astro:content';
 
@@ -24,7 +23,7 @@ const lessons = (
 		<BaseHead title={'Lessons'} description={SITE_DESCRIPTION} />
 	</head>
 	<body class='bg-white dark:bg-black'>
-		<Header client:load />
+		<Header client:only />
 		<main
 			class='pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white'
 		>

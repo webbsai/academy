@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react';
 import { Search } from '../../components/icons/icons';
-import type { Lesson } from './AllLessons';
 import AllLessons from './AllLessons';
+import type { StarlightDocType } from '../../types';
 
-function Lessons({ lessons }: { lessons: Lesson[] }) {
-	const [lessonFilter, setLessonFilter] = useState('');
+function Lessons({ lessons }: { lessons: StarlightDocType[] }) {
+	const [lessonFilter, setLessonFilter] = useState<string>('');
 
 	const filteredLessons = useMemo(() => {
 		if (!lessonFilter) return lessons;

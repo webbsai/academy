@@ -1,21 +1,22 @@
 import { useEffect, useMemo, useState } from 'react';
 import { courseDifficultyLevels } from '../../consts';
 import clsx from 'clsx';
-import type { Lesson } from '../Lessons/AllLessons';
+import type { StarlightDocType } from '../../types';
 
 function AllCourses({
 	courses,
 	courseFilter,
 }: {
-	courses: Lesson[];
+	courses: StarlightDocType[];
 	courseFilter: string;
 }) {
 	const [numberToDisplay, setNumberToDisplay] = useState<number>(3);
-	const [currentCourses, setCurrentCourses] = useState<Lesson[]>(courses);
+	const [currentCourses, setCurrentCourses] =
+		useState<StarlightDocType[]>(courses);
 	const [selectedLevel, setSelectedLevel] = useState<string>('');
 
 	const filteredCourses = useMemo(() => {
-		if (!selectedLevel) return courses;
+		if (!selectedLevel || selectedLevel === 'All') return courses;
 		return courses.filter(
 			(course) => course.id.split('/')[1] === selectedLevel
 		);

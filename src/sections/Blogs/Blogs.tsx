@@ -1,15 +1,18 @@
 import { useMemo, useState } from 'react';
 import { blogTags } from '../../consts';
-import RecentBlogs, { type Blog } from './RecentBlogs';
+import RecentBlogs from './RecentBlogs';
 import clsx from 'clsx';
+import type { BlogType } from '../../types';
 
-function Blogs({ blogs }: { blogs: any }) {
+function Blogs({ blogs }: { blogs: BlogType[] }) {
 	const [selectedTag, setSelectedTag] = useState('');
 
 	const filteredBlogs = useMemo(() => {
-		if (!selectedTag) return blogs;
+		if (!selectedTag || selectedTag === 'All') return blogs;
 
-		return blogs.filter((blog: Blog) => blog.data.tags.includes(selectedTag));
+		return blogs.filter((blog: BlogType) =>
+			blog.data.tags.includes(selectedTag)
+		);
 	}, [selectedTag]);
 
 	return (

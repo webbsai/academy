@@ -1,27 +1,23 @@
-import { useEffect, useMemo, useState } from 'react';
-import { courseDifficultyLevels, resourceTypes } from '../../consts';
-import clsx from 'clsx';
-import type { Lesson } from '../Lessons/AllLessons';
+import { useEffect, useState } from 'react';
+import type { ResourceType } from '../../types';
 
-function AllResources() {
-	const [selectedResourceType, setSelectedResourceType] = useState('');
+function AllResources({
+	resources,
+	resourceFilter,
+}: {
+	resources: ResourceType[];
+	resourceFilter: string;
+}) {
+	const [numberToDisplay, setNumberToDisplay] = useState(3);
+	const [currentResources, setCurrentResources] =
+		useState<ResourceType[]>(resources);
+
+	useEffect(() => {
+		setCurrentResources(resources?.slice(0, numberToDisplay));
+	}, [numberToDisplay, resources]);
 
 	return (
 		<>
-			<div className='flex py-6 mx-auto overflow-x-auto sm:px-12 max-w-fit'>
-				{resourceTypes.map((resource) => (
-					<button
-						onClick={() => setSelectedResourceType(resource)}
-						className={clsx(
-							'py-3 px-6 relative border-b border-black/30 dark:border-white/30',
-							selectedResourceType === resource &&
-								"after:absolute after:content-[''] after:left-0 after:right-0 after:h-[4px] after:bottom-0 after:bg-primary after:w-full after:mx-auto"
-						)}
-					>
-						{resource}
-					</button>
-				))}
-			</div>
 			<div>
 				<div className='text-center'>
 					<h2 className='text-2xl font-bold md:text-3xl lg:text-5xl'>
@@ -34,26 +30,40 @@ function AllResources() {
 				</div>
 
 				<div className='grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-7'>
-					{Array.from(Array(8)).map(() => (
-						<a href=''>
+					{resources?.map((resource: ResourceType) => (
+						<a href={`/resources/${resource.slug}`}>
 							<div className='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
-								<div className='h-[150px] rounded-[20px] bg-secondary-light dark:bg-black' />
-								<h3 className='text-lg md:text-xl lg:text-2xl'>Resource</h3>
+								<img
+									src={resource.data.image}
+									className='h-[150px] rounded-[20px] bg-secondary-light dark:bg-black'
+								/>
+								<h3 className='text-lg md:text-xl lg:text-2xl'>
+									{resource.data.title}
+								</h3>
 								<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[100px] text-ellipsis overflow-hidden'>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Provident quod harum ipsam consequatur impedit quas,
-									consectetur inventore deleniti dolorem minus repellat
-									necessitatibus quia explicabo, mollitia minima nihil eaque
-									aspernatur magnam!
+									{resource.data.description}
 								</p>
 							</div>
 						</a>
 					))}
 				</div>
+				{!currentResources ||
+					(!(currentResources?.length > 0) && (
+						<h3 className='text-xl font-semibold text-center'>
+							Stay Tuned for the Upcoming Content
+						</h3>
+					))}
 
-				<button className='block mt-8 rounded-[20px] bg-secondary-light dark:bg-secondary-dark px-5 py-4 mx-auto'>
-					Load More
-				</button>
+				{!(numberToDisplay >= resources?.length) &&
+					resources?.length > 0 &&
+					!resourceFilter && (
+						<button
+							onClick={() => setNumberToDisplay((prev) => prev + 3)}
+							className='block mt-8 rounded-[20px] bg-secondary-light dark:bg-secondary-dark px-5 py-4 mx-auto'
+						>
+							Load More
+						</button>
+					)}
 			</div>
 		</>
 	);

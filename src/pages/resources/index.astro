@@ -1,0 +1,50 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import { SITE_DESCRIPTION } from '../../consts';
+import AllResources from '../../sections/Resources/AllResources';
+import { Search } from '../../components/icons/icons';
+import { getCollection } from 'astro:content';
+import ResourcesSection from '../../sections/Resources/Resources';
+
+const resources = (await getCollection('resources')).sort(
+	(a, b) =>
+		//@ts-ignore
+		b.data.pubDate - a.data.pubDate
+);
+---
+
+<!doctype html>
+<html lang='en'>
+	<head>
+		<BaseHead title={'Resources'} description={SITE_DESCRIPTION} />
+	</head>
+	<body class='bg-white dark:bg-black'>
+		<Header client:only />
+		<main
+			class='pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white'
+		>
+			<ResourcesSection client:only resources={resources} />/
+
+			<!-- <section class='px-4 mx-auto mt-16 sm:px-12 xl:max-w-6xl xl:px-0'>
+				<div class='text-center'>
+					<h2 class='text-2xl font-bold md:text-3xl lg:text-5xl'>
+						Latest Resource
+					</h2>
+				</div>
+				<a href='#'>
+					<div
+						class='mt-8 bg-center bg-no-repeat bg-cover h-[500px] rounded-[20px] relative bg-secondary-light dark:bg-secondary-dark'
+					>
+					</div>
+				</a>
+			</section> -->
+
+			<!-- <section class='px-4 mx-auto mt-16 sm:px-12 xl:max-w-6xl xl:px-0'>
+				<AllResources client:only />
+			</section> -->
+		</main>
+		<Footer />
+	</body>
+</html>

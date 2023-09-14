@@ -18,8 +18,18 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog,
-	lessons: defineCollection({ schema: docsSchema() }), 
-	videos: defineCollection({ schema: docsSchema() }), 
+const resources = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		tags: z.array(z.string()),
+		pubDate: z
+			.date(),
+		lastUpdated: z.date().optional(),
+		image: z.string()
+	}),
+})
+
+export const collections = { blog, resources,
 	docs: defineCollection({ schema: docsSchema() }),
 };

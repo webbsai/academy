@@ -1,9 +1,9 @@
 import { useMemo, useState } from 'react';
 import { Search } from '../../components/icons/icons';
-import type { Lesson } from '../Lessons/AllLessons';
 import AllCourses from './AllCourses';
+import type { StarlightDocType } from '../../types';
 
-function Courses({ courses }: { courses: Lesson[] }) {
+function Courses({ courses }: { courses: StarlightDocType[] }) {
 	const [courseFilter, setCourseFilter] = useState('');
 
 	const filteredLessons = useMemo(() => {
@@ -31,7 +31,7 @@ function Courses({ courses }: { courses: Lesson[] }) {
 						<input
 							onChange={(e) => setCourseFilter(e.target.value)}
 							value={courseFilter}
-							placeholder='Search lessons'
+							placeholder='Search courses'
 							className='w-full bg-transparent outline-none'
 						/>
 					</div>

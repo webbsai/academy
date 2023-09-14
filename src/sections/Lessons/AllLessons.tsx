@@ -1,37 +1,18 @@
 import { useEffect, useState } from 'react';
-export type Lesson = {
-	id: string;
-	slug: string;
-	body: string;
-	collection: string;
-	data: {
-		title: string;
-		description?: string;
-		editUrl?: string | boolean;
-		head?: any;
-		template?: string;
-		lastUpdated?: Date;
-		sidebar?: any;
-		banner?: {
-			content: string | HTMLElement;
-		};
-		pagefind?: boolean;
-	};
-	render: any;
-};
+import type { StarlightDocType } from '../../types';
 
 function AllLessons({
 	lessons,
 	lessonFilter,
 }: {
-	lessons: Lesson[];
+	lessons: StarlightDocType[];
 	lessonFilter: string;
 }) {
 	const [numberToDisplay, setNumberToDisplay] = useState(3);
-	const [currentLessons, setCurrentLessons] = useState<Lesson[]>(lessons);
+	const [currentLessons, setCurrentLessons] =
+		useState<StarlightDocType[]>(lessons);
 
 	useEffect(() => {
-		console.log(currentLessons.slice(0, numberToDisplay));
 		setCurrentLessons(lessons?.slice(0, numberToDisplay));
 	}, [numberToDisplay, lessons]);
 
@@ -51,7 +32,7 @@ function AllLessons({
 				)}
 				<div className='grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-7'>
 					{currentLessons?.map((lesson) => (
-						<a href={lesson.slug}>
+						<a key={lesson.slug} href={lesson.slug}>
 							<div className='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
 								<img
 									src={lesson.data.banner!.content as string}

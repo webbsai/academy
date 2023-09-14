@@ -84,7 +84,12 @@ function Header() {
 									{paths.map((path, index) => (
 										<li
 											key={index}
-											className='rounded-[15px] p-[14px] hover:bg-[#131426]/80 hover:text-white'
+											className={clsx(
+												'rounded-[15px] p-[14px] hover:bg-primary/80 dark:hover:bg-[#131426]/80 hover:text-white',
+												'/' + path.name.toLowerCase() ===
+													window?.location.pathname.toLowerCase() &&
+													'bg-primary dark:bg-[#131426] text-white'
+											)}
 										>
 											<a href={path.path} className='block transition md:px-4'>
 												<span>{path.name}</span>

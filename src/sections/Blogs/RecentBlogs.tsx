@@ -1,24 +1,10 @@
 import { useEffect, useState } from 'react';
 import { monthNames } from '../../consts';
+import type { BlogType } from '../../types';
 
-export type Blog = {
-	slug: string;
-	data: {
-		title: string;
-		description: string;
-		author: {
-			name: string;
-			avatar: string;
-		};
-		image: string;
-		pubDate: string;
-		tags: string[];
-	};
-};
-
-function RecentBlogs({ blogs }: { blogs: Blog[] }) {
+function RecentBlogs({ blogs }: { blogs: BlogType[] }) {
 	const [numberToDisplay, setNumberToDisplay] = useState(3);
-	const [currentBlogs, setCurrentBlogs] = useState<Blog[]>(blogs);
+	const [currentBlogs, setCurrentBlogs] = useState<BlogType[]>(blogs);
 
 	useEffect(() => {
 		setCurrentBlogs(blogs?.slice(0, numberToDisplay));
@@ -63,12 +49,12 @@ function RecentBlogs({ blogs }: { blogs: Blog[] }) {
 					))}
 				</div>
 				{!currentBlogs ||
-					(!(currentBlogs?.length >= 0) && (
+					(!(currentBlogs?.length >= 1) && (
 						<h3 className='text-xl font-semibold text-center'>
 							Stay Tuned for the Upcoming Content
 						</h3>
 					))}
-				{numberToDisplay !== blogs?.length && blogs.length > 0 && (
+				{numberToDisplay < blogs?.length && blogs.length > 0 && (
 					<button
 						onClick={() => setNumberToDisplay((prev) => prev + 3)}
 						className='block mt-8 rounded-[20px] bg-secondary-light dark:bg-secondary-dark px-5 py-4 mx-auto'

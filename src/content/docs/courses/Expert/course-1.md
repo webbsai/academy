@@ -3,6 +3,7 @@ title: 'Custom styles, effects & Animations'
 lastUpdated: 2023-08-14
 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor nibh ullamcorper, volutpat nisi sit amet, imperdiet libero. Praesent eget massa eget sapien aliquet eleifend in a libero.'
 banner: { content: 'https://picsum.photos/seed/hello123/300/300' }
+head: [{ tag: 'meta', content: 'popular' }]
 ---
 
 <video class="w-full" width="400" controls>

@@ -6,7 +6,7 @@ function FormattedDate(props: Props) {
 	const { date } = props;
 
 	return (
-		<time datetime={date.toISOString()}>
+		<time dateTime={date.toISOString()}>
 			{date.toLocaleDateString('en-us', {
 				year: 'numeric',
 				month: 'short',

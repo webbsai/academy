@@ -3,7 +3,6 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.tsx';
 import Footer from '../components/Footer.tsx';
 import { SITE_TITLE, SITE_DESCRIPTION, DEFAULT_SCREEN_SIZE } from '../consts';
-import '@fontsource/poppins';
 import { RightArrow } from '../components/icons/icons.tsx';
 import { getCollection } from 'astro:content';
 
@@ -24,7 +23,7 @@ const courses = (
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class='bg-white dark:bg-black'>
-		<Header client:load />
+		<Header client:only />
 		<!-- <Header title={SITE_TITLE} /> -->
 		<main
 			class='min-h-screen text-black bg-white vsc-initialized font-urbanist selection:text-primary dark:bg-black lg:pb-16 dark:text-white'
@@ -59,11 +58,11 @@ const courses = (
 					</div>
 					<img
 						src='/background-light.png'
-						class='hidden w-full translate-y-24 sm:h-full dark:inline'
+						class='hidden max-h-full translate-y-24 dark:inline'
 					/>
 					<img
 						src='/background.png'
-						class='w-full translate-y-24 sm:h-full dark:hidden'
+						class='max-h-full translate-y-24 dark:hidden'
 					/>
 				</div>
 			</section>

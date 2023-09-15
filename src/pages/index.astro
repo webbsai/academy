@@ -1,49 +1,251 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Header from '../components/Header.tsx';
+import Footer from '../components/Footer.tsx';
+import { SITE_TITLE, SITE_DESCRIPTION, DEFAULT_SCREEN_SIZE } from '../consts';
+import { RightArrow } from '../components/icons/icons.tsx';
+import { getCollection } from 'astro:content';
+
+const courses = (
+	await getCollection('docs', (doc) => {
+		return doc.id.split('/')[0] === 'courses';
+	})
+).sort(
+	(a, b) =>
+		//@ts-ignore
+		b.data.lastUpdated - a.data.lastUpdated
+);
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang='en'>
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+	<body class='bg-white dark:bg-black'>
+		<Header client:only />
+		<!-- <Header title={SITE_TITLE} /> -->
+		<main
+			class='min-h-screen text-black bg-white vsc-initialized font-urbanist selection:text-primary dark:bg-black lg:pb-16 dark:text-white'
+		>
+			<section
+				class='h-screen pt-24 mx-auto bg-center sm:pt-32 lg:mb-16 lg:pt-36'
+			>
+				<div
+					class='mx-auto flex h-[calc(100vh-96px)] flex-col items-center justify-center gap-5 px-[70px] text-black -translate-y-24 relative px-4 mx-auto dark:text-white sm:px-12 xl:max-w-6xl xl:px-0'
+				>
+					<div
+						class='absolute px-4 sm:px-12 z-10 w-full h-full bg-white/[85%] dark:bg-black/[85%] top-24 flex flex-col gap-8 items-center justify-center text-center'
+					>
+						<h1
+							class='text-3xl font-extrabold md:text-4xl lg:text-5xl xl:text-6xl'
+						>
+							Learn everything about WebbsAI
+						</h1>
+						<p class='text-xl md:text-2xl lg:text-3xl'>
+							No-bullshit, practical tutorials & the best resources.
+						</p>
+						<div class='flex flex-col justify-center w-full gap-5 sm:flex-row'>
+							<a
+								class='px-5 py-4 rounded-[18px] bg-white text-black border'
+								href='/courses'>Get free courses</a
+							>
+							<a
+								class='px-6 py-4 rounded-[18px] bg-[#202020] text-white'
+								href='/resources'>See Resources</a
+							>
+						</div>
+					</div>
+					<img
+						src='/background-light.png'
+						class='hidden max-h-full translate-y-24 dark:inline'
+					/>
+					<img
+						src='/background.png'
+						class='max-h-full translate-y-24 dark:hidden'
+					/>
+				</div>
+			</section>
+
+			<section class='mt-24'>
+				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
+					<div class='flex flex-col'>
+						<div
+							class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:p-8 lg:p-12'
+						>
+							<div class='flex flex-col gap-16 md:flex-row'>
+								<div class='flex flex-col justify-center gap-5'>
+									<h3 class='font-semibold text-2g md:text-3xl lg:text-5xl'>
+										Free WebbsAI Courses
+									</h3>
+									<p class='mt-2 text-base md:text-lg lg:text-2xl'>
+										Learn how to create stunning websites with ease by learning
+										the fundamentals of WebbsAI.
+									</p>
+									<a
+										href='/lessons'
+										class='px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black'
+										>Start Learning Now</a
+									>
+								</div>
+								<div class='w-full h-full'>
+									<img
+										src='/assets/toolboxes.svg'
+										class='block w-full h-full m-auto'
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class='flex flex-col gap-4 mt-4 md:flex-row'>
+							<div
+								class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-3/5 md:p-8 lg:p-12'
+							>
+								<div>
+									<h3 class='text-lg font-semibold md:text-xl lg:text-2xl'>
+										Getting Started
+									</h3>
+									<p class='mt-2 text-sm md:text-base lg:text-lg'>
+										Bring more charm to your designs by setting up animations.
+									</p>
+								</div>
+							</div>
+							<div
+								class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-2/5 md:p-8 lg:p-12'
+							>
+								<div>
+									<h3 class='text-lg font-semibold md:text-xl lg:text-2xl'>
+										Core Skills
+									</h3>
+									<p class='mt-2 text-sm md:text-base lg:text-lg'>
+										WebbsAI gives you control of all CSS design proporties
+										visually.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class='flex flex-col gap-4 mt-4 md:flex-row'>
+							<div
+								class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-2/5 md:p-8 lg:p-12'
+							>
+								<div>
+									<h3 class='text-lg font-semibold md:text-xl lg:text-2xl'>
+										Web Types
+									</h3>
+									<p class='mt-2 text-sm md:text-base lg:text-lg'>
+										WebbsAI gives you control of all CSS design proporties
+										visually.
+									</p>
+								</div>
+							</div>
+							<div
+								class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-3/5 md:p-8 lg:p-12'
+							>
+								<div>
+									<h3 class='text-lg font-semibold md:text-xl lg:text-2xl'>
+										Resources
+									</h3>
+									<p class='mt-2 text-sm md:text-base lg:text-lg'>
+										Bring more charm to your designs by setting up animations.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class='mt-24'>
+				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
+					<h2
+						class='text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl'
+					>
+						Get started with our<br />WebbsAI video lessons
+					</h2>
+					<p
+						class='mt-8 text-lg text-center md:text-xl lg:text-2xl text-black/70 dark:text-white/70'
+					>
+						The website builder for everyone, from novices to pros. With our<br
+						/>generative AI technology.
+					</p>
+					<div class='mt-16 h-[400px] bg-[#EEEEEE] dark:bg-[#131313]'>
+						<!-- <CarouselSection /> -->
+					</div>
+				</div>
+			</section>
+
+			<section class='mt-24'>
+				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
+					<h2
+						class='text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl'
+					>
+						WebbsAI Courses
+					</h2>
+					<a
+						href='/courses'
+						class='flex items-center justify-center gap-4 mt-8 text-lg md:text-xl lg:text-2xl'
+					>
+						<span class='underline'>Explore all</span><RightArrow
+							className='invert dark:invert-0'
+						/>
+					</a>
+					<div
+						class='grid items-center grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7'
+					>
+						{
+							courses?.length > 0 ? (
+								courses?.map((course) => (
+									<a href={course.slug}>
+										<div class='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
+											<img
+												src={course.data.banner!.content as string}
+												class='h-[150px] rounded-[20px]'
+											/>
+											<h3 class='text-lg md:text-xl lg:text-2xl'>
+												{course.data.title}
+											</h3>
+											<p class='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[100px] overflow-hidden'>
+												{course.data.description}
+											</p>
+										</div>
+									</a>
+								))
+							) : (
+								<h3 class='col-span-4 text-xl font-semibold text-center'>
+									Stay Tuned for the Upcoming Content
+								</h3>
+							)
+						}
+					</div>
+				</div>
+			</section>
+
+			<section class='my-24'>
+				<div class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
+					<div class='flex flex-col w-full'>
+						<div class='flex flex-col gap-16 md:flex-row'>
+							<div class='flex flex-col justify-center gap-5'>
+								<h3 class='font-semibold text-2g md:text-3xl lg:text-5xl'>
+									Read our WebbsAI University Blogs
+								</h3>
+								<p class='mt-2 text-base md:text-lg lg:text-2xl'>
+									The website builder for everyone, from novices to pros. With
+									our generative AI technology.
+								</p>
+								<a
+									href='/blogs'
+									class='px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black'
+									>See all blogs</a
+								>
+							</div>
+							<div class='w-full h-full'>
+								<img src='/assets/blogs.png' class='w-full h-full' />
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>

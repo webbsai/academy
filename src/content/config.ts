@@ -1,21 +1,35 @@
 import { defineCollection, z } from 'astro:content';
+import { docsSchema } from '@astrojs/starlight/schema';
 
 const blog = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		// Transform string to Date object
+		tags: z.array(z.string()),
 		pubDate: z
-			.string()
-			.or(z.date())
-			.transform((val) => new Date(val)),
-		updatedDate: z
-			.string()
-			.optional()
-			.transform((str) => (str ? new Date(str) : undefined)),
-		heroImage: z.string().optional(),
+			.date(),
+		lastUpdated: z.date().optional(),
+		author: z.object({
+			avatar: z.string(),
+			name: z.string()
+		}),
+		image: z.string()
 	}),
 });
 
-export const collections = { blog };
+const resources = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		tags: z.array(z.string()),
+		pubDate: z
+			.date(),
+		lastUpdated: z.date().optional(),
+		image: z.string()
+	}),
+})
+
+export const collections = { blog, resources,
+	docs: defineCollection({ schema: docsSchema() }),
+};

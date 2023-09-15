@@ -1,0 +1,34 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.tsx';
+import Footer from '../components/Footer.tsx';
+import { SITE_DESCRIPTION } from '../consts';
+import LessonsSection from './../sections/Lessons/Lessons';
+import { getCollection } from 'astro:content';
+
+const lessons = (
+	await getCollection('docs', (doc) => {
+		return doc.id.split('/')[0] === 'lessons';
+	})
+).sort(
+	(a, b) =>
+		//@ts-ignore
+		b.data.lastUpdated - a.data.lastUpdated
+);
+---
+
+<!doctype html>
+<html lang='en'>
+	<head>
+		<BaseHead title={'Lessons'} description={SITE_DESCRIPTION} />
+	</head>
+	<body class='bg-white dark:bg-black'>
+		<Header client:only />
+		<main
+			class='pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white'
+		>
+			<LessonsSection client:only lessons={lessons} />
+		</main>
+		<Footer />
+	</body>
+</html>

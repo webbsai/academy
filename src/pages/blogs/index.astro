@@ -1,0 +1,59 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.tsx';
+import Footer from '../../components/Footer.tsx';
+import { SITE_DESCRIPTION } from '../../consts.ts';
+import { getCollection } from 'astro:content';
+import BlogsSection from '../../sections/Blogs/Blogs.tsx';
+import PopularCoursesSection from '../../sections/Blogs/PopularCourses.tsx';
+
+const blogs = (await getCollection('blog')).sort(
+	(a, b) =>
+		//@ts-ignore
+		b.data.pubDate - a.data.pubDate
+);
+
+const popularCourses = (
+	await getCollection('docs', (doc) => {
+		return (
+			doc.id.split('/')[0] === 'courses' &&
+			doc.data.head.find((h) => h.content === 'popular')
+		);
+	})
+).sort(
+	(a, b) =>
+		//@ts-ignore
+		b.data.lastUpdated - a.data.lastUpdated
+);
+---
+
+<!doctype html>
+<html lang='en'>
+	<head>
+		<BaseHead title={'Blogs'} description={SITE_DESCRIPTION} />
+	</head>
+	<body class='bg-white dark:bg-black'>
+		<Header client:only />
+		<main
+			class='pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white'
+		>
+			<section class='px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0'>
+				<div class='text-center'>
+					<h1 class='text-3xl font-bold md:text-4xl lg:text-6xl'>
+						The WebbsAI Blog
+					</h1>
+					<p class='text-base md:text-lg lg:text-xl max-w-[800px] mx-auto mt-4'>
+						Stay Up-to-Date on the Latest in Website Development and AI.
+					</p>
+				</div>
+			</section>
+
+			<BlogsSection client:only blogs={blogs} />
+
+			<section class='px-4 mx-auto mt-24 sm:px-12 xl:max-w-6xl xl:px-0'>
+				{(<PopularCoursesSection client:only courses={popularCourses} />)}
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

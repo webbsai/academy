@@ -1,10 +1,18 @@
 import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
+import tailwind from '@astrojs/tailwind';
+import starlight from '@astrojs/starlight';
 
-import sitemap from '@astrojs/sitemap';
+import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+	integrations: [
+		tailwind({}),
+		starlight({
+			title: 'WebbsAI',
+			customCss: ['./src/styles/custom.css', './src/styles/tailwind.css'],
+		}),
+		preact({ compat: true }),
+	],
 });

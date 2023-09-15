@@ -1,4 +1,3 @@
-import react from 'react';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
 function CarouselSection() {

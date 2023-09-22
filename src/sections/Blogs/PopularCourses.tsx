@@ -32,12 +32,12 @@ function PopularCourses({ courses }: { courses: StarlightDocType[] }) {
 							<div className='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
 								<img
 									src={course.data.banner!.content as string}
-									className='h-[150px] rounded-[20px]'
+									className='h-[200px] rounded-[20px]'
 								/>
 								<h3 className='text-base md:text-lg lg:text-xl'>
 									{course.data.title}
 								</h3>
-								<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[100px] text-ellipsis overflow-hidden'>
+								<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[80px] text-ellipsis overflow-hidden'>
 									{course.data.description}
 								</p>
 							</div>

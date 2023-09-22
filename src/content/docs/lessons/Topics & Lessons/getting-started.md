@@ -2,7 +2,7 @@
 title: 'Getting Started'
 lastUpdated: 2023-08-12
 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo diam egestas libero tristique varius. Fusce lorem nulla, tempor sed tincidunt sed, fermentum quis est. Aliquam erat volutpat. Pellentesque vitae dui neque. Nullam volutpat accumsan felis nec pharetra.'
-banner: { content: 'https://picsum.photos/seed/hello2/300/150' }
+banner: { content: 'https://picsum.photos/seed/getting-started/500/500' }
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor nibh ullamcorper, volutpat nisi sit amet, imperdiet libero. Praesent eget massa eget sapien aliquet eleifend in a libero. Etiam commodo diam egestas libero tristique varius. Fusce lorem nulla, tempor sed tincidunt sed, fermentum quis est. Aliquam erat volutpat. Pellentesque vitae dui neque. Nullam volutpat accumsan felis nec pharetra. Curabitur fringilla tellus vitae lorem malesuada mattis. Vestibulum dignissim volutpat turpis sit amet venenatis.

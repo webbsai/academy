@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'preact/hooks';
 import { courseDifficultyLevels } from '../../consts';
 import clsx from 'clsx';
 import type { StarlightDocType } from '../../types';
@@ -61,12 +61,12 @@ function AllCourses({
 								<div className='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
 									<img
 										src={course.data.banner!.content as string}
-										className='h-[150px] rounded-[20px]'
+										className='h-[200px] rounded-[20px]'
 									/>
-									<h3 className='text-lg md:text-xl lg:text-2xl'>
+									<h3 className='text-base md:text-lg lg:text-xl'>
 										{course.data.title}
 									</h3>
-									<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[100px] text-ellipsis overflow-hidden'>
+									<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[80px] text-ellipsis overflow-hidden'>
 										{course.data.description}
 									</p>
 								</div>
@@ -78,12 +78,12 @@ function AllCourses({
 								<div className='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
 									<img
 										src={course.data.banner!.content as string}
-										className='h-[150px] rounded-[20px]'
+										className='h-[200px] rounded-[20px]'
 									/>
-									<h3 className='text-lg md:text-xl lg:text-2xl'>
+									<h3 className='text-base md:text-lg lg:text-xl'>
 										{course.data.title}
 									</h3>
-									<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[100px] text-ellipsis overflow-hidden'>
+									<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[80px] text-ellipsis overflow-hidden'>
 										{course.data.description}
 									</p>
 								</div>

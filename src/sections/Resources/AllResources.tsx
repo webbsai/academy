@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'preact/hooks';
 import type { ResourceType } from '../../types';
 
 function AllResources({
@@ -8,7 +8,7 @@ function AllResources({
 	resources: ResourceType[];
 	resourceFilter: string;
 }) {
-	const [numberToDisplay, setNumberToDisplay] = useState(3);
+	const [numberToDisplay, setNumberToDisplay] = useState<number>(3);
 	const [currentResources, setCurrentResources] =
 		useState<ResourceType[]>(resources);
 
@@ -35,12 +35,12 @@ function AllResources({
 							<div className='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
 								<img
 									src={resource.data.image}
-									className='h-[150px] rounded-[20px] bg-secondary-light dark:bg-black'
+									className='h-[200px] rounded-[20px] bg-secondary-light dark:bg-black'
 								/>
-								<h3 className='text-lg md:text-xl lg:text-2xl'>
+								<h3 className='text-base md:text-lg lg:text-xl'>
 									{resource.data.title}
 								</h3>
-								<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[100px] text-ellipsis overflow-hidden'>
+								<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[80px] text-ellipsis overflow-hidden'>
 									{resource.data.description}
 								</p>
 							</div>
@@ -58,7 +58,7 @@ function AllResources({
 					resources?.length > 0 &&
 					!resourceFilter && (
 						<button
-							onClick={() => setNumberToDisplay((prev) => prev + 3)}
+							onClick={() => setNumberToDisplay((prev: number) => prev + 3)}
 							className='block mt-8 rounded-[20px] bg-secondary-light dark:bg-secondary-dark px-5 py-4 mx-auto'
 						>
 							Load More

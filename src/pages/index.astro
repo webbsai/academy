@@ -5,10 +5,21 @@ import Footer from '../components/Footer.tsx';
 import { SITE_TITLE, SITE_DESCRIPTION, DEFAULT_SCREEN_SIZE } from '../consts';
 import { RightArrow } from '../components/icons/icons.tsx';
 import { getCollection } from 'astro:content';
+import CarouselSection from '../components/CarouselSection.tsx';
 
 const courses = (
 	await getCollection('docs', (doc) => {
 		return doc.id.split('/')[0] === 'courses';
+	})
+).sort(
+	(a, b) =>
+		//@ts-ignore
+		b.data.lastUpdated - a.data.lastUpdated
+);
+
+const lessons = (
+	await getCollection('docs', (doc) => {
+		return doc.id.split('/')[0] === 'lessons';
 	})
 ).sort(
 	(a, b) =>
@@ -47,11 +58,11 @@ const courses = (
 						</p>
 						<div class='flex flex-col justify-center w-full gap-5 sm:flex-row'>
 							<a
-								class='px-5 py-4 rounded-[18px] bg-white text-black border'
+								class='px-5 py-4 rounded-[18px] bg-white text-black border hover:shadow-[0_0_2px_1px_rgba(150,150,150,1)] dark:hover:shadow-[inset_0_0_5px_1px_rgba(100,100,100,1)] transition-[box-shadow]'
 								href='/courses'>Get free courses</a
 							>
 							<a
-								class='px-6 py-4 rounded-[18px] bg-[#202020] text-white'
+								class='px-6 py-4 rounded-[18px] bg-[#202020] text-white dark:hover:shadow-[0_0_2px_1px_rgba(150,150,150,1)] hover:shadow-[inset_0_0_5px_1px_rgba(200,200,200,1)] transition-[box-shadow]'
 								href='/resources'>See Resources</a
 							>
 						</div>
@@ -78,13 +89,13 @@ const courses = (
 									<h3 class='font-semibold text-2g md:text-3xl lg:text-5xl'>
 										Free WebbsAI Courses
 									</h3>
-									<p class='mt-2 text-base md:text-lg lg:text-2xl'>
+									<p class='mt-2 text-base md:text-lg lg:text-xl'>
 										Learn how to create stunning websites with ease by learning
 										the fundamentals of WebbsAI.
 									</p>
 									<a
 										href='/lessons'
-										class='px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black'
+										class='px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black hover:shadow-[inset_0_0_5px_1px_rgba(200,200,200,1)] dark:hover:shadow-[inset_0_0_5px_1px_rgba(100,100,100,1)] transition-[box-shadow]'
 										>Start Learning Now</a
 									>
 								</div>
@@ -139,7 +150,8 @@ const courses = (
 									</p>
 								</div>
 							</div>
-							<div
+							<a
+								href='/resources'
 								class='flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-3/5 md:p-8 lg:p-12'
 							>
 								<div>
@@ -150,7 +162,7 @@ const courses = (
 										Bring more charm to your designs by setting up animations.
 									</p>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -169,8 +181,8 @@ const courses = (
 						The website builder for everyone, from novices to pros. With our<br
 						/>generative AI technology.
 					</p>
-					<div class='mt-16 h-[400px] bg-[#EEEEEE] dark:bg-[#131313]'>
-						<!-- <CarouselSection /> -->
+					<div class='mt-16'>
+						<CarouselSection lessons={lessons} client:only />
 					</div>
 				</div>
 			</section>
@@ -191,21 +203,21 @@ const courses = (
 						/>
 					</a>
 					<div
-						class='grid items-center grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7'
+						class='grid items-center grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-7'
 					>
 						{
 							courses?.length > 0 ? (
-								courses?.map((course) => (
+								courses.slice(0, 3)?.map((course) => (
 									<a href={course.slug}>
 										<div class='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
 											<img
 												src={course.data.banner!.content as string}
-												class='h-[150px] rounded-[20px]'
+												class='h-[200px] rounded-[20px]'
 											/>
-											<h3 class='text-lg md:text-xl lg:text-2xl'>
+											<h3 class='text-base truncate md:text-lg lg:text-xl'>
 												{course.data.title}
 											</h3>
-											<p class='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[100px] overflow-hidden'>
+											<p class='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[80px] overflow-hidden'>
 												{course.data.description}
 											</p>
 										</div>
@@ -235,7 +247,7 @@ const courses = (
 								</p>
 								<a
 									href='/blogs'
-									class='px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black'
+									class='px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black hover:shadow-[inset_0_0_5px_1px_rgba(200,200,200,1)] dark:hover:shadow-[inset_0_0_5px_1px_rgba(100,100,100,1)] transition-[box-shadow]'
 									>See all blogs</a
 								>
 							</div>

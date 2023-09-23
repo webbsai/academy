@@ -85,7 +85,7 @@ function Header() {
 										<li
 											key={index}
 											className={clsx(
-												'rounded-[15px] p-[14px] hover:bg-primary/80 dark:hover:bg-[#131426]/80 hover:text-white',
+												'rounded-[15px] py-[14px] hover:bg-primary/80 dark:hover:bg-[#131426]/80 hover:text-white',
 												'/' + path.name.toLowerCase() ===
 													window?.location.pathname.toLowerCase() &&
 													'bg-primary dark:bg-[#131426] text-white'

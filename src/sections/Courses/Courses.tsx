@@ -29,7 +29,21 @@ function Courses({ courses }: { courses: StarlightDocType[] }) {
 					<div className='flex bg-secondary-light dark:bg-secondary-dark rounded-[20px] h-[60px] items-center px-8 gap-x-4 max-w-[400px] mx-auto'>
 						<Search className='invert dark:invert-0' />
 						<input
-							onChange={(e) => setCourseFilter(e.target.value)}
+							onFocus={(e) => {
+								(e.target as HTMLInputElement)!.parentElement?.classList.add(
+									'outline',
+									'outline-1'
+								);
+							}}
+							onBlur={(e) => {
+								(e.target as HTMLInputElement)!.parentElement?.classList.remove(
+									'outline',
+									'outline-1'
+								);
+							}}
+							onChange={(e) =>
+								setCourseFilter((e.target as HTMLInputElement).value)
+							}
 							value={courseFilter}
 							placeholder='Search courses'
 							className='w-full bg-transparent outline-none'

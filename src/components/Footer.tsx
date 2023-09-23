@@ -20,6 +20,7 @@ function Footer() {
 
 					<div className='flex mt-6 space-x-4 text-gray-300'>
 						<a
+							className='hover:text-primary'
 							href='https://twitter.com/webbsai'
 							target='_blank'
 							rel='noreferrer'
@@ -27,6 +28,7 @@ function Footer() {
 							<TwitterIcon />
 						</a>
 						<a
+							className='hover:text-primary'
 							href='https://github.com/webbsai'
 							target='_blank'
 							rel='noreferrer'
@@ -34,6 +36,7 @@ function Footer() {
 							<GithubIcon />
 						</a>
 						<a
+							className='hover:text-primary'
 							href='https://slack.webbsai.com'
 							target='_blank'
 							rel='noreferrer'
@@ -48,7 +51,7 @@ function Footer() {
 							column.links.map((link) => (
 								<li key={link.title} className='text-lg md:text-xl'>
 									<a
-										className='mb-3 text-center transition-colors text-gray hover:text-off-white'
+										className='mb-3 text-center text-gray-800 transition-colors dark:text-gray-500 hover:text-gray-900 hover:text-white'
 										target={link.href.includes('http') ? '_blank' : '_self'}
 										href={link.href}
 									>
@@ -60,7 +63,7 @@ function Footer() {
 					</ul>
 				</div>
 				<hr className='my-8 border dark:border-white/30'></hr>
-				<p className='text-center text-gray-300'>
+				<p className='text-center text-gray-800 dark:text-gray-500'>
 					The website builder for everyone, from novices to pros.<br></br>
 					With our generative AI technology.
 				</p>

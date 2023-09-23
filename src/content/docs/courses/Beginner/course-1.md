@@ -2,7 +2,7 @@
 title: 'Layouts with WebbsAI'
 lastUpdated: 2023-08-14
 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor nibh ullamcorper, volutpat nisi sit amet, imperdiet libero. Praesent eget massa eget sapien aliquet eleifend in a libero.'
-banner: { content: 'https://picsum.photos/seed/hello123/300/300' }
+banner: { content: 'https://picsum.photos/seed/helloo321/500/500' }
 ---
 
 <video class="w-full" width="400" controls>

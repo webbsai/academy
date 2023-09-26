@@ -6,12 +6,12 @@ import DiscordIcon from './icons/discord';
 
 function Footer() {
 	return (
-		<footer className='overflow-x-clip py-[5.6rem] pt-16 text-sm dark:border-gray-900 bg-black text-gray-400 lg:text-lg'>
+		<footer className='overflow-x-clip py-[5.6rem] pt-16 text-sm dark:border-gray-900 dark:bg-black text-gray-400 lg:text-lg'>
 			<div className='flex flex-col justify-between px-4 mx-auto sm:px-10 md:px-14 lg:px-12 xl:max-w-6xl xl:px-2'>
 				<div className='flex flex-col items-center justify-center h-full'>
 					<div className='flex text-lg font-semibold text-left lg:text-center'>
 						<a
-							className='flex items-center text-4xl font-bold text-white md:text-5xl'
+							className='flex items-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl'
 							aria-label='WebbsAI Logo'
 							href='/'
 						>
@@ -19,7 +19,7 @@ function Footer() {
 						</a>
 					</div>
 
-					<div className='flex mt-6 space-x-4 text-gray-300'>
+					<div className='flex mt-6 space-x-4 text-gray-800 dark:text-gray-300'>
 						<a
 							className='hover:text-primary'
 							href='https://twitter.com/webbsai'

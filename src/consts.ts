@@ -26,11 +26,11 @@ export const paths = [
 export const footerLinks = [
 	{
 		title: 'Home',
-		links: [{ title: 'Home', href: 'https://webbsai.vercel.app/' }],
+		links: [{ title: 'Home', href: `${import.meta.env.WEBBSAI_LANDING_URL}/` }],
 	},
 	{
 		title: 'Product',
-		links: [{ title: 'Pricing', href: 'https://webbsai.vercel.app/pricing' }],
+		links: [{ title: 'Pricing', href: `${import.meta.env.WEBBSAI_LANDING_URL}/pricing`}],
 	},
 	{
 		title: 'Company',
@@ -48,9 +48,9 @@ export const footerLinks = [
 	{
 		title: 'Resources',
 		links: [
-			{ title: 'Contact', href: 'https://webbsai.vercel.app/contact' },
-			{ title: 'Terms', href: 'https://webbsai.vercel.app/tos' },
-			{ title: 'Privacy', href: 'https://webbsai.vercel.app/privacy' },
+			{ title: 'Contact', href: `${import.meta.env.WEBBSAI_LANDING_URL}/contact` },
+			{ title: 'Terms', href: `${import.meta.env.WEBBSAI_LANDING_URL}/tos` },
+			{ title: 'Privacy', href: `${import.meta.env.WEBBSAI_LANDING_URL}/privacy` },
 		],
 	},
 ];

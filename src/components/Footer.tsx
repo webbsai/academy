@@ -2,6 +2,7 @@ import TwitterIcon from './icons/twitter';
 import SlackIcon from './icons/slack';
 import GithubIcon from './icons/github';
 import { footerLinks } from '../consts';
+import DiscordIcon from './icons/discord';
 
 function Footer() {
 	return (
@@ -42,6 +43,14 @@ function Footer() {
 							rel='noreferrer'
 						>
 							<SlackIcon />
+						</a>
+						<a
+							className='hover:text-primary'
+							href='https://discord.gg/3Wc5MS5w'
+							target='_blank'
+							rel='noreferrer'
+						>
+							<DiscordIcon />
 						</a>
 					</div>
 				</div>

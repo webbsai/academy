@@ -60,7 +60,7 @@ function Footer() {
 							column.links.map((link) => (
 								<li key={link.title} className='text-lg md:text-xl'>
 									<a
-										className='mb-3 text-center text-gray-800 transition-colors dark:text-gray-500 hover:text-gray-900 hover:text-white'
+										className='mb-3 text-center text-gray-800 transition-colors dark:text-gray-500 hover:text-gray-900 dark:hover:text-white'
 										target={link.href.includes('http') ? '_blank' : '_self'}
 										href={link.href}
 									>

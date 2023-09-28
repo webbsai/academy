@@ -37,13 +37,17 @@ function Header() {
 			>
 				<div className='px-4 mx-auto sm:px-12'>
 					<div className='relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4'>
-						<div className='relative z-20 flex w-full gap-x-6 text-[#31456a] md:px-0 lg:w-max'>
+						<div className='relative z-20 flex justify-between w-full gap-x-6 text-[#31456a] md:px-0 lg:w-max'>
 							<a
 								className='flex items-center order-2 text-2xl font-semibold text-black dark:text-white lg:order-1'
 								aria-label='WebbsAI Logo'
 								href='/'
 							>
-								WebbsAI
+								<img
+									class='h-[30px] lg:h-[60px]'
+									src={theme === 'dark' ? 'logo-dark.svg' : 'logo.svg'}
+									alt='WebbsAI Academy Logo'
+								/>
 							</a>
 
 							<button

@@ -15,7 +15,16 @@ function Footer() {
 							aria-label='WebbsAI Logo'
 							href='/'
 						>
-							WebbsAI
+							<img
+								class='dark:hidden h-[80px]'
+								src='logo.svg'
+								alt='WebbsAI Academy Logo'
+							/>
+							<img
+								class='hidden dark:block h-[80px]'
+								src='logo-dark.svg'
+								alt='WebbsAI Academy Logo'
+							/>
 						</a>
 					</div>
 

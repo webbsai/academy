@@ -14,6 +14,6 @@ image: 'https://picsum.photos/seed/hello10/300/150'
 
 # Welcome to WebbsAI
 
-This is the first post ***from WebbsAI blog team***
+This is the first post ***from WebbsAI blog team*** and this is just for demo
 
  - List item

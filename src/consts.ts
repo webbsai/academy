@@ -1,8 +1,10 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'WebbsAI Academy';
-export const SITE_DESCRIPTION = 'Welcome to WebbsAI Academy!';
+export const SITE_TITLE =
+	'WebbsAI Academy | Generate a custom website using Generative AI'
+export const SITE_DESCRIPTION =
+	"Welcome to WebbsAI Academy! Learn to generate amazing websites in 30 secs using WebbAI's magical AI website builder."
 
 export const paths = [
 	{
@@ -21,16 +23,23 @@ export const paths = [
 		name: 'Blogs',
 		path: '/blogs',
 	},
-];
+]
 
 export const footerLinks = [
 	{
 		title: 'Home',
-		links: [{ title: 'Home', href: `${import.meta.env.WEBBSAI_LANDING_URL}/` }],
+		links: [
+			{ title: 'Home', href: `${import.meta.env.WEBBSAI_LANDING_URL}/` },
+		],
 	},
 	{
 		title: 'Product',
-		links: [{ title: 'Pricing', href: `${import.meta.env.WEBBSAI_LANDING_URL}/pricing`}],
+		links: [
+			{
+				title: 'Pricing',
+				href: `${import.meta.env.WEBBSAI_LANDING_URL}/pricing`,
+			},
+		],
 	},
 	{
 		title: 'Company',
@@ -48,14 +57,23 @@ export const footerLinks = [
 	{
 		title: 'Resources',
 		links: [
-			{ title: 'Contact', href: `${import.meta.env.WEBBSAI_LANDING_URL}/contact` },
-			{ title: 'Terms', href: `${import.meta.env.WEBBSAI_LANDING_URL}/tos` },
-			{ title: 'Privacy', href: `${import.meta.env.WEBBSAI_LANDING_URL}/privacy` },
+			{
+				title: 'Contact',
+				href: `${import.meta.env.WEBBSAI_LANDING_URL}/contact`,
+			},
+			{
+				title: 'Terms',
+				href: `${import.meta.env.WEBBSAI_LANDING_URL}/tos`,
+			},
+			{
+				title: 'Privacy',
+				href: `${import.meta.env.WEBBSAI_LANDING_URL}/privacy`,
+			},
 		],
 	},
-];
+]
 
-export const DEFAULT_SCREEN_SIZE = 1360;
+export const DEFAULT_SCREEN_SIZE = 1360
 
 export const monthNames = [
 	'Jan',
@@ -70,7 +88,7 @@ export const monthNames = [
 	'Oct',
 	'Nov',
 	'Dec',
-];
+]
 
 export const blogTags = [
 	'All',
@@ -80,7 +98,7 @@ export const blogTags = [
 	'Technical',
 	'Interviews',
 	'Trends',
-];
+]
 
 export const courseDifficultyLevels = [
 	'All',
@@ -88,7 +106,7 @@ export const courseDifficultyLevels = [
 	'Intermediate',
 	'Advance',
 	'Expert',
-];
+]
 
 export const resourceTypes = [
 	'All',
@@ -96,4 +114,4 @@ export const resourceTypes = [
 	'Animations',
 	'Nav bars',
 	'Tables',
-];
+]

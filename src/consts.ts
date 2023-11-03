@@ -102,10 +102,9 @@ export const blogTags = [
 
 export const courseDifficultyLevels = [
 	'All',
-	'Beginner',
-	'Intermediate',
-	'Advance',
-	'Expert',
+	'HTML',
+	'CSS',
+	'JavaScript',
 ]
 
 export const resourceTypes = [

@@ -24,7 +24,7 @@ function AllResources({
 						All Resources
 					</h2>
 					<p className='text-base md:text-lg lg:text-xl max-w-[800px] mx-auto mt-4'>
-						Learn from my bite-sized WebbsAI tutorials where I show you how to
+						Learn from my bite-sized WebbsAI tutorials where we show you how to
 						create stunning effects.
 					</p>
 				</div>

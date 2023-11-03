@@ -1,8 +1,8 @@
 ---
-title: 'Introduction to HTML'
+title: 'Introduction To HTML'
 lastUpdated: 2023-10-30
 description: 'A beginner-friendly guide that covers the fundamentals of HTML, the language behind the web, so you can gain the skills needed to create web content that stands out online.'
-banner: { content: 'https://res.cloudinary.com/dqylflo1n/image/upload/v1698768504/intro-to-html_jiyvys.png' }
+banner: { content: '../../../../../public/assets/courses/HTML/lesson-1/intro-to-html-banner.png' }
 ---
 
 
@@ -14,7 +14,7 @@ In this guide, we’ll explore the basics of HTML, covering important tags and e
 
   
 
-## What is HTML?
+## What Is HTML?
 
   
 
@@ -39,7 +39,7 @@ An HTML file is composed of tags and elements that act as building blocks of web
 2. HTML Elements: They consist of an opening tag, the content enclosed between the tag, and a closing tag. For example, `<p>` This is a paragraph `</p>`
 
 A visual representation of the application of the concept is demonstrated below:
-![HTML Elements visual representation](https://res.cloudinary.com/dqylflo1n/image/upload/v1698769786/Lessons/html-elements_uwqbrh.png )
+![HTML Elements visual representation](../../../../../public/assets/courses/HTML/lesson-1/html-elements.png )
 To understand the concepts and structure more quickly, it is suggested that you open up Notepad on your Desktop (or simply, search for an Online HTML Compiler on Google).
 
   
@@ -94,7 +94,7 @@ To visually explain what the above lines of code do, you will be shown something
 
   
 
-![Browser display of first test run](https://res.cloudinary.com/dqylflo1n/image/upload/v1698768818/Lessons/first-test-run_kgywqi.png)
+![Browser display of first test run](../../../../../public/assets/courses/HTML/lesson-1/first-test-run.png)
   
 
 Congratulations! You've just created your first HTML document. This is just one of the many milestones you’ll achieve as you cover these lessons. For now, we shall head on to the next sub-topic in this lesson.
@@ -115,7 +115,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
         <h2>This is a Level 2 Heading</h2>
         <h6>This is a Level 6 Heading</h6>
 
-    ![Browser display of heading test run](https://res.cloudinary.com/dqylflo1n/image/upload/v1698769786/Lessons/heading-test-run_kfxyc6.png)
+    ![Browser display of heading test run](../../../../../public/assets/courses/HTML/lesson-1/heading-test-run.png)
 
 2. Paragraphs (`<p>`):
 
@@ -124,7 +124,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 	`<p> This is a paragraph text </p>`
 	`<p> It is used to represent general content and text </p>`
 
-    ![Browser display of paragraph test run](https://res.cloudinary.com/dqylflo1n/image/upload/v1698769785/Lessons/para-test-run_mut7wm.png)
+    ![Browser display of paragraph test run](../../../../../public/assets/courses/HTML/lesson-1/para-test-run.png)
 
 3. Links (`<a>`):
 
@@ -133,7 +133,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 
 	`<a href="https://www.google.com”> This link will take you to Google’s homepage </a>`
 
-    ![Browser display of links test run](https://res.cloudinary.com/dqylflo1n/image/upload/v1698769785/Lessons/link-test-run_wcwvps.png)
+    ![Browser display of links test run](../../../../../public/assets/courses/HTML/lesson-1/link-test-run.png)
 
 4. Unordered List (`<ul>`):
 
@@ -145,7 +145,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 		    <li>Item 3</li>
 	    </ul>
 
-    ![Browser display of unordered list test run](https://res.cloudinary.com/dqylflo1n/image/upload/v1698769785/Lessons/unordered-test-run_bxpmsw.png)
+    ![Browser display of unordered list test run](../../../../../public/assets/courses/HTML/lesson-1/unordered-test-run.png)
 	  
 5. Ordered List (`<ol>`):
 
@@ -157,7 +157,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 		    <li>Third Item</li>
 	    </ol>
 
-    ![Browser display of ordered list test run](https://res.cloudinary.com/dqylflo1n/image/upload/v1698769785/Lessons/ordered-test-run_cedj7v.png)
+    ![Browser display of ordered list test run](../../../../../public/assets/courses/HTML/lesson-1/ordered-test-run.png)
 	  
 6. Break (`<br>`):
 
@@ -167,7 +167,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 
 	`<p>This is some text.<br> And this text appears on a new line.</p>`
 
-    ![Browser display of break tag test run](https://res.cloudinary.com/dqylflo1n/image/upload/v1698769785/Lessons/break-test-run_bjyevm.png)
+    ![Browser display of break tag test run](../../../../../public/assets/courses/HTML/lesson-1/break-test-run.png)
 
 7. Container Tag (`<div>`):
 
@@ -182,7 +182,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 	    
 	    </div>
 
-    ![Browser display of container tag test run](https://res.cloudinary.com/dqylflo1n/image/upload/v1698769785/Lessons/div-test-run_qotvkd.png)
+    ![Browser display of container tag test run](../../../../../public/assets/courses/HTML/lesson-1/div-test-run.png)
 
 ## Important Characteristics To Remember
 
@@ -217,7 +217,7 @@ For example, tags like:    `<p>Hello World!</p>` and  `<p>Hello World!</p>` both
 
 This is how your output should look:
 
-![Browser display of Scenario](https://res.cloudinary.com/dqylflo1n/image/upload/v1698769785/Lessons/whiskers-run_ihyt1d.png)
+![Browser display of Scenario](../../../../../public/assets/courses/HTML/lesson-1/whiskers-run.png)
 
 Before you head on over to study the solution provided below, we suggest you give it a try on your own first. Comparing your solution with ours will give you a much better understanding of how HTML actually works.
 

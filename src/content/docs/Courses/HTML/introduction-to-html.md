@@ -2,7 +2,7 @@
 title: 'Introduction To HTML'
 lastUpdated: 2023-10-30
 description: 'A beginner-friendly guide that covers the fundamentals of HTML, the language behind the web, so you can gain the skills needed to create web content that stands out online.'
-banner: { content: '../../../../../public/assets/courses/HTML/lesson-1/intro-to-html-banner.png' }
+banner: { content: '/assets/courses/HTML/lesson-1/intro-to-html-banner.png' }
 ---
 
 
@@ -39,7 +39,7 @@ An HTML file is composed of tags and elements that act as building blocks of web
 2. HTML Elements: They consist of an opening tag, the content enclosed between the tag, and a closing tag. For example, `<p>` This is a paragraph `</p>`
 
 A visual representation of the application of the concept is demonstrated below:
-![HTML Elements visual representation](../../../../../public/assets/courses/HTML/lesson-1/html-elements.png )
+![HTML Elements visual representation](/assets/courses/HTML/lesson-1/html-elements.png )
 To understand the concepts and structure more quickly, it is suggested that you open up Notepad on your Desktop (or simply, search for an Online HTML Compiler on Google).
 
   
@@ -94,7 +94,7 @@ To visually explain what the above lines of code do, you will be shown something
 
   
 
-![Browser display of first test run](../../../../../public/assets/courses/HTML/lesson-1/first-test-run.png)
+![Browser display of first test run](/assets/courses/HTML/lesson-1/first-test-run.png)
   
 
 Congratulations! You've just created your first HTML document. This is just one of the many milestones you’ll achieve as you cover these lessons. For now, we shall head on to the next sub-topic in this lesson.
@@ -115,7 +115,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
         <h2>This is a Level 2 Heading</h2>
         <h6>This is a Level 6 Heading</h6>
 
-    ![Browser display of heading test run](../../../../../public/assets/courses/HTML/lesson-1/heading-test-run.png)
+    ![Browser display of heading test run](/assets/courses/HTML/lesson-1/heading-test-run.png)
 
 2. Paragraphs (`<p>`):
 
@@ -124,7 +124,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 	`<p> This is a paragraph text </p>`
 	`<p> It is used to represent general content and text </p>`
 
-    ![Browser display of paragraph test run](../../../../../public/assets/courses/HTML/lesson-1/para-test-run.png)
+    ![Browser display of paragraph test run](/assets/courses/HTML/lesson-1/para-test-run.png)
 
 3. Links (`<a>`):
 
@@ -133,7 +133,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 
 	`<a href="https://www.google.com”> This link will take you to Google’s homepage </a>`
 
-    ![Browser display of links test run](../../../../../public/assets/courses/HTML/lesson-1/link-test-run.png)
+    ![Browser display of links test run](/assets/courses/HTML/lesson-1/link-test-run.png)
 
 4. Unordered List (`<ul>`):
 
@@ -145,7 +145,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 		    <li>Item 3</li>
 	    </ul>
 
-    ![Browser display of unordered list test run](../../../../../public/assets/courses/HTML/lesson-1/unordered-test-run.png)
+    ![Browser display of unordered list test run](/assets/courses/HTML/lesson-1/unordered-test-run.png)
 	  
 5. Ordered List (`<ol>`):
 
@@ -157,7 +157,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 		    <li>Third Item</li>
 	    </ol>
 
-    ![Browser display of ordered list test run](../../../../../public/assets/courses/HTML/lesson-1/ordered-test-run.png)
+    ![Browser display of ordered list test run](/assets/courses/HTML/lesson-1/ordered-test-run.png)
 	  
 6. Break (`<br>`):
 
@@ -167,7 +167,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 
 	`<p>This is some text.<br> And this text appears on a new line.</p>`
 
-    ![Browser display of break tag test run](../../../../../public/assets/courses/HTML/lesson-1/break-test-run.png)
+    ![Browser display of break tag test run](/assets/courses/HTML/lesson-1/break-test-run.png)
 
 7. Container Tag (`<div>`):
 
@@ -182,7 +182,7 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 	    
 	    </div>
 
-    ![Browser display of container tag test run](../../../../../public/assets/courses/HTML/lesson-1/div-test-run.png)
+    ![Browser display of container tag test run](/assets/courses/HTML/lesson-1/div-test-run.png)
 
 ## Important Characteristics To Remember
 
@@ -217,7 +217,7 @@ For example, tags like:    `<p>Hello World!</p>` and  `<p>Hello World!</p>` both
 
 This is how your output should look:
 
-![Browser display of Scenario](../../../../../public/assets/courses/HTML/lesson-1/whiskers-run.png)
+![Browser display of Scenario](/assets/courses/HTML/lesson-1/whiskers-run.png)
 
 Before you head on over to study the solution provided below, we suggest you give it a try on your own first. Comparing your solution with ours will give you a much better understanding of how HTML actually works.
 

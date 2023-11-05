@@ -2,7 +2,7 @@
 title: 'Mastering HTML Intermediate And Advanced'
 lastUpdated: 2023-10-31
 description: 'A further look into the intermediate and advanced concepts of HTML to strengthen your foundation as a web developer'
-banner: { content: '../../../../../public/assets/courses/HTML/lesson-2/intermediate-advanced-html-banner.png' }
+banner: { content: '/assets/courses/HTML/lesson-2/intermediate-advanced-html-banner.png' }
 ---
 
 
@@ -33,7 +33,7 @@ Outlined are some common semantic HTML tags:
 
 One form of arrangement for the semantic tags can be shown visually as follows:
 
- ![Semantic Tags visual representation](../../../../../public/assets/courses/HTML/lesson-2/schematic.png)
+ ![Semantic Tags visual representation](/assets/courses/HTML/lesson-2/schematic.png)
 
 It is integral to note here that the navigation menu acts as a sidebar in this case. There is also a main tag that acts like a body to group all the section tags.
 
@@ -44,7 +44,7 @@ It is integral to note here that the navigation menu acts as a sidebar in this c
 
  You should be able to display something like this:
 
- ![Scenario browser display](../../../../../public/assets/courses/HTML/lesson-2/scenario1-test-run.png)
+ ![Scenario browser display](/assets/courses/HTML/lesson-2/scenario1-test-run.png)
 
  
  **Answer:**
@@ -116,7 +116,7 @@ As mentioned in the previous lesson as well, these tags are used to change the a
 
 This is how it should look:
 
- ![Scenario browser display](../../../../../public/assets/courses/HTML/lesson-2/scenario2-test-run.png)
+ ![Scenario browser display](/assets/courses/HTML/lesson-2/scenario2-test-run.png)
 
 
 **Answer:**
@@ -191,7 +191,7 @@ Link tags are essential for including external resources and specifying how they
 **Scenario:** For the Services page of my Yangtzee Restaurant, I want to display an image of our Menu. Consider that the relevant image is already present in your project and has the source URL of 'menu.png'.
 How would you add the code such that the image is placed clearly on the Services page?
 
- ![Scenario browser display](../../../../../public/assets/courses/HTML/lesson-2/scenario3-test-run.png)
+ ![Scenario browser display](/assets/courses/HTML/lesson-2/scenario3-test-run.png)
 
 **Answer:**
 
@@ -235,7 +235,7 @@ This is an important category of tags responsible for dealing with input from th
 
    Some examples are provided below:
 
-    ![Form Tags type display](../../../../../public/assets/courses/HTML/lesson-2/input-forms.png)
+    ![Form Tags type display](/assets/courses/HTML/lesson-2/input-forms.png)
 
 
  - `<textarea>`: This tag creates a multi-line text input area for entering longer texts or comments.
@@ -261,7 +261,7 @@ One important thing to note is that for the label to target the correct input fi
  - An input field that asks for the user's email address.
  - A text area that allows the user to submit any query or message they might have.
 
- ![Scenario browser display](../../../../../public/assets/courses/HTML/lesson-2/scenario4-test-run.png)
+ ![Scenario browser display](/assets/courses/HTML/lesson-2/scenario4-test-run.png)
 
 **Answer:**
 
@@ -318,7 +318,7 @@ Oftentimes, we need to represent data in tabular format to record information cl
 
 This is how the tags structure themselves:
 
- ![Table tags structure display](../../../../../public/assets/courses/HTML/lesson-2/html-tables.png)
+ ![Table tags structure display](/assets/courses/HTML/lesson-2/html-tables.png)
 
 
 **Scenario:** The Restaurant changes its requirements and instead of having its Menu shown as an image, it wants it shown as a table on their Services page. They have requested the following changes:
@@ -328,7 +328,7 @@ This is how the tags structure themselves:
          Kung Pao Chicken, 1200 Rs, 100 Rs
          Fried Rice, 950 Rs, 60 Rs
 
- ![Scenario browser display](../../../../../public/assets/courses/HTML/lesson-2/scenario5-test-run.png)
+ ![Scenario browser display](/assets/courses/HTML/lesson-2/scenario5-test-run.png)
 
 
 **Answer:**

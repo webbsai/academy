@@ -21,7 +21,7 @@ function Lessons({ lessons }: { lessons: StarlightDocType[] }) {
 						The WebbsAI Lessons
 					</h1>
 					<p className='text-base md:text-lg lg:text-xl max-w-[800px] mx-auto mt-4'>
-						Learn from my bite-sized WebbsAI tutorials where I show you how to
+						Learn from my bite-sized WebbsAI tutorials where we show you how to
 						create stunning effects and animations on your websites.
 					</p>
 				</div>

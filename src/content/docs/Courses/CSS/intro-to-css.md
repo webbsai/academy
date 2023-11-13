@@ -32,17 +32,18 @@ Without CSS, websites would be texts on plain, white backgrounds.
 CSS operates by selecting HTML elements and applying styles to them. Before we delve into the syntax of CSS, it is important to know two fundamental concepts first:
 1. Classes:
     - A class can be assigned to an HTML tag by specifying it as an attribute. For example,
-
-	        `<p class=”highlight” >This is a paragraph with a class.</p>`
+		```html
+		<p class=”highlight” >This is a paragraph with a class.</p>
+		```
+	        
 
 	- Classes are a way to apply the same CSS styling to multiple HTML tags without individually having to target each one.
 	- Let’s assume that the class ‘highlight’ has CSS code associated with it that highlights the content of every tag it is used with. It would be inefficient and time-consuming to write those lines of code every time some text needs to be highlighted. By simply using the ‘class=”highlight”’ on tags with content that requires highlighting, we use these lines of code to our advantage.
-
-		    <p class="highlight">This is a highlighted paragraph.</p>
-		    
-		    <h2 class="highlight">This is a highlighted heading.</h2>
-		    
-		    <a class="highlight">This is a highlighted link.</a>
+		```html
+		<p class="highlight">This is a highlighted paragraph.</p>
+		<h2 class="highlight">This is a highlighted heading.</h2>
+		<a class="highlight">This is a highlighted link.</a>
+		```
 
 
 2.  IDs:
@@ -79,11 +80,12 @@ Moving on, CSS syntax is composed of four distinct things:
 
 	- Example:
 
-	    p {
-    
-	    /* Declaration block */
-    
+		```css
+		p {
+	    	/* Declaration block */
 	    }
+		```
+	    
 
   
 
@@ -122,33 +124,21 @@ CSS can be added to an HTML in three primary ways:
 	- This is where you can define styles for classes, IDs, and elements for the entire file.
 	- For example:
 
-		    <!DOCTYPE html>
-		    
-		    <html>
-		    
-		    <head>
-		    
-		    <style>
-		    
-		    p {
-		    
-		    color: red;
-		    
-		    font-size: 16px;
-		    
-		    }
-		    
-		    </style>
-		    
-		    </head>
-		    
-		    <body>
-		    
-		    <p>This is a paragraph with internal CSS.</p>
-		    
-		    </body>
-		    
-		    </html>
+		```html
+		<html>
+			<head>
+				<style>
+					p {
+					color: red;
+					font-size: 16px;
+					}
+				</style>
+			</head>
+			<body>
+				<p>This is a paragraph with internal CSS.</p>
+			</body>
+		</html>
+		```
 		    
 		      
  

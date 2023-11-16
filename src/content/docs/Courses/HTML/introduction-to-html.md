@@ -1,5 +1,5 @@
 ---
-title: 'Introduction To HTML'
+title: 'Introduction to HTML'
 lastUpdated: 2023-10-30
 description: 'A beginner-friendly guide that covers the fundamentals of HTML, the language behind the web, so you can gain the skills needed to create web content that stands out online.'
 banner: { content: '/assets/courses/HTML/lesson-1/intro-to-html-banner.png' }
@@ -14,7 +14,7 @@ In this guide, we’ll explore the basics of HTML, covering important tags and e
 
   
 
-## What Is HTML?
+## What is HTML?
 
   
 
@@ -46,27 +46,17 @@ To understand the concepts and structure more quickly, it is suggested that you 
 
 In your file, type in the following contents:
 
-  
-
-    <!DOCTYPE html>
-    
-    <html>
-    
-    <head>
-    
-    <title>Title of Webpage</title>
-    
-    </head>
-    
-    <body>
-    
-    <p>Hello World!</p>
-    
-    </body>
-    
-    </html>
-
-  
+```html
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Title of Webpage</title>
+   </head>
+   <body>
+      <p>Hello World!</p>
+   </body>
+</html>
+```
 
 Explanation:
 
@@ -110,19 +100,21 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 1. Headings (`<h1>` to `<h6>`):
 
 	`<h1>` to `<h6>` tags are used to define headings on a webpage, with `<h1>` being the highest level and `<h6>` the lowest. For example:
-
-    	<h1>This is a Level 1 Heading</h1>
-        <h2>This is a Level 2 Heading</h2>
-        <h6>This is a Level 6 Heading</h6>
+    ```html
+    <h1>This is a Level 1 Heading</h1>
+    <h2>This is a Level 2 Heading</h2>
+    <h6>This is a Level 6 Heading</h6>
+    ```
 
     ![Browser display of heading test run](/assets/courses/HTML/lesson-1/heading-test-run.png)
 
 2. Paragraphs (`<p>`):
 
 	The `<p>` tag is used to create paragraphs of text. It's an essential element for organizing and structuring textual content:
-	
-	`<p> This is a paragraph text </p>`
-	`<p> It is used to represent general content and text </p>`
+	```html
+	<p> This is a paragraph text </p>
+	<p> It is used to represent general content and text </p>
+    ```
 
     ![Browser display of paragraph test run](/assets/courses/HTML/lesson-1/para-test-run.png)
 
@@ -130,32 +122,35 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 
 	The `<a>` tag is used for creating hyperlinks. It requires the href attribute, which specifies the URL to link to. For instance:
 
-
-	`<a href="https://www.google.com”> This link will take you to Google’s homepage </a>`
+	```html
+    <a href="https://www.google.com”> This link will take you to Google’s homepage </a>
+    ```
 
     ![Browser display of links test run](/assets/courses/HTML/lesson-1/link-test-run.png)
 
 4. Unordered List (`<ul>`):
 
 	The `<ul>` tag creates an unordered (bulleted) list. It's great for presenting items without any specific order.
-
-	    <ul>
-		    <li>Item 1</li>
-		    <li>Item 2</li>
-		    <li>Item 3</li>
-	    </ul>
+    ```html
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    ```
 
     ![Browser display of unordered list test run](/assets/courses/HTML/lesson-1/unordered-test-run.png)
 	  
 5. Ordered List (`<ol>`):
 
 	The `<ol>` tag creates an ordered (numbered) list. This is useful when you want to list items in a specific sequence. For Example:
-
-	    <ol>
-	        <li>First Item</li>
-		    <li>Second Item</li>
-		    <li>Third Item</li>
-	    </ol>
+    ```html
+    <ol>
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+    </ol>
+    ```
 
     ![Browser display of ordered list test run](/assets/courses/HTML/lesson-1/ordered-test-run.png)
 	  
@@ -163,28 +158,28 @@ There are certain basic tags that act as a backbone for an HTML file. Some of th
 
 	The `<br>` tag represents a line break. It's used to force content after the tag to appear on a new line.
 
-	  
-
-	`<p>This is some text.<br> And this text appears on a new line.</p>`
+	```html
+    <p>This is some text.<br> And this text appears on a new line.</p>
+    ```
 
     ![Browser display of break tag test run](/assets/courses/HTML/lesson-1/break-test-run.png)
 
 7. Container Tag (`<div>`):
 
 	The `<div>` tag is a container for grouping and styling elements. It's often used for layout purposes, allowing you to apply styles or structure a webpage's content. Think of it as a box that can hold or group different HTML tags and elements.
-
-
-	    <div>
-	    
-	        <h6>This is a div container.</h6>
-	    
-	        <p> It can hold several elements at once </p>
-	    
-	    </div>
+    ```html
+    <div>
+    
+        <h6>This is a div container.</h6>
+    
+        <p> It can hold several elements at once </p>
+    
+    </div>
+    ```
 
     ![Browser display of container tag test run](/assets/courses/HTML/lesson-1/div-test-run.png)
 
-## Important Characteristics To Remember
+## Important Characteristics to Remember
 
 ### Case Insensitivity
 
@@ -211,7 +206,7 @@ In HTML, no matter how many white spaces you include within a line, the browser'
 For example, tags like:    `<p>Hello World!</p>` and  `<p>Hello World!</p>` both provide the same output as follows:
 
 
-## Practice With Us
+## Practice with us
 
 **Scenario**: Imagine you have to create a webpage to introduce your pet cat and provide some basic information.
 
@@ -245,37 +240,29 @@ To map the scenario, we can highlight a few things about a pet cat:
 
 Here's a basic HTML document with content for this scenario:
 
-  
-
-    <!DOCTYPE html>
-    <html>
-
-        <head>
-        <title>Meet My Cat - Whiskers</title>
-        </head>
-
-        <body>
-            <h1>About My Cat - Whiskers</h1>
-            <p>Meet Whiskers, my adorable pet cat. He's a fluffy and playful feline companion.</p>
-
-            <h2>More About Whiskers</h2>
-            <p>Whiskers enjoys lounging in the sun, chasing toy mice, and taking long naps. He's also an expert at purring.</p>
-
-            <h2>See Whiskers in Action</h2>
-            <ul>
-                <li>Playing with a ball of yarn</li>    
-                <li>Basking in the sunlight</li>   
-                <li>Cuddling with his favorite toy</li>
-            </ul>
-
-            <h2>Connect with Whiskers</h2>
-            <p>For more adorable cat moments, you can visit Whiskers on his <a href="https://www.whiskerscat.com">website</a>.</p>
-
-            <p>Thank you for learning about Whiskers!</p>
-        </body>
-    </html>
-
-  
+```html
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Meet My Cat - Whiskers</title>
+   </head>
+   <body>
+      <h1>About My Cat - Whiskers</h1>
+      <p>Meet Whiskers, my adorable pet cat. He's a fluffy and playful feline companion.</p>
+      <h2>More About Whiskers</h2>
+      <p>Whiskers enjoys lounging in the sun, chasing toy mice, and taking long naps. He's also an expert at purring.</p>
+      <h2>See Whiskers in Action</h2>
+      <ul>
+         <li>Playing with a ball of yarn</li>
+         <li>Basking in the sunlight</li>
+         <li>Cuddling with his favorite toy</li>
+      </ul>
+      <h2>Connect with Whiskers</h2>
+      <p>For more adorable cat moments, you can visit Whiskers on his <a href="https://www.whiskerscat.com">website</a>.</p>
+      <p>Thank you for learning about Whiskers!</p>
+   </body>
+</html>
+```  
 
 ## Conclusion
 

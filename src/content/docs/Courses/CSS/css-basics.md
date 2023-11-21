@@ -1,7 +1,7 @@
 ---
 title: 'CSS Basics'
 lastUpdated: 2023-11-14
-description: 'Learn how to utilize the user-friendly WebbsAI No-Code Editor to design the essentials of a website.'
+description: 'Learn how to utilize the user-friendly WebbsAI No-Code Editor to design the essentials of a website'
 banner: { content: '/assets/courses/CSS/lesson-1/css-banner.png' }
 ---
 When you start designing your site, you'll want to build and iterate over different options to structure your designs. In this lesson, we'll cover all the ways you can do this without leaving our WebbsAI No-Code Editor.
@@ -21,7 +21,7 @@ By exploring these key elements, you'll be able to gain the skills needed to enh
 If you wish to modify the text or foreground color of your element, our editor offers a straightforward solution.
 
 
-##### WebbsAI Implementation:
+##### How to change colors in WebbsAI:
 To modify text or foreground color, head to Styles > Typography. The **Color** option in that section allows you to choose from a range of options whenever you select an element that contains content.
 
 
@@ -57,8 +57,27 @@ Don’t worry if you can't understand the format for now. Through a quick intern
     - In the WebbsAI editor, the alpha value will range from 0, which is fully transparent, to 100, which is fully visible.
     - You can use the RGBA value obtained from the internet for the previously quoted mahogany red to get the same color.
 
+4. **Color Schemes:**
+    - Provides a predefined option of colors that help set the theming for your site.
 
-Feel free to experiment with these options for creating your desired color schemes!
+    ![WebbsAI Styles > Color Scheme](/assets/courses/CSS/lesson-2/color-color-scheme.png (Styles > Color Scheme))
+
+    - It provides four main values:
+        1. Primary Color: It is the dominant color in your design. This color is often used for backgrounds or prominent UI elements, and aligns with your brand or the overall theme of your project.
+        2. Secondary Color: It complements the primary color. This color can be used for text, buttons, and other accents. 
+        3. Neutral: A versatile tone that provides a balanced backdrop for the primary and secondary colors. They're often used for the background to maintain readability and a clean aesthetic.
+        4. Danger: It defines vibrant and attention-grabbing colors, with red being the most common. We can use it to convey warnings, alerts, or error messages.
+
+    - These values can be set from Styles > Color Schemes.
+
+    ![WebbsAI Styles > Color Scheme](/assets/courses/CSS/lesson-2/color-color-scheme-choice.png (Styles > Color Scheme))
+
+    - Whenever you need to set a color for a specific purpose, the 'From Scheme' drop-down is just a click away.
+
+    ![WebbsAI Styles > Color](/assets/courses/CSS/lesson-2/color-color-scheme-choose.png (Styles > Color ))
+
+
+As you practice navigating through different desirable color styles, feel free to experiment with these options!
 
 
 
@@ -89,7 +108,7 @@ Note that the selector here is just a generic placeholder and can be any element
 ### Backgrounds
 
 
-##### WebbsAI Implementation:
+##### How to change backgrounds in WebbsAI:
 
 
 Head to Styles > Backgrounds in your WebbsAI editor:
@@ -276,7 +295,7 @@ CSS typography is all about styling the text content on your webpage, whether it
 
 
 
-##### WebbsAI Implementation:
+##### How to change text in WebbsAI:
 
 
 Go to Style panel > Typography to view the section:
@@ -435,7 +454,7 @@ This looks much cleaner now! You can always improve on it further by adding more
 CSS Borders help define the boundaries around HTML elements, giving you a free way to design edges in any way you like.
 
 
-##### WebbsAI Implementation:
+##### How to change borders in WebbsAI:
 
 
 Located near the end, the Styles > Borders is another great tool that can help you define the boundaries of an element.

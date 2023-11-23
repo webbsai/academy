@@ -1,0 +1,55 @@
+---
+title: 'Make an Account on WebbsAI'
+lastUpdated: 2023-11-22
+description: 'Understand the basics of handling your account'
+banner: { content: 'https://picsum.photos/seed/getting-started/500/500' }
+---
+
+
+After you sign up on WebbsAI, you'll see a dashboard. It's like your own workspace for all your projects using just one account.
+
+
+![WebbsAI Dashboard](/assets/lessons/getting-started/account/account-dashboard.png (WebbsAI Dashboard))
+
+
+### Track your Sites
+
+
+On the left side-menu, you can see three options:
+- All Sites: Helps you view and manage all your websites on WebbsAI.
+- Published Websites: Helps you view and manage all sites that have been hosted and made public.
+- Draft Websites: Helps you view and manage all sites that are currently in development.
+
+
+
+
+### Account Details
+
+
+To check your account details, click the Account button on the top right corner. Here, besides the profile and sign-out options, you can also switch to dark mode.
+
+
+At Account > Profile, you can change two things:
+
+
+#### Profile > General
+
+
+You can modify the following details:
+
+
+![WebbsAI Profile > General](/assets/lessons/getting-started/account/account-profile-general.png (Profile > General))
+
+
+
+
+#### Profile > Password
+
+
+If you forget your password, you can always reset it with this feature below or at the time of login.
+
+
+![WebbsAI Profile > Password](/assets/lessons/getting-started/account/account-profile-password.png (Profile > Password))
+
+
+

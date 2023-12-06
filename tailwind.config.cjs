@@ -6,6 +6,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				sans: ['Poppins', 'Inter'],
+				manrope: ['Manrope', 'Poppins', 'Inter'],
 			},
 			colors: {
 				primary: '#1566C0',

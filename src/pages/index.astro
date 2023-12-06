@@ -1,15 +1,14 @@
 ---
-import { getCollection } from 'astro:content'
-import BaseHead from '../components/BaseHead.astro'
-import CarouselSection from '../components/CarouselSection.tsx'
-import Footer from '../components/Footer.tsx'
-import Header from '../components/Header.tsx'
-import { RightArrow } from '../components/icons/icons.tsx'
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
+import { getCollection } from "astro:content"
+import BaseHead from "../components/BaseHead.astro"
+import CarouselSection from "../components/CarouselSection.tsx"
+import Footer from "../components/Footer.tsx"
+import Header from "../components/Header.tsx"
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
 
 const courses = (
-	await getCollection('docs', doc => {
-		return doc.id.split('/')[0] === 'Courses'
+	await getCollection("docs", doc => {
+		return doc.id.split("/")[0] === "Courses"
 	})
 ).sort(
 	(a, b) =>
@@ -18,8 +17,8 @@ const courses = (
 )
 
 const lessons = (
-	await getCollection('docs', doc => {
-		return doc.id.split('/')[0] === 'Lessons'
+	await getCollection("docs", doc => {
+		return doc.id.split("/")[0] === "Lessons"
 	})
 ).sort(
 	(a, b) =>
@@ -49,43 +48,52 @@ const lessons = (
 						class="absolute px-4 sm:px-12 z-10 w-full h-full bg-white/[85%] dark:bg-black/[85%] top-24 flex flex-col gap-8 items-center justify-center text-center"
 					>
 						<h1
-							class="text-3xl font-extrabold md:text-4xl lg:text-5xl xl:text-6xl"
+							class="text-3xl font-extrabold font-manrope md:text-4xl lg:text-5xl xl:text-6xl"
 						>
-							Learn Everything You Need to Know
+							Learn everything about us!
 						</h1>
-						<p class="text-xl md:text-2xl lg:text-3xl">
-							The practical guide to WebbsAI, with tutorials and
-							the best resources.
+						<p class="text-sm md:text-base lg:text-lg">
+							No-bullshit, practical tutorials & the best
+							resources.
 						</p>
 						<div
 							class="flex flex-col justify-center w-full gap-5 sm:flex-row"
 						>
 							<a
-								class="px-5 py-4 rounded-[18px] bg-white text-black border hover:shadow-[0_0_2px_1px_rgba(150,150,150,1)] dark:hover:shadow-[inset_0_0_5px_1px_rgba(100,100,100,1)] transition-[box-shadow]"
+								class="px-5 py-4 rounded-[0.9375rem] bg-[#2563EB] text-white hover:shadow-[0_0_2px_1px_rgba(150,150,150,1)] dark:hover:shadow-[inset_0_0_5px_1px_rgba(100,100,100,1)] transition-[box-shadow]"
 								href="/courses">Get free courses</a
 							>
 							<a
-								class="px-6 py-4 rounded-[18px] bg-[#202020] text-white dark:hover:shadow-[0_0_2px_1px_rgba(150,150,150,1)] hover:shadow-[inset_0_0_5px_1px_rgba(200,200,200,1)] transition-[box-shadow]"
+								class="px-6 py-4 rounded-[0.9375rem] bg-white text-black dark:hover:shadow-[0_0_2px_1px_rgba(150,150,150,1)] hover:shadow-[inset_0_0_5px_1px_rgba(200,200,200,1)] transition-[box-shadow]"
 								href="/resources">See Resources</a
 							>
 						</div>
 					</div>
 					<img
-						src="/background-light.png"
+						src="/background-new.png"
 						class="hidden max-h-full translate-y-24 dark:inline"
 					/>
 					<img
-						src="/background.png"
+						src="/background-new.png"
 						class="max-h-full translate-y-24 dark:hidden"
 					/>
 				</div>
 			</section>
 
 			<section class="mt-24">
-				<div class="px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0">
+				<div class="px-4 mx-auto sm:px-12 xl:max-w-[82rem] xl:px-0">
 					<div class="flex flex-col">
 						<div
-							class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:p-8 lg:p-12"
+							style={{
+								borderWidth: "4px",
+								borderStyle: "solid",
+								borderImage:
+									"linear-gradient(to right, #7C3AED, #00000000) 1",
+								background:
+									"linear-gradient(-76deg, rgba(21, 102, 192, 0.35) 0%, rgba(15, 18, 25, 0.00) 100%)",
+								backgroundClip: "padding-box"
+							}}
+							class="flex w-full flex-col p-6 bg-[#EEEEEE] dark:bg-[#131313] md:p-8 lg:p-12"
 						>
 							<div class="flex flex-col gap-16 md:flex-row">
 								<div class="flex flex-col justify-center gap-5">
@@ -118,24 +126,37 @@ const lessons = (
 
 						<div class="flex flex-col gap-4 mt-4 md:flex-row">
 							<div
-								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-2/5 md:p-8 lg:p-12"
+								style={{
+									borderWidth: "4px",
+									borderStyle: "solid",
+									borderImage:
+										"linear-gradient(to left, #7C3AED, #00000000) 1"
+								}}
+								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#0F1219] md:w-2/5 md:p-8 lg:p-12"
 							>
 								<div>
 									<h3
-										class="text-lg font-semibold md:text-xl lg:text-2xl"
+										class="text-lg font-manrope font-semibold md:text-xl lg:text-2xl"
 									>
 										Getting Started
 									</h3>
 									<p
-										class="mt-2 text-sm md:text-base lg:text-lg"
+										class="mt-2 font-manrope text-sm md:text-base lg:text-lg"
 									>
-										Learn the basics of WebbsAI and start
-										building your first website with AI.
+										Learn how to create stunning websites
+										with ease by learning the fundamentals
+										of WebbsAI.
 									</p>
 								</div>
 							</div>
 							<div
-								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-3/5 md:p-8 lg:p-12"
+								style={{
+									borderWidth: "4px",
+									borderStyle: "solid",
+									borderImage:
+										"linear-gradient(to left, #7C3AED, #00000000) 1"
+								}}
+								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#0F1219] md:w-3/5 md:p-8 lg:p-12"
 							>
 								<div>
 									<h3
@@ -156,7 +177,13 @@ const lessons = (
 
 						<div class="flex flex-col gap-4 mt-4 md:flex-row">
 							<div
-								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-3/5 md:p-8 lg:p-12"
+								style={{
+									borderWidth: "4px",
+									borderStyle: "solid",
+									borderImage:
+										"linear-gradient(to right, #7C3AED, #00000000) 1"
+								}}
+								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#0F1219] md:w-3/5 md:p-8 lg:p-12"
 							>
 								<div>
 									<h3
@@ -173,8 +200,14 @@ const lessons = (
 								</div>
 							</div>
 							<a
+								style={{
+									borderWidth: "4px",
+									borderStyle: "solid",
+									borderImage:
+										"linear-gradient(to right, #7C3AED, #00000000) 1"
+								}}
 								href="/resources"
-								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#131313] md:w-2/5 md:p-8 lg:p-12"
+								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#0F1219] md:w-2/5 md:p-8 lg:p-12"
 							>
 								<div>
 									<h3
@@ -196,61 +229,66 @@ const lessons = (
 				</div>
 			</section>
 
-			<section class="mt-24">
-				<div class="px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0">
-					<h2
-						class="text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl"
-					>
-						Get started with our<br />WebbsAI lessons
-					</h2>
-					<p
-						class="mt-8 text-lg text-center md:text-xl lg:text-2xl text-black/70 dark:text-white/70"
-					>
-						Learn how to generate powerful websites to grow your
-						business and gain a competitive edge from the start
-					</p>
-					<div class="mt-16">
-						<CarouselSection lessons={lessons} client:only />
-					</div>
-				</div>
-			</section>
-
-			<section class="mt-24">
-				<div class="px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0">
-					<h2
-						class="text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl"
-					>
-						WebbsAI Courses
-					</h2>
-					<a
-						href="/courses"
-						class="flex items-center justify-center gap-4 mt-8 text-lg md:text-xl lg:text-2xl"
-					>
-						<span class="underline">Explore all</span><RightArrow
-							className="invert dark:invert-0"
-						/>
-					</a>
+			<section class="mt-40">
+				<div
+					class="px-4 mx-auto flex flex-col items-center justify-center sm:px-12 xl:max-w-[82rem] xl:px-0"
+				>
 					<div
-						class="grid items-center grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-7"
+						class="flex flex-col items-center justify-center md:max-w-[40.5625rem] lg:max-w-[40.5625rem] xl:max-w-[45.5625rem] gap-8"
+					>
+						<h2
+							class="text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl"
+						>
+							All <span
+								class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-transparent bg-gradient-to-r from-blue-700 to-purple-800 bg-clip-text"
+								>Lessons</span
+							>
+						</h2>
+						<p class="dark:text-white/60 text-center font-manrope text-[1.125rem] font-medium">
+							Learn from my bite-sized WebbsAI tutorials where I
+							show you how to create stunning effects and
+							animations on your websites.
+						</p>
+					</div>
+					<div
+						class="grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full"
 					>
 						{
 							courses?.length > 0 ? (
 								courses.slice(0, 3)?.map(course => (
 									<a href={course.slug}>
-										<div class="bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]">
-											<img
-												src={
-													course.data.banner!
-														.content as string
-												}
-												class="h-[200px] rounded-[20px]"
-											/>
-											<h3 class="text-base truncate md:text-lg lg:text-xl">
-												{course.data.title}
-											</h3>
-											<p class="text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[80px] overflow-hidden">
-												{course.data.description}
-											</p>
+										<div class="bg-[#EEEEEE] lg:max-w-[26.3125rem] lg:max-h-[23.6875rem] dark:bg-[#131313] flex flex-col gap-2 rounded-[20px]">
+											<div
+												style={{
+													height: "12.75rem",
+													overflow: "hidden"
+												}}
+											>
+												<div
+													style={{
+														backgroundImage: `url(${
+															course.data.banner!
+																.content as string
+														})`,
+														height: "100%",
+														width: "100%",
+														backgroundSize: "cover",
+														backgroundPosition:
+															"center",
+														backgroundRepeat:
+															"no-repeat"
+													}}
+												/>
+											</div>
+
+											<div class="my-[1.25rem] ml-[1.19rem] mr-[1.15rem] flex flex-col gap-[1.04rem]">
+												<h3 class="text-base font-normal font-manrope truncate md:text-lg lg:text-xl">
+													{course.data.title}
+												</h3>
+												<p class="text-xs font-manrope lg:text-xs text-black/70 dark:text-white/70 max-h-[80px] overflow-hidden">
+													{course.data.description}
+												</p>
+											</div>
 										</div>
 									</a>
 								))
@@ -264,35 +302,96 @@ const lessons = (
 				</div>
 			</section>
 
-			<section class="my-24">
-				<div class="px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0">
-					<div class="flex flex-col w-full">
-						<div class="flex flex-col gap-16 md:flex-row">
-							<div class="flex flex-col justify-center gap-5">
-								<h3
-									class="font-semibold text-2g md:text-3xl lg:text-5xl"
-								>
-									Read our WebbsAI University Blogs
+			<section class="mt-40">
+				<div
+					class="px-4 mx-auto sm:px-12 xl:max-w-[82rem] xl:px-0 flex flex-col justify-center items-center"
+				>
+					<h2
+						class="text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl"
+					>
+						Get started with our<br /><span
+							class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-transparent bg-gradient-to-r from-blue-700 to-purple-800 bg-clip-text"
+							>WebbsAI video lessons</span
+						>
+					</h2>
+					<p
+						class="mt-8 text-sm font-medium xl:max-w-[45.5625rem] text-center md:text-base lg:text-lg text-black/70 dark:text-white/70"
+					>
+						The website builder for everyone, from novices to pros.
+						With our generative AI technology.
+					</p>
+					<div class="mt-16 bg-red-400">
+						<CarouselSection lessons={lessons} client:only />
+					</div>
+				</div>
+			</section>
+
+			<section class="mt-24">
+				<div class="px-4 mx-auto sm:px-12 xl:max-w-[82rem] xl:px-0">
+					<h2
+						class="text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl"
+					>
+						WebbsAI <span
+							class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-transparent bg-gradient-to-r from-blue-700 to-purple-800 bg-clip-text"
+							>Courses</span
+						>
+					</h2>
+					<a
+						href="/courses"
+						class="flex items-center justify-center gap-4 mt-8 text-sm md:text-base lg:text-lg"
+					>
+						<span class="underline text-black/60 dark:text-white/60"
+							>Explore All Courses</span
+						>
+					</a>
+					<div
+						class="grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full"
+					>
+						{
+							courses?.length > 0 ? (
+								courses.slice(0, 3)?.map(course => (
+									<a href={course.slug}>
+										<div class="bg-[#EEEEEE] lg:max-w-[26.3125rem] lg:max-h-[23.6875rem] dark:bg-[#131313] flex flex-col gap-2 rounded-[20px]">
+											<div
+												style={{
+													height: "12.75rem",
+													overflow: "hidden"
+												}}
+											>
+												<div
+													style={{
+														backgroundImage: `url(${
+															course.data.banner!
+																.content as string
+														})`,
+														height: "100%",
+														width: "100%",
+														backgroundSize: "cover",
+														backgroundPosition:
+															"center",
+														backgroundRepeat:
+															"no-repeat"
+													}}
+												/>
+											</div>
+
+											<div class="my-[1.25rem] ml-[1.19rem] mr-[1.15rem] flex flex-col gap-[1.04rem]">
+												<h3 class="text-base font-normal font-manrope truncate md:text-lg lg:text-xl">
+													{course.data.title}
+												</h3>
+												<p class="text-xs font-manrope lg:text-xs text-black/70 dark:text-white/70 max-h-[80px] overflow-hidden">
+													{course.data.description}
+												</p>
+											</div>
+										</div>
+									</a>
+								))
+							) : (
+								<h3 class="col-span-4 text-xl font-semibold text-center">
+									Stay Tuned for the Upcoming Content
 								</h3>
-								<p
-									class="mt-2 text-base md:text-lg lg:text-2xl"
-								>
-									Get insights and business solutions on what
-									our community has to offer.
-								</p>
-								<a
-									href="/blogs"
-									class="px-5 w-fit py-4 rounded-[18px] dark:bg-white bg-black text-white dark:text-black hover:shadow-[inset_0_0_5px_1px_rgba(200,200,200,1)] dark:hover:shadow-[inset_0_0_5px_1px_rgba(100,100,100,1)] transition-[box-shadow]"
-									>See all blogs</a
-								>
-							</div>
-							<div class="w-full h-full">
-								<img
-									src="/assets/blogs.png"
-									class="w-full h-full"
-								/>
-							</div>
-						</div>
+							)
+						}
 					</div>
 				</div>
 			</section>

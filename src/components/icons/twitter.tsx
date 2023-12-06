@@ -1,7 +1,7 @@
 const TwitterIcon = () => (
   <svg
-    width="18"
-    height="18"
+    width="1.4375rem"
+    height="1.4375rem"
     viewBox="0 0 16 16"
     fill="currentColor"
     role="img"

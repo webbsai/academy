@@ -1,56 +1,87 @@
-import { useEffect, useState } from 'react';
-import type { StarlightDocType } from '../../types';
+import { useEffect, useState } from "react"
+import type { StarlightDocType } from "../../types"
 
 function AllLessons({
 	lessons,
-	lessonFilter,
+	lessonFilter
 }: {
-	lessons: StarlightDocType[];
-	lessonFilter: string;
+	lessons: StarlightDocType[]
+	lessonFilter: string
 }) {
-	const [numberToDisplay, setNumberToDisplay] = useState(3);
+	const [numberToDisplay, setNumberToDisplay] = useState(3)
 	const [currentLessons, setCurrentLessons] =
-		useState<StarlightDocType[]>(lessons);
+		useState<StarlightDocType[]>(lessons)
 
 	useEffect(() => {
-		setCurrentLessons(lessons?.slice(0, numberToDisplay));
-	}, [numberToDisplay, lessons]);
+		setCurrentLessons(lessons?.slice(0, numberToDisplay))
+	}, [numberToDisplay, lessons])
 
 	return (
 		<>
 			<div>
 				{!lessonFilter && (
-					<div className='text-center'>
-						<h2 className='text-2xl font-bold md:text-3xl lg:text-5xl'>
-							All Lessons
+					<div className="text-center">
+						<h2 className="text-3xl font-manrope font-bold md:text-4xl lg:text-6xl">
+							All{" "}
+							<span
+								style={{
+									background:
+										"linear-gradient(91deg, #1566C0 47.22%, #7C3AED 73.36%)",
+									color: "transparent",
+									WebkitBackgroundClip: "text",
+									backgroundClip: "text"
+								}}
+							>
+								Lessons
+							</span>
 						</h2>
-						<p className='text-base md:text-lg lg:text-xl max-w-[800px] mx-auto mt-4'>
-							Learn from my bite-sized WebbsAI tutorials where I show you how to
-							create stunning effects.
+						<p className="text-sm font-medium dark:text-white/60 md:text-base lg:text-[1.125rem] max-w-[800px] mx-auto mt-8 font-manrope ">
+							Learn from my bite-sized WebbsAI tutorials where I
+							show you how to create stunning effects and
+							animations on your websites.
 						</p>
 					</div>
 				)}
-				<div className='grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-7'>
-					{currentLessons?.map((lesson) => (
-						<a key={lesson.slug} href={lesson.slug}>
-							<div className='bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
-								<img
-									src={lesson.data.banner!.content as string}
-									className='h-[150px] rounded-[20px]'
-								/>
-								<h3 className='text-lg md:text-xl lg:text-2xl'>
-									{lesson.data.title}
-								</h3>
-								<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[100px] text-ellipsis overflow-hidden'>
-									{lesson.data.description}
-								</p>
+				<div className="grid grid-cols-1 mt-[3.75rem] sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+					{currentLessons?.map(lesson => (
+						<a href={lesson.slug}>
+							<div class="bg-[#EEEEEE] lg:max-w-[26.3125rem] lg:max-h-[23.6875rem] dark:bg-[#131313] flex flex-col gap-2 rounded-[20px]">
+								<div
+									style={{
+										height: "12.75rem",
+										overflow: "hidden"
+									}}
+								>
+									<div
+										style={{
+											backgroundImage: `url(${
+												lesson.data.banner!
+													.content as string
+											})`,
+											height: "100%",
+											width: "100%",
+											backgroundSize: "cover",
+											backgroundPosition: "center",
+											backgroundRepeat: "no-repeat"
+										}}
+									/>
+								</div>
+
+								<div class="my-[1.25rem] ml-[1.19rem] mr-[1.15rem] flex flex-col gap-[1.04rem]">
+									<h3 class="text-base font-normal font-manrope truncate md:text-lg lg:text-xl">
+										{lesson.data.title}
+									</h3>
+									<p class="text-xs font-manrope lg:text-xs text-black/70 dark:text-white/70 max-h-[80px] overflow-hidden">
+										{lesson.data.description}
+									</p>
+								</div>
 							</div>
 						</a>
 					))}
 				</div>
 				{!currentLessons ||
 					(!(currentLessons?.length >= 0) && (
-						<h3 className='text-xl font-semibold text-center'>
+						<h3 className="text-xl font-semibold text-center">
 							Stay Tuned for the Upcoming Content
 						</h3>
 					))}
@@ -58,15 +89,15 @@ function AllLessons({
 					lessons?.length > 0 &&
 					!lessonFilter && (
 						<button
-							onClick={() => setNumberToDisplay((prev) => prev + 3)}
-							className='block mt-8 rounded-[20px] bg-secondary-light dark:bg-secondary-dark px-5 py-4 mx-auto'
+							onClick={() => setNumberToDisplay(prev => prev + 3)}
+							className="block mt-8 rounded-[20px] bg-secondary-light dark:bg-secondary-dark px-5 py-4 mx-auto"
 						>
-							Load More
+							Load more lessons
 						</button>
 					)}
 			</div>
 		</>
-	);
+	)
 }
 
-export default AllLessons;
+export default AllLessons

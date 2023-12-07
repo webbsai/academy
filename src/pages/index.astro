@@ -132,8 +132,12 @@ const lessons = (
 									borderImage:
 										"linear-gradient(to left, #7C3AED, #00000000) 1"
 								}}
-								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#0F1219] md:w-2/5 md:p-8 lg:p-12"
+								class="flex w-full flex-col relative rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#0F1219] md:w-2/5 md:p-8 lg:p-12"
 							>
+								<div
+									style="position: absolute; top: 0; left: 0; width: 10rem; height: 5rem; border-radius: 19.75925rem; background: linear-gradient(131deg, rgba(21, 102, 192, 0.70) 15.42%, rgba(207, 120, 161, 0.70) 85.57%); filter: blur(85px);"
+								>
+								</div>
 								<div>
 									<h3
 										class="text-lg font-manrope font-semibold md:text-xl lg:text-2xl"
@@ -154,7 +158,7 @@ const lessons = (
 									borderWidth: "4px",
 									borderStyle: "solid",
 									borderImage:
-										"linear-gradient(to left, #7C3AED, #00000000) 1"
+										"linear-gradient(to left, #7C3AED, #00000000) 1",
 								}}
 								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#0F1219] md:w-3/5 md:p-8 lg:p-12"
 							>
@@ -207,8 +211,12 @@ const lessons = (
 										"linear-gradient(to right, #7C3AED, #00000000) 1"
 								}}
 								href="/resources"
-								class="flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#0F1219] md:w-2/5 md:p-8 lg:p-12"
+								class="relative flex w-full flex-col rounded-[20px] p-6 bg-[#EEEEEE] dark:bg-[#0F1219] md:w-2/5 md:p-8 lg:p-12"
 							>
+								<div
+									style="position: absolute; top: 0; right: 0; width: 10rem; height: 5rem; border-radius: 19.75925rem; background: linear-gradient(131deg, rgba(21, 102, 192, 0.70) 15.42%, rgba(207, 120, 161, 0.70) 85.57%); filter: blur(85px);"
+								>
+								</div>
 								<div>
 									<h3
 										class="text-lg font-semibold md:text-xl lg:text-2xl"
@@ -244,7 +252,9 @@ const lessons = (
 								>Lessons</span
 							>
 						</h2>
-						<p class="dark:text-white/60 text-center font-manrope text-[1.125rem] font-medium">
+						<p
+							class="dark:text-white/60 text-center font-manrope text-[1.125rem] font-medium"
+						>
 							Learn from my bite-sized WebbsAI tutorials where I
 							show you how to create stunning effects and
 							animations on your websites.
@@ -304,23 +314,25 @@ const lessons = (
 
 			<section class="mt-40">
 				<div
-					class="px-4 mx-auto sm:px-12 xl:max-w-[82rem] xl:px-0 flex flex-col justify-center items-center"
+					class="px-4 mx-auto sm:px-12 xl:max-w-[82rem] xl:px-0 flex flex-col"
 				>
-					<h2
-						class="text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl"
-					>
-						Get started with our<br /><span
-							class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-transparent bg-gradient-to-r from-blue-700 to-purple-800 bg-clip-text"
-							>WebbsAI video lessons</span
+					<div class="flex flex-col items-center justify-center">
+						<h2
+							class="text-3xl font-bold text-center md:text-4xl lg:text-5xl xl:text-6xl"
 						>
-					</h2>
-					<p
-						class="mt-8 text-sm font-medium xl:max-w-[45.5625rem] text-center md:text-base lg:text-lg text-black/70 dark:text-white/70"
-					>
-						The website builder for everyone, from novices to pros.
-						With our generative AI technology.
-					</p>
-					<div class="mt-16 bg-red-400">
+							Get started with our<br /><span
+								class="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-transparent bg-gradient-to-r from-blue-700 to-purple-800 bg-clip-text"
+								>WebbsAI video lessons</span
+							>
+						</h2>
+						<p
+							class="mt-8 text-sm font-medium xl:max-w-[45.5625rem] text-center md:text-base lg:text-lg text-black/70 dark:text-white/70"
+						>
+							The website builder for everyone, from novices to
+							pros. With our generative AI technology.
+						</p>
+					</div>
+					<div class="mt-16">
 						<CarouselSection lessons={lessons} client:only />
 					</div>
 				</div>

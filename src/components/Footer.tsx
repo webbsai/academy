@@ -2,13 +2,13 @@ import TwitterIcon from "./icons/twitter"
 import SlackIcon from "./icons/slack"
 import GithubIcon from "./icons/github"
 import { footerLinks } from "../consts"
-import DiscordIcon from "./icons/discord"
+import { CardSpotlightEffect } from "./CardSpotlightEffect"
 
 function Footer() {
 	return (
 		<footer className="overflow-x-clip py-[5.6rem] pt-16 text-sm dark:border-gray-900 dark:bg-black text-gray-400 lg:text-lg">
 			<div className="flex flex-col justify-between px-4 mx-auto sm:px-10 md:px-14 lg:px-12 xl:max-w-[82rem] xl:px-2">
-				<div className="flex gap-[8rem]">
+				<div className="flex gap-[8rem] items-center">
 					<div className="flex flex-col h-full">
 						<div className="flex flex-col gap-[1.62rem] text-lg font-semibold text-left lg:text-center">
 							<a
@@ -64,19 +64,22 @@ function Footer() {
 					</div>
 
 					<div className="flex gap-[14.12rem]">
-						<div className="flex flex-col items-center gap-[1.06rem]">
-							<h1 className="text-white text-[1.375rem] font-medium">
-								Product
-							</h1>
-							<ul className="mt-[1rem]">
-								{footerLinks.map(column =>
-									column.links.map(link => (
+						{footerLinks.map(column => (
+							<div
+								key={column.title}
+								className=""
+							>
+								<h1 className="text-white text-[1.375rem] font-medium">
+									{column.title}
+								</h1>
+								<ul className="mt-[1.56rem] flex flex-col items-start gap-[1.02rem] justify-start">
+									{column.links.map(link => (
 										<li
-											// key={link.title}
+											key={link.title}
 											className="text-lg md:text-xl"
 										>
 											<a
-												className="mb-3 text-center text-gray-800 transition-colors dark:text-gray-500 hover:text-gray-900 dark:hover:text-white"
+												className="mb-3 text-gray-800 transition-colors dark:text-gray-500 hover:text-gray-900 dark:hover:text-white"
 												target={
 													link.href.includes("http")
 														? "_blank"
@@ -87,25 +90,15 @@ function Footer() {
 												{link.title}
 											</a>
 										</li>
-									))
-								)}
-							</ul>
-						</div>
-						<div>
-							<h1 className="text-white text-[1.375rem] font-medium">
-								Company
-							</h1>
-						</div>
-						<div>
-							<h1 className="text-white text-[1.375rem] font-medium">
-								Resources
-							</h1>
-						</div>
+									))}
+								</ul>
+							</div>
+						))}
 					</div>
 				</div>
 
 				<div
-					className="w-full mt-[4.56rem] rounded-[1.25rem] flex justify-between py-[2.19rem]"
+					className="w-full mt-[4.56rem] rounded-[1.25rem] flex justify-between py-[2.19rem] flex-col lg:flex-row"
 					style={{
 						border: "4px solid transparent",
 						background:
@@ -160,7 +153,7 @@ function Footer() {
 					</button>
 				</div>
 
-				<div className="flex flex-col justify-between items-center mt-[2.06rem]">
+				<div className="flex flex-col gap-8 lg:flex-row justify-between items-center mt-[2.06rem]">
 					<p className="dark:text-white font-manrope text-[1.125rem] font-normal">
 						Privacy Policy <span className="font-bold">.</span>{" "}
 						Terms & Conditions

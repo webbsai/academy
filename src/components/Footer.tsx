@@ -65,10 +65,7 @@ function Footer() {
 
 					<div className="flex gap-[14.12rem]">
 						{footerLinks.map(column => (
-							<div
-								key={column.title}
-								className=""
-							>
+							<div key={column.title} className="">
 								<h1 className="text-white text-[1.375rem] font-medium">
 									{column.title}
 								</h1>
@@ -102,9 +99,9 @@ function Footer() {
 					style={{
 						border: "4px solid transparent",
 						background:
-							"linear-gradient(183deg, rgba(21, 102, 192, 0.22) 2.18%, rgba(124, 58, 237, 0.00) 34.24%)",
-						borderImage:
-							"linear-gradient(to right, #1566C0, #7C3AED) 1"
+							"linear-gradient(black 0 0) padding-box, linear-gradient(to right, #1566C0, #7C3AED) border-box"
+						// background:
+						// 	"linear-gradient(183deg, rgba(21, 102, 192, 0.22) 2.18%, rgba(124, 58, 237, 0.00) 34.24%) padding-box, linear-gradient(to right, #1566C0, #7C3AED) border-box",
 					}}
 				>
 					<div className="flex items-center gap-[2.62rem] ml-[3.94rem]">
@@ -162,46 +159,6 @@ function Footer() {
 						WebbsAI, LLC. All rights reserved.
 					</p>
 				</div>
-
-				{/* <div
-					className="w-full mt-[4.56rem] rounded-[1.25rem]"
-					style={{
-						background:
-							"linear-gradient(183deg, rgba(21, 102, 192, 0.22) 2.18%, rgba(124, 58, 237, 0.00) 34.24%)",
-						borderImage:
-							"linear-gradient(to right, #1566C0, #7C3AED) 1",
-						border: "4px solid transparent",
-						borderRadius: "1.25rem",
-						overflow: "hidden"
-					}}
-				>
-					<h1>hello</h1>
-				</div> */}
-
-				{/* <div>
-					<ul className="flex flex-wrap justify-center gap-8 mx-auto mt-12 w-fit">
-						{footerLinks.map(column =>
-							column.links.map(link => (
-								<li
-									key={link.title}
-									className="text-lg md:text-xl"
-								>
-									<a
-										className="mb-3 text-center text-gray-800 transition-colors dark:text-gray-500 hover:text-gray-900 dark:hover:text-white"
-										target={
-											link.href.includes("http")
-												? "_blank"
-												: "_self"
-										}
-										href={link.href}
-									>
-										{link.title}
-									</a>
-								</li>
-							))
-						)}
-					</ul>
-				</div> */}
 			</div>
 		</footer>
 	)

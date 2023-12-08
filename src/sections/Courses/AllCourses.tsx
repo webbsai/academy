@@ -56,24 +56,15 @@ function AllCourses({
 					{!selectedLevel &&
 						currentCourses?.map(course => (
 							<a href={course.slug}>
-								<div class="bg-[#EEEEEE] lg:max-w-[26.3125rem] lg:max-h-[23.6875rem] dark:bg-[#131313] flex flex-col gap-2 rounded-[20px]">
-									<div
-										style={{
-											height: "12.75rem",
-											overflow: "hidden"
-										}}
-									>
+								<div class="bg-[#EEEEEE] lg:max-w-[26.3125rem] h-[23.6875rem] border-[1px] border-solid border-gray-300 border-opacity-[0.45] dark:bg-[#131313] flex flex-col rounded-[20px]">
+									<div class="overflow-hidden h-[12.75rem]">
 										<div
+											class="h-full w-full bg-cover bg-center bg-no-repeat rounded-tl-[20px] rounded-tr-[20px]"
 											style={{
 												backgroundImage: `url(${
 													course.data.banner!
 														.content as string
-												})`,
-												height: "100%",
-												width: "100%",
-												backgroundSize: "cover",
-												backgroundPosition: "center",
-												backgroundRepeat: "no-repeat"
+												})`
 											}}
 										/>
 									</div>
@@ -82,9 +73,28 @@ function AllCourses({
 										<h3 class="text-base font-normal font-manrope truncate md:text-lg lg:text-xl">
 											{course.data.title}
 										</h3>
-										<p class="text-xs font-manrope lg:text-xs text-black/70 dark:text-white/70 max-h-[80px] overflow-hidden">
+										<p class="text-xs h-8 font-manrope lg:text-xs text-black/70 dark:text-white/70 max-h-[80px] line-clamp-2">
 											{course.data.description}
 										</p>
+									</div>
+
+									<div class=" flex flex-col  ml-[1.19rem] mr-[3.38rem]">
+										<div class="flex justify-between">
+											<p class="font-manrope text-[0.75rem] font-normal dark:text-white">
+												Category
+											</p>
+											<p class="font-manrope text-[0.75rem] font-normal dark:text-white">
+												Read time
+											</p>
+										</div>
+										<div class="mt-[0.64rem] flex justify-between mb-[1.23rem]">
+											<p class="font-manrope text-[0.75rem] font-semibold dark:text-white">
+												Getting Started
+											</p>
+											<p class="font-manrope text-[0.75rem] font-semibold dark:text-white">
+												2 minutes
+											</p>
+										</div>
 									</div>
 								</div>
 							</a>

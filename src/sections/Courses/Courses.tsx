@@ -14,10 +14,25 @@ function Courses({ courses }: { courses: StarlightDocType[] }) {
 	}, [courses, courseFilter])
 
 	return (
-		<>
+		<div>
+			<div
+				className="w-96 h-96 rounded-[30rem] absolute top-10 -left-48 blur-[150px]"
+				style={{
+					background:
+						"linear-gradient(140deg, rgba(21, 102, 192, 0.30) 13.37%, rgba(151, 71, 255, 0.30) 88.92%"
+				}}
+			/>
+
+			<div
+				className="w-96 h-96 rounded-[30rem] absolute -top-12 right-0 blur-[150px]"
+				style={{
+					background:
+						"linear-gradient(140deg, rgba(21, 102, 192, 0.30) 13.37%, rgba(151, 71, 255, 0.30) 88.92%"
+				}}
+			/>
 			<section className="px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0">
 				<div className="text-center">
-					<h1 className="text-3xl font-bold font-manrope md:text-4xl lg:text-6xl">
+					<h1 className="text-3xl font-bold md:text-4xl lg:text-6xl">
 						The WebbsAI Courses
 					</h1>
 					<p className="text-base md:text-lg lg:text-xl max-w-[800px] mx-auto mt-8">
@@ -58,7 +73,7 @@ function Courses({ courses }: { courses: StarlightDocType[] }) {
 			{!courseFilter && (
 				<section className="px-4 mx-auto mt-40 sm:px-12 xl:max-w-6xl xl:px-0">
 					<div className="text-center">
-						<h2 className="text-3xl font-manrope font-bold md:text-4xl lg:text-6xl">
+						<h2 className="text-3xl font-bold md:text-4xl lg:text-6xl">
 							WebbsAI Latest{" "}
 							<span
 								style={{
@@ -101,7 +116,7 @@ function Courses({ courses }: { courses: StarlightDocType[] }) {
 					courses={filteredLessons}
 				/>
 			</section>
-		</>
+		</div>
 	)
 }
 

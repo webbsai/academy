@@ -140,21 +140,11 @@ function Header() {
 							</div>
 						</div>
 
-						{/* <div className="hidden opacity-0 lg:block">
-							<a
-								className="flex items-center order-2 text-2xl font-semibold text-black dark:text-white lg:order-1"
-								aria-label="WebbsAI Logo"
-								href="/"
-							>
-								WebbsAI
-							</a>
-						</div> */}
-
-						<div className="flex gap-[2.44rem]">
-							<button className="dark:text-white font-manrope font-normal text-base leading-6 tracking-[0.005rem]">
+						<div className="flex gap-10">
+							<button className="dark:text-white font-normal text-base leading-6 tracking-[0.005rem]">
 								Log in
 							</button>
-							<button className="text-white font-normal font-manrope text-base leading-6 tracking-[0.005rem] bg-[#2563EB] rounded-[12px] px-[1.5rem] pt-[0.81rem] pb-[0.88rem]">
+							<button className="text-white font-normal text-base leading-6 tracking-[0.005rem] bg-blue-1 rounded-xl px-6 pt-3 pb-4">
 								Sign Up
 							</button>
 						</div>

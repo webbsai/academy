@@ -19,64 +19,28 @@ function AllResources({
 	return (
 		<>
 			<div>
-				<div className="text-center">
-					<h2 className="text-2xl font-bold md:text-3xl lg:text-5xl">
-						All Resources
-					</h2>
-					<p className="text-base md:text-lg lg:text-xl max-w-[800px] mx-auto mt-4">
-						Learn from my bite-sized WebbsAI tutorials where we show
-						you how to create stunning effects.
-					</p>
-				</div>
-				{/* {resources?.map((resource: ResourceType) => ( */}
-				{/* <a href={`/resources/${resource.slug}`}></a> */}
-
 				<div className="grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-7">
 					{resources?.map((resource: ResourceType) => (
 						<>
 							<a href={`/resources/${resource.slug}`}>
-								<div className="bg-[#EEEEEE] dark:bg-[#131313] p-5 pb-8 flex flex-col gap-5 rounded-[20px]">
-									<img
-										src={resource.data.image}
-										className="h-[200px] rounded-[20px] bg-secondary-light dark:bg-black"
-									/>
-									<h3 className="text-base md:text-lg lg:text-xl">
-										{resource.data.title}
-									</h3>
-									<p className="text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[80px] text-ellipsis overflow-hidden">
-										{resource.data.description}
-									</p>
-								</div>
-							</a>
-
-							<a href={`/resources/${resource.slug}`}>
-								<div class="bg-[#EEEEEE] lg:max-w-[26.3125rem] lg:max-h-[23.6875rem] dark:bg-[#131313] flex flex-col gap-2 rounded-[20px]">
-									<div
-										style={{
-											height: "12.75rem",
-											overflow: "hidden"
-										}}
-									>
-										{/* <div
+								<div class="bg-secondary-light lg:max-w-md h-80 border-[1px] border-solid border-gray-300 border-opacity-40 dark:bg-secondary-dark flex flex-col rounded-2xl">
+									<div class="overflow-hidden h-44">
+										<div
+											class="h-full w-full bg-cover bg-center bg-no-repeat rounded-tl-2xl rounded-tr-2xl"
 											style={{
-												backgroundImage: `url(${
-													resource.data.banner!
-														.content as string
-												})`,
-												height: "100%",
-												width: "100%",
-												backgroundSize: "cover",
-												backgroundPosition: "center",
-												backgroundRepeat: "no-repeat"
+												backgroundImage: `url(${resource.data.image})`
 											}}
-										/> */}
+										/>
 									</div>
 
-									<div class="my-[1.25rem] ml-[1.19rem] mr-[1.15rem] flex flex-col gap-[1.04rem]">
-										<h3 class="text-base font-normal font-manrope truncate md:text-lg lg:text-xl">
+									<div class="my-5 ml-5 mr-5 flex flex-col gap-4">
+										<div class="rounded-lg px-2 py-1 bg-gray-300 dark:bg-gray-1 w-fit text-xs font-medium">
+											{resource.data.tags[0]}
+										</div>
+										<h3 class="text-base font-normal truncate md:text-lg lg:text-xl">
 											{resource.data.title}
 										</h3>
-										<p class="text-xs font-manrope lg:text-xs text-black/70 dark:text-white/70 max-h-[80px] overflow-hidden">
+										<p class="text-xs h-8 lg:text-xs text-black/70 dark:text-white/70 max-h-20 line-clamp-2">
 											{resource.data.description}
 										</p>
 									</div>

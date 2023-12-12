@@ -3,6 +3,8 @@ title: 'Units'
 lastUpdated: 2023-11-26
 description: ''
 banner: { content: '/assets/courses/CSS/lesson-1/css-banner.png' }
+category: 'Getting Started'
+readTime: '2 minutes'
 ---
 Now that you are more familiar with how a lot of properties work in styling a website, it is important to know what values should be used to adjust and set the appropriate size in such a way that your website is responsive. For this, the concept of units holds immense importance.
 

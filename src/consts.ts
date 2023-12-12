@@ -38,10 +38,6 @@ export const footerLinks = [
 				href: `${import.meta.env.WEBBSAI_LANDING_URL}/pricing`
 			},
 			{
-				title: "Blogs",
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/pricing`
-			},
-			{
 				title: "Academy",
 				href: `${import.meta.env.WEBBSAI_LANDING_URL}/pricing`
 			}

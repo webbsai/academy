@@ -15,6 +15,7 @@ export const CardSpotlightEffect = ({
 	const [opacity, setOpacity] = useState(0)
 
 	const handleMouseMove = (e: MouseEvent) => {
+		console.log('here')
 		if (!divRef.current || isFocused) return
 
 		const div = divRef.current
@@ -34,6 +35,7 @@ export const CardSpotlightEffect = ({
 	}
 
 	const handleMouseEnter = () => {
+		console.log("Entered")
 		setOpacity(1)
 	}
 
@@ -50,7 +52,7 @@ export const CardSpotlightEffect = ({
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			className={clsx(
-				"relative overflow-hidden rounded-[20px] border border-slate-200 bg-[#EEEEEE] bg-gradient-to-r p-6 px-8 py-16 shadow-2xl dark:border-slate-800 dark:from-slate-900 dark:to-slate-950",
+				// "relative overflow-hidden rounded-[20px] border border-slate-200 bg-[#EEEEEE] bg-gradient-to-r p-6 px-8 py-16 shadow-2xl dark:border-slate-800 dark:from-slate-900 dark:to-slate-950",
 				className
 			)}
 		>

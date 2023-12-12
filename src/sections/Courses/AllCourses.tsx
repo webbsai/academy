@@ -31,7 +31,7 @@ function AllCourses({
 			<div>
 				{!courseFilter && (
 					<div className="text-center">
-						<h2 className="text-3xl font-manrope font-bold md:text-4xl lg:text-6xl">
+						<h2 className="text-3xl font-bold md:text-4xl lg:text-6xl">
 							All{" "}
 							<span
 								style={{
@@ -45,7 +45,7 @@ function AllCourses({
 								Courses
 							</span>
 						</h2>
-						<p className="text-sm font-medium dark:text-white/60 md:text-base lg:text-[1.125rem] max-w-[800px] mx-auto mt-8 font-manrope">
+						<p className="text-sm font-medium dark:text-white/60 md:text-base lg:text-[1.125rem] max-w-[800px] mx-auto mt-8">
 							Learn from my bite-sized WebbsAI tutorials where I
 							show you how to create stunning effects and
 							animations on your websites.
@@ -70,28 +70,28 @@ function AllCourses({
 									</div>
 
 									<div class="my-[1.25rem] ml-[1.19rem] mr-[1.15rem] flex flex-col gap-[1.04rem]">
-										<h3 class="text-base font-normal font-manrope truncate md:text-lg lg:text-xl">
+										<h3 class="text-base font-normal truncate md:text-lg lg:text-xl">
 											{course.data.title}
 										</h3>
-										<p class="text-xs h-8 font-manrope lg:text-xs text-black/70 dark:text-white/70 max-h-[80px] line-clamp-2">
+										<p class="text-xs h-8 lg:text-xs text-black/70 dark:text-white/70 max-h-[80px] line-clamp-2">
 											{course.data.description}
 										</p>
 									</div>
 
 									<div class=" flex flex-col  ml-[1.19rem] mr-[3.38rem]">
 										<div class="flex justify-between">
-											<p class="font-manrope text-[0.75rem] font-normal dark:text-white">
+											<p class="text-[0.75rem] font-normal dark:text-white">
 												Category
 											</p>
-											<p class="font-manrope text-[0.75rem] font-normal dark:text-white">
+											<p class=" text-[0.75rem] font-normal dark:text-white">
 												Read time
 											</p>
 										</div>
 										<div class="mt-[0.64rem] flex justify-between mb-[1.23rem]">
-											<p class="font-manrope text-[0.75rem] font-semibold dark:text-white">
+											<p class="text-[0.75rem] font-semibold dark:text-white">
 												Getting Started
 											</p>
-											<p class="font-manrope text-[0.75rem] font-semibold dark:text-white">
+											<p class=" text-[0.75rem] font-semibold dark:text-white">
 												2 minutes
 											</p>
 										</div>

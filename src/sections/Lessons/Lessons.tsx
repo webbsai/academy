@@ -17,7 +17,7 @@ function Lessons({ lessons }: { lessons: StarlightDocType[] }) {
 		<>
 			<section className="px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0">
 				<div className="text-center flex flex-col items-center justify-center">
-					<h1 className="text-3xl font-bold font-manrope md:text-4xl lg:text-6xl">
+					<h1 className="text-3xl font-bold md:text-4xl lg:text-6xl">
 						The WebbsAI Lessons
 					</h1>
 					<p className="text-base md:text-lg lg:text-xl max-w-[800px] mx-auto mt-8">
@@ -58,7 +58,7 @@ function Lessons({ lessons }: { lessons: StarlightDocType[] }) {
 			{!lessonFilter && (
 				<section className="px-4 mx-auto mt-40 sm:px-12 xl:max-w-6xl xl:px-0">
 					<div className="text-center">
-						<h2 className="text-3xl font-manrope font-bold md:text-4xl lg:text-6xl">
+						<h2 className="text-3xl font-bold md:text-4xl lg:text-6xl">
 							WebbsAI Latest{" "}
 							<span
 								style={{

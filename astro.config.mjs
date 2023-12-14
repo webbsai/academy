@@ -9,7 +9,7 @@ export default defineConfig({
 	integrations: [
 		tailwind({}),
 		starlight({
-			title: "Academy ",
+			title: "WebbsAI",
 			customCss: ["./src/styles/custom.css", "./src/styles/tailwind.css"]
 		}),
 		preact({ compat: true })

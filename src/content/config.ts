@@ -1,6 +1,5 @@
-import { defineCollection, z } from "astro:content"
 import { docsSchema } from "@astrojs/starlight/schema"
-
+import { defineCollection, z } from "astro:content"
 const blog = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
@@ -44,5 +43,4 @@ export const collections = {
 			})
 		})
 	})
-	// docs: defineCollection({ schema: docsSchema() })
 }

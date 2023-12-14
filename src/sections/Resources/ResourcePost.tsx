@@ -23,7 +23,13 @@ export default function BlogPost(props: Props) {
 					</p>
 
 					<div className="mt-8 flex items-center gap-5">
-						<img src="https://i.pravatar.cc/150?img=3" height="44" width="44" alt="Author Profile Picture" className="rounded-full"/>
+						<img
+							src="https://i.pravatar.cc/150?img=3"
+							height="44"
+							width="44"
+							alt="Author Profile Picture"
+							className="rounded-full"
+						/>
 						<div className="flex flex-col">
 							<p className="text-xl font-medium">Rizwan Nasir</p>
 							<p className="text-sm font-normal">

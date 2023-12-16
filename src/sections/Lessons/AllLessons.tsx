@@ -78,10 +78,10 @@ function AllLessons({
 									</div>
 									<div class="mt-[0.64rem] flex justify-between mb-[1.23rem]">
 										<p class=" text-[0.75rem] font-semibold dark:text-white">
-											Getting Started
+											{lesson.data.category}
 										</p>
 										<p class="text-[0.75rem] font-semibold dark:text-white">
-											2 minutes
+											{lesson.data.readTime}
 										</p>
 									</div>
 								</div>

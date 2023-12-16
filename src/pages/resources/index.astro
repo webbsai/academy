@@ -29,6 +29,6 @@ const resources = (await getCollection("resources")).sort(
 		>
 			<ResourcesSection client:only resources={resources} />
 		</main>
-		<Footer />
+		<Footer client:only/>
 	</body>
 </html>

@@ -31,7 +31,7 @@ export const footerLinks = [
 		links: [
 			{
 				title: "Home",
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/pricing`
+				href: `${import.meta.env.WEBBSAI_LANDING_URL}`
 			},
 			{
 				title: "Features",
@@ -39,7 +39,7 @@ export const footerLinks = [
 			},
 			{
 				title: "Academy",
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/pricing`
+				href: `/`
 			}
 		]
 	},
@@ -56,7 +56,7 @@ export const footerLinks = [
 			},
 			{
 				title: "Blogs",
-				href: "https://www.linkedin.com/company/webbsai/jobs/"
+				href: `${import.meta.env.WEBBSAI_LANDING_URL}/blogs`
 			}
 		]
 	},

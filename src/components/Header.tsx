@@ -27,6 +27,8 @@ function Header() {
 			document.documentElement.classList.remove("dark")
 		}
 		window.localStorage.setItem("starlight-theme", theme)
+		window.dispatchEvent(new Event("storage"));
+
 	}, [theme])
 
 	return (

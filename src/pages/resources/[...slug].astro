@@ -10,10 +10,13 @@ export async function getStaticPaths() {
 	const resources = await getCollection("resources")
 	return resources.map(resource => ({
 		params: { slug: resource.slug },
-		props: resource
+		props: resource,
 	}))
 }
-type Props = CollectionEntry<"blog">
+
+type Props = CollectionEntry<"resources">
+
+const resources = await getCollection("resources")
 
 const resource = Astro.props
 const { Content } = await resource.render()
@@ -29,10 +32,12 @@ const { Content } = await resource.render()
 		<main
 			class="pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white"
 		>
-			<ResourcePost {...resource.data}>
+			<ResourcePost {...resource.data} resource={resource.data} resources={resources} >
 				<Content />
 			</ResourcePost>
 		</main>
-		<Footer />
+		<Footer client:only/>
 	</body>
 </html>
+
+<!-- resource={resource.data} resources={resources} -->

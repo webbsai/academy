@@ -15,7 +15,6 @@ export const CardSpotlightEffect = ({
 	const [opacity, setOpacity] = useState(0)
 
 	const handleMouseMove = (e: MouseEvent) => {
-		console.log('here')
 		if (!divRef.current || isFocused) return
 
 		const div = divRef.current
@@ -35,7 +34,6 @@ export const CardSpotlightEffect = ({
 	}
 
 	const handleMouseEnter = () => {
-		console.log("Entered")
 		setOpacity(1)
 	}
 

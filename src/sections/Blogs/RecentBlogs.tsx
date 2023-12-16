@@ -21,8 +21,8 @@ function RecentBlogs({ blogs }: { blogs: BlogType[] }) {
 				<div className="grid items-center grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 gap-7">
 					{currentBlogs?.map(blog => (
 						<a href={`blogs/${blog.slug}`}>
-							<div class="bg-[#EEEEEE] lg:max-w-[26.3125rem] h-[23.6875rem] border-[1px] border-solid border-gray-300 border-opacity-[0.45] dark:bg-[#131313] flex flex-col rounded-[20px]">
-								<div class="overflow-hidden h-[12.75rem]">
+							<div class="bg-[#EEEEEE] lg:max-w-md h-96 border-[1px] border-solid border-gray-300 border-opacity-[0.45] dark:bg-[#131313] flex flex-col rounded-[20px]">
+								<div class="overflow-hidden h-">
 									<div
 										class="h-full w-full bg-cover bg-center bg-no-repeat rounded-tl-[20px] rounded-tr-[20px]"
 										style={{
@@ -31,7 +31,7 @@ function RecentBlogs({ blogs }: { blogs: BlogType[] }) {
 									/>
 								</div>
 
-								<div class="my-[1.25rem] ml-[1.19rem] mr-[1.15rem] flex flex-col gap-[1.04rem]">
+								<div class="my-5 ml-5 mr-5 flex flex-col gap-4">
 									<h3 class="text-base font-normal truncate md:text-lg lg:text-xl">
 										{blog.data.title}
 									</h3>
@@ -40,21 +40,21 @@ function RecentBlogs({ blogs }: { blogs: BlogType[] }) {
 									</p>
 								</div>
 
-								<div class=" flex flex-col  ml-[1.19rem] mr-[3.38rem]">
+								<div class=" flex flex-col  ml-5 mr-14">
 									<div class="flex justify-between">
-										<p class=" text-[0.75rem] font-normal dark:text-white">
+										<p class=" text-xs font-normal dark:text-white">
 											Category
 										</p>
-										<p class=" text-[0.75rem] font-normal dark:text-white">
+										<p class=" text-xs font-normal dark:text-white">
 											Read time
 										</p>
 									</div>
-									<div class="mt-[0.64rem] flex justify-between mb-[1.23rem]">
-										<p class=" text-[0.75rem] font-semibold dark:text-white">
-											Getting Started
+									<div class="mt-3 flex justify-between mb-5">
+										<p class=" text-xs font-semibold dark:text-white">
+											{blog.data.category}
 										</p>
-										<p class=" text-[0.75rem] font-semibold dark:text-white">
-											2 minutes
+										<p class=" text-xs font-semibold dark:text-white">
+											{blog.data.readTime}
 										</p>
 									</div>
 								</div>

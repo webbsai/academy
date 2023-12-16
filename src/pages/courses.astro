@@ -16,7 +16,6 @@ const courses = (
 		b.data.lastUpdated - a.data.lastUpdated
 )
 
-console.log(courses)
 ---
 
 <!doctype html>
@@ -31,6 +30,6 @@ console.log(courses)
 		>
 			<CoursesSection client:only courses={courses} />
 		</main>
-		<Footer />
+		<Footer client:only/>
 	</body>
 </html>

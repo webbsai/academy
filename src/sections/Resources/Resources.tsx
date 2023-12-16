@@ -1,7 +1,5 @@
 import { useMemo, useState } from "react"
 import type { ResourceType } from "../../types"
-import { resourceTypes } from "../../consts"
-import clsx from "clsx"
 import { Search } from "../../components/icons/icons"
 import AllResources from "./AllResources"
 

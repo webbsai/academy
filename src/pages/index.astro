@@ -304,10 +304,10 @@ const lessons = (
 												</div>
 												<div class="mt-3 flex justify-between mb-5">
 													<p class="text-xs font-semibold dark:text-white">
-														Getting Started
+														{lesson.data.category}
 													</p>
 													<p class="text-xs font-semibold dark:text-white">
-														2 minutes
+														{lesson.data.readTime}
 													</p>
 												</div>
 											</div>
@@ -408,10 +408,10 @@ const lessons = (
 												</div>
 												<div class="mt-3 flex justify-between mb-5">
 													<p class="text-xs font-semibold dark:text-white">
-														Getting Started
+														{course.data.category}
 													</p>
 													<p class=" text-xs font-semibold dark:text-white">
-														2 minutes
+														{course.data.readTime}
 													</p>
 												</div>
 											</div>
@@ -428,6 +428,6 @@ const lessons = (
 				</div>
 			</section>
 		</main>
-		<Footer />
+		<Footer client:only/>
 	</body>
 </html>

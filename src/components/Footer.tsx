@@ -2,13 +2,21 @@ import TwitterIcon from "./icons/twitter"
 import SlackIcon from "./icons/slack"
 import GithubIcon from "./icons/github"
 import { footerLinks } from "../consts"
+import { useState, useEffect } from "preact/hooks"
 
 function Footer() {
+	const [theme, setTheme] = useState<string>("dark")
+
+	window.addEventListener("storage", () => {
+		setTheme(localStorage.getItem("starlight-theme") ?? "dark")
+		setTheme(window.localStorage.getItem("starlight-theme") ?? "light")
+	})
+
 	return (
 		<footer className="overflow-x-clip py-24 pt-16 text-sm dark:border-gray-900 dark:bg-black text-gray-400 lg:text-lg">
 			<div className="flex flex-col justify-between px-4 mx-auto sm:px-10 md:px-14 lg:px-12 xl:max-w-7xl xl:px-2">
-				<div className="flex gap-32 items-center">
-					<div className="flex flex-col h-full">
+				<div className="flex flex-col lg:flex-row items-center gap-32">
+					<div className="flex flex-col h-full w-full">
 						<div className="flex flex-col gap-7 text-lg font-semibold text-left lg:text-center">
 							<a
 								className="flex items-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl"
@@ -26,11 +34,9 @@ function Footer() {
 									alt="WebbsAI Academy Logo"
 								/>
 							</a>
-							<p className="text-left text-black font-normal text-lg dark:text-white">
+							<p className="text-left text-black font-normal max-w-sm md:text-sm lg:text-base xl:text-lg dark:text-white">
 								The website builder for everyone, from novices
-								to pros.
-								<br></br>
-								With our generative AI technology.
+								to pros. With our generative AI technology.
 							</p>
 						</div>
 
@@ -62,20 +68,20 @@ function Footer() {
 						</div>
 					</div>
 
-					<div className="flex gap-56">
+					<div className="flex flex-col lg:flex-row max-w-3xl gap-56">
 						{footerLinks.map(column => (
-							<div key={column.title} className="">
-								<h1 className="text-white text-xl font-medium">
+							<div key={column.title} className="flex flex-col">
+								<h1 className="dark:text-white text-xl font-medium">
 									{column.title}
 								</h1>
 								<ul className="mt-6 flex flex-col items-start gap-4 justify-start">
 									{column.links.map(link => (
 										<li
 											key={link.title}
-											className="text-lg md:text-xl"
+											className="text-base md:text-lg"
 										>
 											<a
-												className="mb-3 text-gray-800 transition-colors dark:text-gray-500 hover:text-gray-900 dark:hover:text-white"
+												className="mb-3 text-gray-800 transition-colors dark:text-white hover:text-gray-900 dark:hover:text-gray-500"
 												target={
 													link.href.includes("http")
 														? "_blank"
@@ -97,8 +103,12 @@ function Footer() {
 					className="w-full mt-20 rounded-3xl gap-8 flex justify-center items-center py-9 flex-col lg:flex-row lg:justify-between"
 					style={{
 						border: "4px solid transparent",
-						background:
-							"linear-gradient(black 0 0) padding-box, linear-gradient(to right, #1566C0, #7C3AED) border-box"
+
+						background: `${
+							theme === "dark"
+								? "linear-gradient(black 0 0) padding-box, linear-gradient(to right, #1566C0, #7C3AED) border-box"
+								: "linear-gradient(white 0 0) padding-box, linear-gradient(to right, #1566C0, #7C3AED) border-box"
+						} `
 					}}
 				>
 					<div className="flex items-center gap-11 ml-16">
@@ -122,13 +132,13 @@ function Footer() {
 					<button
 						style={{
 							background:
-								"linear-gradient(95deg, rgba(21, 102, 192, 0.37) 0.51%, rgba(21, 102, 192, 0.37) 99.97%)"
+								"linear-gradient(95deg, rgba(21, 102, 192, 0.7) 0.51%, rgba(21, 102, 192, 0.37) 99.97%)"
 						}}
 						className="px-5 pt-3 pb-4 mx-20 rounded-xl mr-8 w-3/4 lg:w-fit"
 					>
 						<span
 							style={{
-								background:
+								background: 
 									"linear-gradient(91deg, #FFF 0.31%, #7C3AED 102.8%)",
 								backgroundClip: "text",
 								WebkitBackgroundClip: "text",
@@ -143,10 +153,23 @@ function Footer() {
 
 				<div className="flex flex-col gap-8 lg:flex-row justify-between items-center mt-8">
 					<p className="dark:text-white text-sm md:text-base lg:text-lg font-normal">
-						Privacy Policy <span className="font-bold">.</span>{" "}
-						Terms & Conditions
+						<a
+							className="hover:underline cursor-pointer"
+							href={`${
+								import.meta.env.WEBBSAI_LANDING_URL
+							}/privacy`}
+						>
+							Privacy Policy
+						</a>{" "}
+						<span className="font-bold">.</span>{" "}
+						<a
+							className="hover:underline cursor-pointer"
+							href={`${import.meta.env.WEBBSAI_LANDING_URL}/tos`}
+						>
+							Terms & Conditions
+						</a>
 					</p>
-					<a className="dark:text-white text-sm md:text-base lg:text-lg font-normal cursor-pointer hover:underline">
+					<a className="dark:text-white text-sm md:text-base lg:text-lg font-normal ">
 						WebbsAI, LLC. All rights reserved.
 					</a>
 				</div>

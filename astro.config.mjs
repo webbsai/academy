@@ -10,7 +10,10 @@ export default defineConfig({
 		tailwind({}),
 		starlight({
 			title: "WebbsAI",
-			customCss: ["./src/styles/custom.css", "./src/styles/tailwind.css"]
+			customCss: ["./src/styles/custom.css", "./src/styles/tailwind.css"],
+			logo: {
+				src: "./public/new-logo.svg"
+			}
 		}),
 		preact({ compat: true })
 	]

@@ -1,39 +1,53 @@
 import type { CollectionEntry } from "astro:content"
-import FormattedDate from "../../components/FormattedDate"
-import type { ResourceType } from "../../types"
 
-type Props = CollectionEntry<"blog">["data"] & {
+type Props = CollectionEntry<"resources">["data"] & {
+	resource: CollectionEntry<"resources">
+	resources: CollectionEntry<"resources">[]
 	children: React.ReactNode
 }
 
 export default function BlogPost(props: Props) {
-	const { title, pubDate, lastUpdated, image, children } = props
+	const {
+		title,
+		pubDate,
+		lastUpdated,
+		image,
+		children,
+		author,
+		description,
+		tags,
+		resources
+	} = props
+
 	return (
 		<div className="px-4 mx-auto sm:px-12 xl:max-w-6xl xl:px-0">
 			<article className="!dark:text-white">
 				<div className="flex flex-col justify-center items-center mb-14 max-w-2xl mx-auto">
 					<div class="rounded-xl px-3 py-2 bg-gray-300 dark:bg-gray-1 w-fit text-xs font-medium">
-						animations
+						{tags[0]}
+						{resources}
 					</div>
-					<h1 className="text-6xl font-bold mt-1">{title}</h1>
-					<p className="mt-8 text-lg font-medium text-center">
-						Learn from my bite-sized WebbsAI tutorials where I show
-						you how to create stunning effects and animations on
-						your websites.
+					<h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mt-1">
+						{title}
+					</h1>
+					<p className="mt-8 text-sm lg:text-base xl:text-lg font-medium text-center">
+						{description}
 					</p>
 
 					<div className="mt-8 flex items-center gap-5">
 						<img
-							src="https://i.pravatar.cc/150?img=3"
+							src={author.avatar}
 							height="44"
 							width="44"
 							alt="Author Profile Picture"
 							className="rounded-full"
 						/>
 						<div className="flex flex-col">
-							<p className="text-xl font-medium">Rizwan Nasir</p>
+							<p className="text-base lg:text-lg xl:text-xl font-medium">
+								{author.name}
+							</p>
 							<p className="text-sm font-normal">
-								UI/UX Designer
+								{author.designation}
 							</p>
 						</div>
 					</div>
@@ -50,117 +64,8 @@ export default function BlogPost(props: Props) {
 						About this feature
 					</h1>
 					<p className="dark:text-white/75 text-base font-normal">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Quis ipsum accumsan lacus sed do
-						consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Quis ipsum
-						accumsan lacus sed do Quis ut labore et dolore magna
-						aliqua. Quis ipsum accumsan lacus sed do consectetur
-						adipiscing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Quis ipsum accumsan lacus
-						sed do Quisut labore et dolore magna aliqua. Quis ipsum
-						accumsan lacus sed do consectetur adipiscing elit, sed
-						do eiusmod tempor incididunt ut labore et dolore magna
-						aliqua. Quis ipsum accumsan lacus sed do Quis. Lorem
-						ipsum dolor sit amet, consectetur adipiscing elit, sed
-						do eiusmod tempor incididunt ut labore et dolore magna
-						aliqua. Quis ipsum accumsan lacus sed do consectetur
-						adipiscing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Quis ipsum accumsan lacus
-						sed do Quis
+						{children}
 					</p>
-				</div>
-
-				<div className="mt-40 min-h-[16rem] max-w-4xl mx-auto relative">
-					<div className="absolute top-20 left-44">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							className="absolute -top-2 left-0"
-						>
-							<circle cx="12" cy="12" r="12" fill="#9747FF" />
-						</svg>
-
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="201"
-							height="70"
-							viewBox="0 0 201 70"
-							fill="none"
-						>
-							<path
-								d="M1 2.49992C42.5 -3.16674 140.5 2.19992 200.5 68.9999"
-								stroke="white"
-							/>
-						</svg>
-
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							className="-right-1 -bottom-1 absolute"
-						>
-							<circle cx="12" cy="12" r="12" fill="#1566C0" />
-						</svg>
-					</div>
-
-					<div className="absolute right-40 top-20">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							className="absolute bottom-0 -left-2"
-						>
-							<circle cx="12" cy="12" r="12" fill="#9747FF" />
-						</svg>
-
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							className="absolute -top-3 right-0"
-						>
-							<circle cx="12" cy="12" r="12" fill="#1566C0" />
-						</svg>
-
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="146"
-							height="77"
-							viewBox="0 0 146 77"
-							fill="none"
-						>
-							<path
-								d="M1 76.5C16.6667 48 67.4 -6.89999 145 1.50001"
-								stroke="white"
-							/>
-						</svg>
-					</div>
-
-					<div className="flex flex-col absolute top-0 left-6">
-						<h1 className="text-8xl font-semibold">01</h1>
-						<p className="text-2xl font-medium">Step 1 detail</p>
-					</div>
-
-					<div className="flex flex-col absolute bottom-7 right-80">
-						<h1 className="text-8xl font-semibold">02</h1>
-						<p className="text-2xl font-medium">Step 2 detail</p>
-					</div>
-
-					<div className="flex flex-col absolute right-0 top-11">
-						<h1 className="text-8xl font-semibold">03</h1>
-						<p className="text-2xl font-medium">Step 3 detail</p>
-					</div>
 				</div>
 
 				<div className="px-4 mx-auto mt-40 sm:px-12 xl:max-w-7xl xl:px-0">
@@ -185,13 +90,9 @@ export default function BlogPost(props: Props) {
 							show you how to create stunning effects and
 							animations on your websites.
 						</p>
-
-						<button className="mt-8 rounded-lg border border-blue-1 py-4 px-5">
-							View All
-						</button>
 					</div>
-					{/* <div className="grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-7">
-						{resources?.map((resource: ResourceType) => (
+					<div className="grid grid-cols-1 mt-16 sm:grid-cols-2 md:grid-cols-3 gap-7">
+						{resources?.map(resource => (
 							<>
 								<a href={`/resources/${resource.slug}`}>
 									<div class="bg-secondary-light lg:max-w-md h-80 border-[1px] border-solid border-gray-300 border-opacity-40 dark:bg-secondary-dark flex flex-col rounded-2xl">
@@ -219,7 +120,7 @@ export default function BlogPost(props: Props) {
 								</a>
 							</>
 						))}
-					</div> */}
+					</div>
 				</div>
 			</article>
 		</div>

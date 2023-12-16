@@ -27,7 +27,12 @@ const resources = defineCollection({
 		lastUpdated: z.date().optional(),
 		image: z.string(),
 		category: z.string(),
-		readTime: z.string()
+		readTime: z.string(),
+		author: z.object({
+			avatar: z.string(),
+			name: z.string(),
+			designation: z.string()
+		})
 	})
 })
 

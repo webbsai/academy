@@ -44,5 +44,12 @@ export type ResourceType = {
 		image: string
 		pubDate: string
 		tags: string[]
+		category: string
+		readTime: string
+		author: {
+			avatar: string
+			name: string
+			designation: string
+		}
 	}
 }

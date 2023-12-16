@@ -8,6 +8,7 @@ function Footer() {
 	const [theme, setTheme] = useState<string>("dark")
 
 	window.addEventListener("storage", () => {
+		console.log(import.meta.env.WEBBSAI_LANDING_URL)
 		setTheme(localStorage.getItem("starlight-theme") ?? "dark")
 		setTheme(window.localStorage.getItem("starlight-theme") ?? "light")
 	})
@@ -15,8 +16,8 @@ function Footer() {
 	return (
 		<footer className="overflow-x-clip py-24 pt-16 text-sm dark:border-gray-900 dark:bg-black text-gray-400 lg:text-lg">
 			<div className="flex flex-col justify-between px-4 mx-auto sm:px-10 md:px-14 lg:px-12 xl:max-w-7xl xl:px-2">
-				<div className="flex flex-col lg:flex-row items-center gap-32">
-					<div className="flex flex-col h-full w-full">
+				<div className="flex flex-col lg:flex-row items-center justify-center gap-20 lg:gap-32">
+					<div className="flex flex-col h-full w-full items-center justify-center">
 						<div className="flex flex-col gap-7 text-lg font-semibold text-left lg:text-center">
 							<a
 								className="flex items-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl"
@@ -68,13 +69,14 @@ function Footer() {
 						</div>
 					</div>
 
-					<div className="flex flex-col lg:flex-row max-w-3xl gap-56">
+					<div className="flex flex-col lg:flex-row max-w-3xl gap-20 lg:gap-56">
 						{footerLinks.map(column => (
-							<div key={column.title} className="flex flex-col">
+							<div key={column.title} className="flex items-center gap-8 lg:flex-col lg:gap-0">
+								
 								<h1 className="dark:text-white text-xl font-medium">
 									{column.title}
 								</h1>
-								<ul className="mt-6 flex flex-col items-start gap-4 justify-start">
+								<ul className="mt-6 flex lg:flex-col items-start gap-4 justify-start">
 									{column.links.map(link => (
 										<li
 											key={link.title}

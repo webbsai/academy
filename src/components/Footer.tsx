@@ -2,13 +2,14 @@ import TwitterIcon from "./icons/twitter"
 import SlackIcon from "./icons/slack"
 import GithubIcon from "./icons/github"
 import { footerLinks } from "../consts"
-import { useState, useEffect } from "preact/hooks"
+import { useState } from "preact/hooks"
 
 function Footer() {
 	const [theme, setTheme] = useState<string>("dark")
 
+	const gradientType = theme === "dark" ? "black" : "white"
+
 	window.addEventListener("storage", () => {
-		console.log(import.meta.env.WEBBSAI_LANDING_URL)
 		setTheme(localStorage.getItem("starlight-theme") ?? "dark")
 		setTheme(window.localStorage.getItem("starlight-theme") ?? "light")
 	})
@@ -71,8 +72,10 @@ function Footer() {
 
 					<div className="flex flex-col lg:flex-row max-w-3xl gap-20 lg:gap-56">
 						{footerLinks.map(column => (
-							<div key={column.title} className="flex items-center gap-8 lg:flex-col lg:gap-0">
-								
+							<div
+								key={column.title}
+								className="flex items-center gap-8 lg:flex-col lg:gap-0"
+							>
 								<h1 className="dark:text-white text-xl font-medium">
 									{column.title}
 								</h1>
@@ -105,12 +108,7 @@ function Footer() {
 					className="w-full mt-20 rounded-3xl gap-8 flex justify-center items-center py-9 flex-col lg:flex-row lg:justify-between"
 					style={{
 						border: "4px solid transparent",
-
-						background: `${
-							theme === "dark"
-								? "linear-gradient(black 0 0) padding-box, linear-gradient(to right, #1566C0, #7C3AED) border-box"
-								: "linear-gradient(white 0 0) padding-box, linear-gradient(to right, #1566C0, #7C3AED) border-box"
-						} `
+						background: `linear-gradient(${gradientType} 0 0) padding-box, linear-gradient(to right, #1566C0, #7C3AED) border-box`
 					}}
 				>
 					<div className="flex items-center gap-11 ml-16">
@@ -140,7 +138,7 @@ function Footer() {
 					>
 						<span
 							style={{
-								background: 
+								background:
 									"linear-gradient(91deg, #FFF 0.31%, #7C3AED 102.8%)",
 								backgroundClip: "text",
 								WebkitBackgroundClip: "text",

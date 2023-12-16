@@ -14,7 +14,7 @@ function RecentBlogs({ blogs }: { blogs: BlogType[] }) {
 		<>
 			<div>
 				<div>
-					<h2 className="text-2xl font-bold md:text-3xl lg:text-5xl">
+					<h2 className="text-2xl text-center font-bold md:text-3xl lg:text-5xl">
 						Recent Posts
 					</h2>
 				</div>
@@ -22,7 +22,7 @@ function RecentBlogs({ blogs }: { blogs: BlogType[] }) {
 					{currentBlogs?.map(blog => (
 						<a href={`blogs/${blog.slug}`}>
 							<div class="bg-[#EEEEEE] lg:max-w-md h-96 border-[1px] border-solid border-gray-300 border-opacity-[0.45] dark:bg-[#131313] flex flex-col rounded-[20px]">
-								<div class="overflow-hidden h-">
+								<div class="overflow-hidden h-52">
 									<div
 										class="h-full w-full bg-cover bg-center bg-no-repeat rounded-tl-[20px] rounded-tr-[20px]"
 										style={{

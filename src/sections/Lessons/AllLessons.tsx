@@ -46,7 +46,7 @@ function AllLessons({
 					{currentLessons?.map(lesson => (
 						<a href={lesson.slug}>
 							<div class="bg-[#EEEEEE] lg:max-w-[26.3125rem] h-[23.6875rem] border-[1px] border-solid border-gray-300 border-opacity-[0.45] dark:bg-[#131313] flex flex-col rounded-[20px]">
-								<div class="overflow-hidden h-[12.75rem]">
+								<div class="overflow-hidden h-52">
 									<div
 										class="h-full w-full bg-cover bg-center bg-no-repeat rounded-tl-[20px] rounded-tr-[20px]"
 										style={{

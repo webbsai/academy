@@ -6,19 +6,23 @@ import { useState } from "preact/hooks"
 
 function Footer() {
 	const [theme, setTheme] = useState<string>("dark")
-
-	const gradientType = theme === "dark" ? "black" : "white"
+	const [gradientType, setGradientType] = useState(
+		theme === "dark" ? "black" : "white"
+	)
 
 	window.addEventListener("storage", () => {
-		setTheme(localStorage.getItem("starlight-theme") ?? "dark")
-		setTheme(window.localStorage.getItem("starlight-theme") ?? "light")
+		const currentTheme = localStorage.getItem("starlight-theme") ?? "dark"
+		setTheme(currentTheme)
+		setGradientType(prevGradient =>
+			currentTheme === "dark" ? "black" : "white"
+		)
 	})
 
 	return (
 		<footer className="overflow-x-clip py-24 pt-16 text-sm dark:border-gray-900 dark:bg-black text-gray-400 lg:text-lg">
 			<div className="flex flex-col justify-between px-4 mx-auto sm:px-10 md:px-14 lg:px-12 xl:max-w-7xl xl:px-2">
-				<div className="flex flex-col lg:flex-row items-center justify-center gap-20 lg:gap-32">
-					<div className="flex flex-col h-full w-full items-center justify-center">
+				<div className="flex flex-col lg:flex-row items-center justify-center gap-32 lg:gap-32">
+					<div className="flex flex-col h-full w-full">
 						<div className="flex flex-col gap-7 text-lg font-semibold text-left lg:text-center">
 							<a
 								className="flex items-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl"
@@ -27,7 +31,7 @@ function Footer() {
 							>
 								<img
 									class="dark:hidden h-[80px]"
-									src="logo.svg"
+									src="logo-light.svg"
 									alt="WebbsAI Academy Logo"
 								/>
 								<img
@@ -70,20 +74,20 @@ function Footer() {
 						</div>
 					</div>
 
-					<div className="flex flex-col lg:flex-row max-w-3xl gap-20 lg:gap-56">
+					<div className="flex w-full flex-wrap lg:flex-nowrap gap-14 items-start justify-between">
 						{footerLinks.map(column => (
 							<div
 								key={column.title}
-								className="flex items-center gap-8 lg:flex-col lg:gap-0"
+								className="flex gap-1 flex-col lg:gap-0"
 							>
-								<h1 className="dark:text-white text-xl font-medium">
+								<h1 className="dark:text-white text-black text-xl font-bold text-left">
 									{column.title}
 								</h1>
-								<ul className="mt-6 flex lg:flex-col items-start gap-4 justify-start">
+								<ul className="mt-6 flex flex-col items-start gap-4 justify-start">
 									{column.links.map(link => (
 										<li
 											key={link.title}
-											className="text-base md:text-lg"
+											className="text-lg"
 										>
 											<a
 												className="mb-3 text-gray-800 transition-colors dark:text-white hover:text-gray-900 dark:hover:text-gray-500"
@@ -119,10 +123,10 @@ function Footer() {
 						/>
 
 						<div className="flex flex-col gap-3">
-							<p className="dark:text-white font-medium text-2xl">
+							<p className="dark:text-white text-black font-medium text-2xl">
 								Join our awesome community
 							</p>
-							<p className="dark:text-white font-normal text-lg">
+							<p className="dark:text-white text-black font-normal text-lg">
 								Share work, Seek suppirt, vote on components,
 								stay updated and network with others.
 							</p>
@@ -152,24 +156,40 @@ function Footer() {
 				</div>
 
 				<div className="flex flex-col gap-8 lg:flex-row justify-between items-center mt-8">
-					<p className="dark:text-white text-sm md:text-base lg:text-lg font-normal">
+					<p className="dark:text-white text-black text-sm md:text-base lg:text-lg font-normal">
 						<a
 							className="hover:underline cursor-pointer"
 							href={`${
-								import.meta.env.WEBBSAI_LANDING_URL
+								import.meta.env.PUBLIC_WEBBSAI_LANDING_URL
 							}/privacy`}
+							target={
+								import.meta.env.PUBLIC_WEBBSAI_LANDING_URL.includes(
+									"http"
+								)
+									? "_blank"
+									: "_self"
+							}
 						>
 							Privacy Policy
 						</a>{" "}
 						<span className="font-bold">.</span>{" "}
 						<a
 							className="hover:underline cursor-pointer"
-							href={`${import.meta.env.WEBBSAI_LANDING_URL}/tos`}
+							href={`${
+								import.meta.env.PUBLIC_WEBBSAI_LANDING_URL
+							}/tos`}
+							target={
+								import.meta.env.PUBLIC_WEBBSAI_LANDING_URL.includes(
+									"http"
+								)
+									? "_blank"
+									: "_self"
+							}
 						>
 							Terms & Conditions
 						</a>
 					</p>
-					<a className="dark:text-white text-sm md:text-base lg:text-lg font-normal ">
+					<a className="dark:text-white text-black text-sm md:text-base lg:text-lg font-normal ">
 						WebbsAI, LLC. All rights reserved.
 					</a>
 				</div>

@@ -3,6 +3,10 @@ import { paths } from "../consts"
 import { useEffect, useState } from "react"
 
 function Header() {
+	// for conditionally rendering sign up and login buttons
+	const breakpoint = 1024
+	const [width, setWidth] = useState(window.innerWidth)
+
 	const onDropDownHandler = () => {
 		let layer = document.getElementById("layer")
 		let navlinks = document.getElementById("navlinks")
@@ -27,9 +31,18 @@ function Header() {
 			document.documentElement.classList.remove("dark")
 		}
 		window.localStorage.setItem("starlight-theme", theme)
-		window.dispatchEvent(new Event("storage"));
-
+		window.dispatchEvent(new Event("storage"))
 	}, [theme])
+
+	useEffect(() => {
+		const handleResizeWindow = () => setWidth(window.innerWidth)
+
+		window.addEventListener("resize", handleResizeWindow)
+
+		return () => {
+			window.removeEventListener("resize", handleResizeWindow)
+		}
+	}, [])
 
 	return (
 		<header className="overflow-x-clip not-content">
@@ -50,7 +63,7 @@ function Header() {
 									src={
 										theme === "dark"
 											? "logo-dark.svg"
-											: "logo.svg"
+											: "logo-light.svg"
 									}
 									alt="WebbsAI Academy Logo"
 								/>
@@ -110,11 +123,27 @@ function Header() {
 											</a>
 										</li>
 									))}
+
+									{width <= breakpoint && (
+										<div className="flex -px-4">
+											<li className="flex items-center rounded-[15px] px-[14px]">
+												<button className="dark:text-white font-normal text-base leading-6 tracking-[0.005rem]">
+													Log in
+												</button>
+											</li>
+											<li className="flex items-center rounded-[15px] px-[14px]">
+												<button className="text-white font-normal text-base leading-6 tracking-[0.005rem] bg-primary hover:bg-primary/80 rounded-xl px-6 pt-3 pb-4">
+													Sign Up
+												</button>
+											</li>
+										</div>
+									)}
+
 									<li className="flex items-center rounded-[15px] px-[14px]">
 										<button
 											onClick={handleClick}
 											aria-label="switch theme"
-											className="relative rounded-full switcher group h-9 w-9 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex"
+											className=" relative rounded-full switcher group h-9 w-9 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex"
 										>
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
@@ -142,14 +171,16 @@ function Header() {
 							</div>
 						</div>
 
-						<div className="flex gap-10">
-							<button className="dark:text-white font-normal text-base leading-6 tracking-[0.005rem]">
-								Log in
-							</button>
-							<button className="text-white font-normal text-base leading-6 tracking-[0.005rem] bg-blue-1 rounded-xl px-6 pt-3 pb-4">
-								Sign Up
-							</button>
-						</div>
+						{width > breakpoint && (
+							<div className="flex gap-10">
+								<button className="dark:text-white font-normal text-base leading-6 tracking-[0.005rem]">
+									Log in
+								</button>
+								<button className="text-white font-normal text-base leading-6 tracking-[0.005rem] bg-primary hover:bg-primary/80 rounded-xl px-6 pt-3 pb-4">
+									Sign Up
+								</button>
+							</div>
+						)}
 					</div>
 				</div>
 			</nav>

@@ -31,11 +31,11 @@ export const footerLinks = [
 		links: [
 			{
 				title: "Home",
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}`
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}`
 			},
 			{
 				title: "Features",
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/pricing`
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/pricing`
 			},
 			{
 				title: "Academy",
@@ -56,7 +56,7 @@ export const footerLinks = [
 			},
 			{
 				title: "Blogs",
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/blogs`
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/blogs`
 			}
 		]
 	},
@@ -65,11 +65,11 @@ export const footerLinks = [
 		links: [
 			{
 				title: "Documentation",
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/contact`
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/contact`
 			},
 			{
 				title: "Contact",
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/tos`
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/tos`
 			},
 			{
 				title: "Help Center",

@@ -12,7 +12,7 @@ export default defineConfig({
 			title: "WebbsAI",
 			customCss: ["./src/styles/custom.css", "./src/styles/tailwind.css"],
 			logo: {
-				src: "./public/new-logo.svg"
+				src: "./public/logo-dark.svg"
 			}
 		}),
 		preact({ compat: true })

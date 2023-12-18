@@ -60,32 +60,6 @@ function RecentBlogs({ blogs }: { blogs: BlogType[] }) {
 								</div>
 							</div>
 						</a>
-						// <a href={`blogs/${blog.slug}`}>
-						// 	<div className='p-5 pb-8 flex flex-col gap-5 rounded-[20px]'>
-						// 		<img
-						// 			src={blog.data.image}
-						// 			className='h-[200px] rounded-[20px]'
-						// 		/>
-						// 		<h3 className='text-base font-medium md:text-lg lg:text-xl'>
-						// 			{blog.data.title}
-						// 		</h3>
-						// 		<p className='text-xs lg:text-sm text-black/70 dark:text-white/70 max-h-[80px] text-ellipsis overflow-hidden'>
-						// 			{blog.data.description}
-						// 		</p>
-						// 		<div className='flex items-center text-xs gap-x-2 lg:text-sm text-black/70 dark:text-white/70'>
-						// 			<img
-						// 				className='w-10 h-10 rounded-full'
-						// 				src={blog?.data.author?.avatar}
-						// 			/>
-						// 			<p className='truncate'>{blog?.data.author?.name}</p> |
-						// 			<p className='truncate'>
-						// 				{monthNames[new Date(blog?.data.pubDate).getMonth()]}{' '}
-						// 				{new Date(blog?.data.pubDate).getDate()},{' '}
-						// 				{new Date(blog?.data.pubDate).getFullYear()}
-						// 			</p>
-						// 		</div>
-						// 	</div>
-						// </a>
 					))}
 				</div>
 				{!currentBlogs ||

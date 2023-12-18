@@ -69,11 +69,11 @@ export const footerLinks = [
 			},
 			{
 				title: "Contact",
-				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/tos`
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/contact`
 			},
 			{
 				title: "Help Center",
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/privacy`
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/privacy`
 			}
 		]
 	}

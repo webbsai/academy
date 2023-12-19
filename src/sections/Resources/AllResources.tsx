@@ -1,4 +1,4 @@
-import { useEffect, useState } from "preact/hooks"
+import { useMemo, useState } from "preact/hooks"
 import type { ResourceType } from "../../types"
 
 function AllResources({
@@ -9,11 +9,9 @@ function AllResources({
 	resourceFilter: string
 }) {
 	const [numberToDisplay, setNumberToDisplay] = useState<number>(3)
-	const [currentResources, setCurrentResources] =
-		useState<ResourceType[]>(resources)
 
-	useEffect(() => {
-		setCurrentResources(resources?.slice(0, numberToDisplay))
+	const currentResources = useMemo(() => {
+		return resources?.slice(0, numberToDisplay)
 	}, [numberToDisplay, resources])
 
 	return (

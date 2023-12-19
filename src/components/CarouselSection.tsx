@@ -1,8 +1,11 @@
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide"
 import "@splidejs/react-splide/css"
+import { useMemo } from "preact/hooks"
 
 function CarouselSection({ lessons }: { lessons: any[] }) {
-	return lessons?.length > 0 ? (
+	const memoizedLessons = useMemo(() => lessons, [lessons])
+
+	return memoizedLessons?.length > 0 ? (
 		<Splide
 			hasTrack={false}
 			options={{
@@ -23,7 +26,7 @@ function CarouselSection({ lessons }: { lessons: any[] }) {
 			}}
 		>
 			<SplideTrack>
-				{lessons?.map((lesson, index) => (
+				{memoizedLessons?.map((lesson, index) => (
 					<SplideSlide key={index}>
 						<a href={lesson.slug}>
 							<img

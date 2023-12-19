@@ -1,17 +1,31 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Search } from "../../components/icons/icons"
-import AllCourses from "./AllCourses"
 import type { StarlightDocType } from "../../types"
+import AllCourses from "./AllCourses"
 
 function Courses({ courses }: { courses: StarlightDocType[] }) {
 	const [courseFilter, setCourseFilter] = useState("")
 
+	const [debouncedCourseFilter, setDebouncedCourseFilter] =
+		useState<string>("")
+
+	useEffect(() => {
+		const timerId = setTimeout(() => {
+			setDebouncedCourseFilter(courseFilter)
+		}, 500)
+		return () => {
+			clearTimeout(timerId)
+		}
+	}, [courseFilter])
+
 	const filteredLessons = useMemo(() => {
-		if (!courseFilter) return courses
-		return courses.filter(course =>
-			course.data.title.toLowerCase().includes(courseFilter.toLowerCase())
+		if (!debouncedCourseFilter) return courses
+		return courses.filter(courses =>
+			courses.data.title
+				.toLowerCase()
+				.includes(debouncedCourseFilter.toLowerCase())
 		)
-	}, [courses, courseFilter])
+	}, [courses, debouncedCourseFilter])
 
 	return (
 		<div>

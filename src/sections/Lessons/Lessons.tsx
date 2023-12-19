@@ -1,17 +1,30 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Search } from "../../components/icons/icons"
-import AllLessons from "./AllLessons"
 import type { StarlightDocType } from "../../types"
+import AllLessons from "./AllLessons"
 
 function Lessons({ lessons }: { lessons: StarlightDocType[] }) {
 	const [lessonFilter, setLessonFilter] = useState<string>("")
+	const [debouncedLessonFilter, setDebouncedLessonFilter] =
+		useState<string>("")
+
+	useEffect(() => {
+		const timerId = setTimeout(() => {
+			setDebouncedLessonFilter(lessonFilter)
+		}, 500)
+		return () => {
+			clearTimeout(timerId)
+		}
+	}, [lessonFilter])
 
 	const filteredLessons = useMemo(() => {
-		if (!lessonFilter) return lessons
+		if (!debouncedLessonFilter) return lessons
 		return lessons.filter(lesson =>
-			lesson.data.title.toLowerCase().includes(lessonFilter.toLowerCase())
+			lesson.data.title
+				.toLowerCase()
+				.includes(debouncedLessonFilter.toLowerCase())
 		)
-	}, [lessons, lessonFilter])
+	}, [lessons, debouncedLessonFilter])
 
 	return (
 		<>

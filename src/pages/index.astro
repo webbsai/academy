@@ -5,7 +5,6 @@ import CarouselSection from "../components/CarouselSection.tsx"
 import Footer from "../components/Footer.tsx"
 import Header from "../components/Header.tsx"
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
-import { CardSpotlightEffect } from "../components/CardSpotlightEffect"
 
 const courses = (
 	await getCollection("docs", doc => {
@@ -61,7 +60,7 @@ const lessons = (
 							class="flex flex-col justify-center w-full gap-5 sm:flex-row"
 						>
 							<a
-								class="px-5 py-4 rounded-xl bg-[#2563EB] text-white hover:shadow-[0_0_2px_1px_rgba(150,150,150,1)] dark:hover:shadow-[inset_0_0_5px_1px_rgba(100,100,100,1)] transition-[box-shadow]"
+								class="px-5 py-4 rounded-xl bg-primary text-white hover:shadow-[0_0_2px_1px_rgba(150,150,150,1)] dark:hover:shadow-[inset_0_0_5px_1px_rgba(100,100,100,1)] transition-[box-shadow]"
 								href="/courses">Get free courses</a
 							>
 							<a
@@ -428,6 +427,6 @@ const lessons = (
 				</div>
 			</section>
 		</main>
-		<Footer client:only/>
+		<Footer client:only />
 	</body>
 </html>

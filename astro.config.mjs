@@ -9,11 +9,13 @@ export default defineConfig({
 	integrations: [
 		tailwind({}),
 		starlight({
-			title: "WebbsAI",
+			title: "",
 			customCss: ["./src/styles/custom.css", "./src/styles/tailwind.css"],
 			logo: {
-				src: "./public/logo-dark.svg"
-			}
+				light: "./public/logo-light.svg",
+				dark: "./public/logo-dark.svg"
+			},
+			favicon: "./public/favicon.ico"
 		}),
 		preact({ compat: true })
 	]

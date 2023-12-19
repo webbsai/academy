@@ -109,13 +109,13 @@ function Footer() {
 				</div>
 
 				<div
-					className="w-full mt-20 rounded-3xl gap-8 flex justify-center items-center py-9 flex-col lg:flex-row lg:justify-between"
+					className="w-full mt-20 px-8 lg:px-16 rounded-3xl gap-8 flex justify-center items-center py-9 flex-col lg:flex-row lg:justify-between"
 					style={{
 						border: "4px solid transparent",
 						background: `linear-gradient(${gradientType} 0 0) padding-box, linear-gradient(to right, #1566C0, #7C3AED) border-box`
 					}}
 				>
-					<div className="flex items-center gap-11 ml-16">
+					<div className="flex flex-col items-start gap-3 ">
 						<img
 							class="bg-blue-2 p-3 rounded-xl "
 							src="new-logo.svg"
@@ -127,32 +127,34 @@ function Footer() {
 								Join our awesome community
 							</p>
 							<p className="dark:text-white text-black font-normal text-lg">
-								Share work, Seek suppirt, vote on components,
+								Share work, Seek support, vote on components,
 								stay updated and network with others.
 							</p>
 						</div>
 					</div>
 
-					<button
-						style={{
-							background:
-								"linear-gradient(95deg, rgba(21, 102, 192, 0.7) 0.51%, rgba(21, 102, 192, 0.37) 99.97%)"
-						}}
-						className="px-5 pt-3 pb-4 mx-20 rounded-xl mr-8 w-3/4 lg:w-fit"
-					>
-						<span
+					<div className="flex items-end w-full lg:w-fit">
+						<button
 							style={{
 								background:
-									"linear-gradient(91deg, #FFF 0.31%, #7C3AED 102.8%)",
-								backgroundClip: "text",
-								WebkitBackgroundClip: "text",
-								WebkitTextFillColor: "transparent"
+									"linear-gradient(95deg, rgba(21, 102, 192, 0.7) 0.51%, rgba(21, 102, 192, 0.37) 99.97%)"
 							}}
-							className="text-center text-lg font-semibold"
+							className="px-5 py-4 w-full rounded-xl items-end"
 						>
-							Join our Discord
-						</span>
-					</button>
+							<span
+								style={{
+									background:
+										"linear-gradient(91deg, #FFF 0.31%, #7C3AED 102.8%)",
+									backgroundClip: "text",
+									WebkitBackgroundClip: "text",
+									WebkitTextFillColor: "transparent"
+								}}
+								className="text-center text-lg font-semibold"
+							>
+								Join our Discord
+							</span>
+						</button>
+					</div>
 				</div>
 
 				<div className="flex flex-col gap-8 lg:flex-row justify-between items-center mt-8">

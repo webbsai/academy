@@ -3,6 +3,8 @@ title: 'Introduction to CSS'
 lastUpdated: 2023-11-13
 description: 'Understanding the power of CSS in creating visually appealing and user-friendly websites over the Internet'
 banner: { content: '/assets/courses/CSS/lesson-1/css-banner.png' }
+category: 'Getting Started'
+readTime: '2 minutes'
 ---
 
 By now, we’ve developed a solid understanding of our document structure, which tags to use correctly and where. But what makes the web pages you see across the Internet so vibrant and appealing? By the end of the lesson, you’ll gain a deeper insight into CSS and its role in improving the visual aesthetic of web pages.

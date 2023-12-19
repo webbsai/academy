@@ -3,6 +3,8 @@ title: 'Mastering HTML Intermediate and Advanced'
 lastUpdated: 2023-10-31
 description: 'A further look into the intermediate and advanced concepts of HTML to strengthen your foundation as a web developer'
 banner: { content: '/assets/courses/HTML/lesson-2/intermediate-advanced-html-banner.png' }
+category: 'Getting Started'
+readTime: '2 minutes'
 ---
 
 

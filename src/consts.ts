@@ -2,115 +2,116 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE =
-	'WebbsAI Academy | Generate a custom website using Generative AI'
+	"WebbsAI Academy | Generate a custom website using Generative AI"
 export const SITE_DESCRIPTION =
 	"Welcome to WebbsAI Academy! Learn to generate amazing websites in 30 secs using WebbAI's magical AI website builder."
 
 export const paths = [
 	{
-		name: 'Lessons',
-		path: '/lessons',
+		name: "Lessons",
+		path: "/lessons"
 	},
 	{
-		name: 'Courses',
-		path: '/courses',
+		name: "Courses",
+		path: "/courses"
 	},
 	{
-		name: 'Resources',
-		path: '/resources',
+		name: "Resources",
+		path: "/resources"
 	},
 	{
-		name: 'Blogs',
-		path: '/blogs',
-	},
+		name: "Blogs",
+		path: "/blogs"
+	}
 ]
 
 export const footerLinks = [
 	{
-		title: 'Home',
+		title: "Product",
 		links: [
-			{ title: 'Home', href: `${import.meta.env.WEBBSAI_LANDING_URL}/` },
-		],
+			{
+				title: "Home",
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}`
+			},
+			{
+				title: "Features",
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/pricing`
+			},
+			{
+				title: "Academy",
+				href: `/`
+			}
+		]
 	},
 	{
-		title: 'Product',
+		title: "Company",
 		links: [
 			{
-				title: 'Pricing',
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/pricing`,
+				title: "Our Team",
+				href: "https://www.linkedin.com/company/webbsai/about/"
 			},
-		],
+			{
+				title: "Our Value",
+				href: "https://www.linkedin.com/company/webbsai/jobs/"
+			},
+			{
+				title: "Blogs",
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/blogs`
+			}
+		]
 	},
 	{
-		title: 'Company',
+		title: "Resources",
 		links: [
 			{
-				title: 'About us',
-				href: 'https://www.linkedin.com/company/webbsai/about/',
+				title: "Documentation",
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/contact`
 			},
 			{
-				title: 'Careers',
-				href: 'https://www.linkedin.com/company/webbsai/jobs/',
-			},
-		],
-	},
-	{
-		title: 'Resources',
-		links: [
-			{
-				title: 'Contact',
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/contact`,
+				title: "Contact",
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/contact`
 			},
 			{
-				title: 'Terms',
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/tos`,
-			},
-			{
-				title: 'Privacy',
-				href: `${import.meta.env.WEBBSAI_LANDING_URL}/privacy`,
-			},
-		],
-	},
+				title: "Help Center",
+				href: `${import.meta.env.PUBLIC_WEBBSAI_LANDING_URL}/privacy`
+			}
+		]
+	}
 ]
 
 export const DEFAULT_SCREEN_SIZE = 1360
 
 export const monthNames = [
-	'Jan',
-	'Feb',
-	'Mar',
-	'Apr',
-	'May',
-	'Jun',
-	'Jul',
-	'Aug',
-	'Sep',
-	'Oct',
-	'Nov',
-	'Dec',
+	"Jan",
+	"Feb",
+	"Mar",
+	"Apr",
+	"May",
+	"Jun",
+	"Jul",
+	"Aug",
+	"Sep",
+	"Oct",
+	"Nov",
+	"Dec"
 ]
 
 export const blogTags = [
-	'All',
-	'Product Update',
-	'Web designs',
+	"All",
+	"Product Update",
+	"Web designs",
 	"FAQ's",
-	'Technical',
-	'Interviews',
-	'Trends',
+	"Technical",
+	"Interviews",
+	"Trends"
 ]
 
-export const courseDifficultyLevels = [
-	'All',
-	'HTML',
-	'CSS',
-	'JavaScript',
-]
+export const courseDifficultyLevels = ["All", "HTML", "CSS", "JavaScript"]
 
 export const resourceTypes = [
-	'All',
-	'Buttons',
-	'Animations',
-	'Nav bars',
-	'Tables',
+	"All",
+	"Buttons",
+	"Animations",
+	"Nav bars",
+	"Tables"
 ]

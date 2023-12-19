@@ -3,6 +3,8 @@ title: 'Introduction to HTML'
 lastUpdated: 2023-10-30
 description: 'A beginner-friendly guide that covers the fundamentals of HTML, the language behind the web, so you can gain the skills needed to create web content that stands out online'
 banner: { content: '/assets/courses/HTML/lesson-1/intro-to-html-banner.png' }
+category: 'Getting Started'
+readTime: '2 minutes'
 ---
 
 

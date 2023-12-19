@@ -3,6 +3,8 @@ title: "The Box Model"
 lastUpdated: 2023-12-11
 description: "Mastering the CSS Box Model to build well-structured web pages"
 banner: { content: "/assets/courses/CSS/lesson-1/css-banner.png" }
+category: 'Getting Started'
+readTime: '2 minutes'
 ---
 
 The CSS box model is a fundamental concept in web design. It defines the layout and spacing of all elements on a web page. Every element in CSS, including text, images, and buttons, is essentially a box.

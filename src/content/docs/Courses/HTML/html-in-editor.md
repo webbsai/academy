@@ -3,6 +3,8 @@ title: 'Layouts and Elements'
 lastUpdated: 2023-11-19
 description: 'Understand how the WebbsAI editor simplifies the design process'
 banner: { content: '/assets/courses/HTML/lesson-3/html-editor-banner.png' }
+category: 'Getting Started'
+readTime: '2 minutes'
 ---
 
 

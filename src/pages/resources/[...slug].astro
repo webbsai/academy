@@ -1,38 +1,43 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import ResourcePost from '../../sections/Resources/ResourcePost.tsx';
-import Header from '../../components/Header';
-import BaseHead from '../../components/BaseHead.astro';
-import { SITE_DESCRIPTION } from '../../consts';
-import Footer from '../../components/Footer';
+import { type CollectionEntry, getCollection } from "astro:content"
+import ResourcePost from "../../sections/Resources/ResourcePost.tsx"
+import Header from "../../components/Header"
+import BaseHead from "../../components/BaseHead.astro"
+import { SITE_DESCRIPTION } from "../../consts"
+import Footer from "../../components/Footer"
 
 export async function getStaticPaths() {
-	const resources = await getCollection('resources');
-	return resources.map((resource) => ({
+	const resources = await getCollection("resources")
+	return resources.map(resource => ({
 		params: { slug: resource.slug },
 		props: resource,
-	}));
+	}))
 }
-type Props = CollectionEntry<'blog'>;
 
-const resource = Astro.props;
-const { Content } = await resource.render();
+type Props = CollectionEntry<"resources">
+
+const resources = await getCollection("resources")
+
+const resource = Astro.props
+const { Content } = await resource.render()
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
 	<head>
 		<BaseHead title={resource.data.title} description={SITE_DESCRIPTION} />
 	</head>
-	<body class='bg-white dark:bg-black'>
+	<body class="bg-white dark:bg-black">
 		<Header client:only />
 		<main
-			class='pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white'
+			class="pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white"
 		>
-			<ResourcePost {...resource.data}>
+			<ResourcePost {...resource.data} resource={resource.data} resources={resources} >
 				<Content />
 			</ResourcePost>
 		</main>
-		<Footer />
+		<Footer client:only/>
 	</body>
 </html>
+
+<!-- resource={resource.data} resources={resources} -->

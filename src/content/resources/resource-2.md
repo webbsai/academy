@@ -1,17 +1,17 @@
 ---
-title: 'A Prompt to generate website in minutes using AI.'
-description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus nec quam condem, quis scelerisque arcu ultrices.'
-tags: ['Product Update', 'Technical']
+title: 'Floating Circle'
+description: 'second ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend risus nec quam condem, quis scelerisque arcu ultrices.'
+tags: ['animations']
 pubDate: 2022-09-15
 lastUpdated: 2022-09-15
-author:
-  {
-    avatar: 'https://freepngimg.com/download/happy_girl/8-2-happy-girl-free-png-image.png',
-    name: 'Eva Thompson',
-  }
-image: 'https://picsum.photos/seed/hello10/300/150'
+image: 'https://picsum.photos/seed/resource1/300/150'
 category: 'Getting Started'
 readTime: '2 minutes'
+author: {
+    avatar: 'https://i.pravatar.cc/150?img=3',
+    name: 'Rizwan Nasir',
+    designation: 'UI/UX Designer'
+}
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.

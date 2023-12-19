@@ -1,12 +1,8 @@
 import clsx from "clsx"
-import { paths } from "../consts"
 import { useEffect, useState } from "react"
+import { paths } from "../consts"
 
 function Header() {
-	// for conditionally rendering sign up and login buttons
-	const breakpoint = 1024
-	const [width, setWidth] = useState(window.innerWidth)
-
 	const onDropDownHandler = () => {
 		let layer = document.getElementById("layer")
 		let navlinks = document.getElementById("navlinks")
@@ -33,16 +29,6 @@ function Header() {
 		window.localStorage.setItem("starlight-theme", theme)
 		window.dispatchEvent(new Event("storage"))
 	}, [theme])
-
-	useEffect(() => {
-		const handleResizeWindow = () => setWidth(window.innerWidth)
-
-		window.addEventListener("resize", handleResizeWindow)
-
-		return () => {
-			window.removeEventListener("resize", handleResizeWindow)
-		}
-	}, [])
 
 	return (
 		<header className="overflow-x-clip not-content">
@@ -72,7 +58,7 @@ function Header() {
 							<button
 								aria-label="humburger"
 								id="hamburger"
-								className="relative order-1 px-3 py-2 -mr-6 lg:order-2 lg:hidden"
+								className="relative order-1 px-3 py-2 mr-6 lg:order-2 lg:hidden"
 								onClick={() => onDropDownHandler()}
 							>
 								<div className="rounded-[8px] bg-white px-3 py-4 dark:bg-black">
@@ -123,21 +109,18 @@ function Header() {
 											</a>
 										</li>
 									))}
-
-									{width <= breakpoint && (
-										<div className="flex -px-4">
-											<li className="flex items-center rounded-[15px] px-[14px]">
-												<button className="dark:text-white font-normal text-base leading-6 tracking-[0.005rem]">
-													Log in
-												</button>
-											</li>
-											<li className="flex items-center rounded-[15px] px-[14px]">
-												<button className="text-white font-normal text-base leading-6 tracking-[0.005rem] bg-primary hover:bg-primary/80 rounded-xl px-6 pt-3 pb-4">
-													Sign Up
-												</button>
-											</li>
-										</div>
-									)}
+									<div className="flex px-4 md:hidden">
+										<li className="flex items-center rounded-[15px] px-[14px]">
+											<button className="dark:text-white font-normal text-base leading-6 tracking-[0.005rem]">
+												Log in
+											</button>
+										</li>
+										<li className="flex items-center rounded-[15px] px-[14px]">
+											<button className="text-white font-normal text-base leading-6 tracking-[0.005rem] bg-primary hover:bg-primary/80 rounded-xl px-6 py-3">
+												Sign Up
+											</button>
+										</li>
+									</div>
 
 									<li className="flex items-center rounded-[15px] px-[14px]">
 										<button
@@ -170,17 +153,14 @@ function Header() {
 								</ul>
 							</div>
 						</div>
-
-						{width > breakpoint && (
-							<div className="flex gap-10">
-								<button className="dark:text-white font-normal text-base leading-6 tracking-[0.005rem]">
-									Log in
-								</button>
-								<button className="text-white font-normal text-base leading-6 tracking-[0.005rem] bg-primary hover:bg-primary/80 rounded-xl px-6 pt-3 pb-4">
-									Sign Up
-								</button>
-							</div>
-						)}
+						<div className="flex gap-10 hidden lg:inline-flex">
+							<button className="dark:text-white font-normal text-base leading-6 tracking-[0.005rem]">
+								Log in
+							</button>
+							<button className="text-white font-normal text-base leading-6 tracking-[0.005rem] bg-primary hover:bg-primary/80 rounded-xl px-6 py-3">
+								Sign Up
+							</button>
+						</div>
 					</div>
 				</div>
 			</nav>

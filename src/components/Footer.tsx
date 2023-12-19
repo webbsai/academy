@@ -1,8 +1,8 @@
-import TwitterIcon from "./icons/twitter"
-import SlackIcon from "./icons/slack"
-import GithubIcon from "./icons/github"
-import { footerLinks } from "../consts"
 import { useState } from "preact/hooks"
+import { footerLinks } from "../consts"
+import GithubIcon from "./icons/github"
+import SlackIcon from "./icons/slack"
+import TwitterIcon from "./icons/twitter"
 
 function Footer() {
 	const [theme, setTheme] = useState<string>("dark")
@@ -162,13 +162,6 @@ function Footer() {
 							href={`${
 								import.meta.env.PUBLIC_WEBBSAI_LANDING_URL
 							}/privacy`}
-							target={
-								import.meta.env.PUBLIC_WEBBSAI_LANDING_URL.includes(
-									"http"
-								)
-									? "_blank"
-									: "_self"
-							}
 						>
 							Privacy Policy
 						</a>{" "}
@@ -178,13 +171,6 @@ function Footer() {
 							href={`${
 								import.meta.env.PUBLIC_WEBBSAI_LANDING_URL
 							}/tos`}
-							target={
-								import.meta.env.PUBLIC_WEBBSAI_LANDING_URL.includes(
-									"http"
-								)
-									? "_blank"
-									: "_self"
-							}
 						>
 							Terms & Conditions
 						</a>

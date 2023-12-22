@@ -3,6 +3,8 @@ title: 'CSS Basics'
 lastUpdated: 2023-11-14
 description: 'Learn how to utilize the user-friendly WebbsAI No-Code Editor to design the essentials of a website'
 banner: { content: '/assets/courses/CSS/lesson-1/css-banner.png' }
+category: 'Getting Started'
+readTime: '2 minutes'
 ---
 When you start designing your site, you'll want to build and iterate over different options to structure your designs. In this lesson, we'll cover all the ways you can do this without leaving our WebbsAI No-Code Editor.
 Today’s objectives will cover the following:

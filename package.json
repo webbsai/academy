@@ -16,7 +16,7 @@
     "@astrojs/sitemap": "^3.0.0",
     "@astrojs/starlight": "^0.9.1",
     "@astrojs/tailwind": "^5.0.0",
-    "@fontsource/poppins": "^5.0.8",
+    "@fontsource/manrope": "^5.0.18",
     "@splidejs/react-splide": "^0.7.12",
     "astro": "^3.0.5",
     "clsx": "^2.0.0",

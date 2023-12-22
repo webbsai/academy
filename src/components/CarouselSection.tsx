@@ -1,36 +1,44 @@
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide"
+import "@splidejs/react-splide/css"
+import { useMemo } from "preact/hooks"
 
 function CarouselSection({ lessons }: { lessons: any[] }) {
-	return lessons?.length > 0 ? (
+	const memoizedLessons = useMemo(() => lessons, [lessons])
+
+	return memoizedLessons?.length > 0 ? (
 		<Splide
 			hasTrack={false}
 			options={{
-				height: '100%',
+				height: "100%",
 				perPage: 1,
-				gap: '2rem',
-				type: 'loop',
+				gap: "2rem",
+				type: "loop",
 				pauseOnHover: false,
 				perMove: 1,
 				pagination: false,
 				autoplay: true,
-				padding: '12rem',
+				mediaQuery: "min",
+				breakpoints: {
+					767: {
+						padding: "12rem"
+					}
+				}
 			}}
 		>
 			<SplideTrack>
-				{lessons?.map((lesson) => (
-					<SplideSlide>
+				{memoizedLessons?.map((lesson, index) => (
+					<SplideSlide key={index}>
 						<a href={lesson.slug}>
 							<img
 								src={lesson.data.banner!.content as string}
-								className='h-[450px] rounded-[13px] w-full'
+								className="h-[450px] rounded-[13px] w-full"
 							/>
 						</a>
 					</SplideSlide>
 				))}
 			</SplideTrack>
 		</Splide>
-	) : null;
+	) : null
 }
 
-export default CarouselSection;
+export default CarouselSection

@@ -1,32 +1,33 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import { SITE_DESCRIPTION } from '../../consts';
-import AllResources from '../../sections/Resources/AllResources';
-import { Search } from '../../components/icons/icons';
-import { getCollection } from 'astro:content';
-import ResourcesSection from '../../sections/Resources/Resources';
+import BaseHead from "../../components/BaseHead.astro"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+import { SITE_DESCRIPTION } from "../../consts"
+import AllResources from "../../sections/Resources/AllResources"
+import { Search } from "../../components/icons/icons"
+import { getCollection } from "astro:content"
+import ResourcesSection from "../../sections/Resources/Resources"
 
-const resources = (await getCollection('resources')).sort(
+const resources = (await getCollection("resources")).sort(
 	(a, b) =>
 		//@ts-ignore
 		b.data.pubDate - a.data.pubDate
-);
+)
+
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
 	<head>
-		<BaseHead title={'Resources'} description={SITE_DESCRIPTION} />
+		<BaseHead title={"Resources"} description={SITE_DESCRIPTION} />
 	</head>
-	<body class='bg-white dark:bg-black'>
+	<body class="bg-white dark:bg-black">
 		<Header client:only />
 		<main
-			class='pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white'
+			class="pt-32 text-black sm:pt-40 md:pt-48 lg:pb-16 lg:pt-56 dark:text-white"
 		>
 			<ResourcesSection client:only resources={resources} />
 		</main>
-		<Footer />
+		<Footer client:only/>
 	</body>
 </html>

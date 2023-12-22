@@ -1,26 +1,27 @@
 ---
-import { getCollection } from 'astro:content'
-import BaseHead from '../components/BaseHead.astro'
-import Footer from '../components/Footer.tsx'
-import Header from '../components/Header.tsx'
-import { SITE_DESCRIPTION } from '../consts'
-import CoursesSection from './../sections/Courses/Courses'
+import { getCollection } from "astro:content"
+import BaseHead from "../components/BaseHead.astro"
+import Footer from "../components/Footer.tsx"
+import Header from "../components/Header.tsx"
+import { SITE_DESCRIPTION } from "../consts"
+import CoursesSection from "./../sections/Courses/Courses"
 
 const courses = (
-	await getCollection('docs', doc => {
-		return doc.id.split('/')[0] === 'Courses'
+	await getCollection("docs", doc => {
+		return doc.id.split("/")[0] === "Courses"
 	})
 ).sort(
 	(a, b) =>
 		//@ts-ignore
 		b.data.lastUpdated - a.data.lastUpdated
 )
+
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={'Courses'} description={SITE_DESCRIPTION} />
+		<BaseHead title={"Courses"} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="bg-white dark:bg-black">
 		<Header client:only />
@@ -29,6 +30,6 @@ const courses = (
 		>
 			<CoursesSection client:only courses={courses} />
 		</main>
-		<Footer />
+		<Footer client:only/>
 	</body>
 </html>

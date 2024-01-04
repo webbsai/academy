@@ -1,11 +1,10 @@
 ---
-
 title: "Units"
 lastUpdated: 2023-11-26
 description: "Use a variety of different units to make your website responsive on all screen types"
-banner: { content: "/assets/courses/CSS/lesson-1/css-banner.png" }
-category: 'Getting Started'
-readTime: '2 minutes'
+banner: { content: "/assets/courses/CSS/lesson-3/banner.png" }
+category: "CSS"
+readTime: "5 mins"
 ---
 
 Now that you are more familiar with how a lot of properties work in styling a website, it is important to know what values should be used to adjust and set the appropriate size in such a way that your website is responsive. For this, the concept of units holds immense importance.
@@ -48,7 +47,6 @@ Through pixels, you can set margins, paddings, width, height, and any property t
 ```
 [property]: [value]px;
 ```
-
 
 **Example**:
 
@@ -97,7 +95,6 @@ This is how relative units help in responsiveness for each screen size and bette
 ```
 [property]: [value]%;
 ```
-
 
 **Example**:
 
@@ -195,7 +192,6 @@ The advantage of using rem is all elements using rem units will scale proportion
 [property]: [value]em;
 ```
 
-
 **Example**:
 
 ```css
@@ -229,7 +225,6 @@ To set the property of any text to have 'ch' unit, go to Styles > Typography > S
 ```
 [property]: [value]ch;
 ```
-
 
 **Example**:
 
@@ -275,4 +270,3 @@ selector {
 
 In summary, choosing the right units is crucial for building websites that look good on all devices. Absolute units, like pixels (px), stay the same size no matter what. Relative units, such as percentages (%), ems (em), rem (rem), adjust based on the size of other things in the document.
 Understanding and using these units wisely will make your website not only look consistent but also work well on all sorts of screens.
-

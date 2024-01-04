@@ -3,6 +3,8 @@ title: "Layouts"
 lastUpdated: 2023-12-17
 description: "Apply different layouts to create structures that are organised and engaging"
 banner: { content: "/assets/courses/CSS/lesson-1/css-banner.png" }
+category: "CSS"
+readTime: "6 mins"
 ---
 
 Well-designed layouts don’t just make websites visually appealing, they make them usable. With good structure, users can navigate easily and search engines can understand your content. Each layout technique we’ll cover serves a specific purpose and, no technique is designed to be used in isolation.
